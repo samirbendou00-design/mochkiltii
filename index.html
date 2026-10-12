@@ -3,272 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مشكلتي - عود مشكلتك</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet">
-<style>body{font-family:'Tajawal',sans-serif}.big-shadow{box-shadow:0 20px 40px rgba(193,39,45,0.2)}</style>
+<title>مشكلتي - بالدارجة</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Tahoma,Arial;background:#FFF8F0;margin:0;padding-bottom:80px}
+.top{background:#C1272D;color:#fff;padding:18px;text-align:center;font-weight:900;font-size:24px}
+.voice-wrap{text-align:center;padding:20px 10px}
+.btn-voice{width:220px;height:220px;border-radius:50%;background:#C1272D;color:#fff;border:none;font-size:22px;font-weight:900;box-shadow:0 20px 40px rgba(193,39,45,.35)}
+.btn-voice.on{background:#000;transform:scale(1.05);animation:pl 1s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 #000}70%{box-shadow:0 0 0 25px transparent}100%{box-shadow:0 0 0 0 transparent}}
+#status{color:#C1272D;font-weight:900;margin-top:15px;font-size:18px;min-height:24px}
+.card{background:#fff;margin:15px;border-radius:22px;padding:18px;border:1px solid #eee}
+textarea,input{width:100%;padding:14px;border-radius:16px;border:2px solid #eee;font-size:16px;margin-top:8px}
+.btn-black{background:#000;color:#fff;border:none;width:100%;padding:16px;border-radius:30px;font-weight:900;font-size:18px;margin-top:12px}
+.badge{background:#006233;color:#fff;padding:6px 14px;border-radius:20px;font-size:14px}
+.step{background:#FFF3E8;padding:10px;border-radius:12px;margin:6px 0}
+.legal{font-size:11px;background:#f2f2f2;padding:10px;border-radius:10px;text-align:center;margin-top:12px}
+#admin{display:none;position:fixed;inset:0;background:#0f0f0f;color:#fff;z-index:999;padding:20px;overflow:auto}
+.qbox{background:#1e1e1e;padding:10px;border-radius:12px;margin:8px 0}
+</style>
 </head>
-<body class="bg-[#FFF8F0] min-h-screen text-[#1a1a1a]">
+<body>
+<div class="top" id="logo">🇲🇦 مشكلتي<br><span style="font-size:13px;font-weight:400">عود مشكلتك بصوتك - نفهمك بالدارجة</span></div>
 
-<!-- HEADER -->
-<header class="bg-[#C1272D] p-4 text-white flex justify-between items-center">
-<div class="flex items-center gap-2" id="logoTap">
-<span class="text-2xl">🇲🇦</span>
-<h1 class="font-black text-xl">مشكلتي</h1>
-</div>
-<div class="bg-[#006233] px-3 py-1 rounded-full text-xs font-bold" id="visitCounter">0 زيارة</div>
-</header>
-
-<!-- MAIN APP -->
-<main class="max-w-[420px] mx-auto p-5 pb-24">
-<div class="bg-white rounded-[28px] p-6 big-shadow border border-red-100 text-center mt-4">
-<p class="font-bold text-gray-500 text-sm mb-2">للناس الكبار - غير هضر وصافي</p>
-
-<!-- BIG RED VOICE BUTTON -->
-<button id="voiceBtn" class="w-[200px] h-[200px] mx-auto bg-[#C1272D] hover:bg-[#a81f24] rounded-full flex flex-col items-center justify-center text-white font-black text-xl leading-tight big-shadow active:scale-95 transition-all">
-<span class="text-[60px]">🎙️</span>
-<span class="mt-1">عود لمشكلتك<br>بصوتك</span>
-</button>
-
-<p id="status" class="mt-4 font-bold text-[#C1272D] min-h-[24px]">كليكي وهضر</p>
-
-<!-- TEXT FALLBACK -->
-<textarea id="textInput" placeholder="ولا كتب هنا مشكلتك... مثلا: مول الدار بغا يخرجني..." class="w-full mt-4 bg-[#FFF0E6] rounded-2xl p-4 outline-none border-2 border-transparent focus:border-orange-300 text-base"></textarea>
-<button onclick="analyzeText()" class="w-full mt-3 bg-black text-white py-4 rounded-full font-black text-lg">حلل ليا مشكلتي</button>
-
-<!-- RESULT -->
-<div id="result" class="hidden mt-6 text-right">
-<div id="categoryBadge" class="inline-block bg-[#006233] text-white px-4 py-1 rounded-full text-sm font-bold mb-3"></div>
-<div class="bg-white rounded-[24px] p-5 border-2 border-gray-100 space-y-5 text-right">
-<div>
-<h3 class="font-black text-[#C1272D] text-lg">1. آش كيقول القانون المغربي</h3>
-<p id="lawText" class="mt-2 leading-8 text-[17px]"></p>
-</div>
-<div class="h-[1px] bg-gray-100"></div>
-<div>
-<h3 class="font-black text-[#006233] text-lg">2. شنو تدير دابا - خطوة بخطوة</h3>
-<ul id="stepsList" class="mt-2 space-y-2 leading-7 text-[16px] list-decimal mr-5"></ul>
-<div id="vipTips" class="hidden mt-3 bg-yellow-50 border border-yellow-200 rounded-xl p-3">
-<p class="font-black text-yellow-700">⭐ نصائح ذهبية VIP:</p>
-<p id="vipTipsText" class="text-sm mt-1"></p>
-</div>
-</div>
-<div class="h-[1px] bg-gray-100"></div>
-<div>
-<h3 class="font-black text-black text-lg">3. فين تمشي</h3>
-<p id="whereText" class="mt-2 leading-7"></p>
-</div>
+<div class="voice-wrap">
+<button class="btn-voice" id="vBtn">🎙️<br>عود لمشكلتك<br>بصوتك</button>
+<div id="status">كليكي وهضر بالدارجة</div>
 </div>
 
-<button onclick="generateDoc()" class="w-full mt-4 bg-[#006233] text-white py-4 rounded-full font-black text-lg">📄 وجد ليا الوثيقة</button>
-
-<div class="mt-4 bg-gray-100 rounded-xl p-3 text-center text-xs text-gray-600 font-bold">
-هذا توجيه أولي وليس استشارة محاماة رسمية
-</div>
-</div>
+<div class="card">
+<textarea id="txt" rows="4" placeholder="مثلا: مول الدار بغا يخرجني بلا سبب، ولا: نصب عليا واحد فالفلوس"></textarea>
+<button class="btn-black" onclick="analyze()">⚖️ حلل ليا مشكلتي</button>
+<div style="text-align:center;margin-top:8px;font-size:13px;color:#666">كليكي 5 مرات على مشكلتي الفوق باش تدخل للادمين</div>
 </div>
 
-<!-- DOCUMENT MODAL -->
-<div id="docModal" class="hidden fixed inset-0 bg-black/60 z-50 p-4 flex items-end sm:items-center justify-center">
-<div class="bg-white w-full max-w-[420px] rounded-[24px] p-6 max-h-[90vh] overflow-auto">
-<h3 class="font-black text-xl">الوثيقة ديالك واجدة</h3>
-<pre id="docContent" class="mt-4 bg-gray-50 p-4 rounded-xl text-sm leading-7 whitespace-pre-wrap text-right font-sans"></pre>
-<div class="flex gap-2 mt-4">
-<button onclick="window.print()" class="flex-1 bg-black text-white py-3 rounded-full font-bold">طبع</button>
-<button onclick="document.getElementById('docModal').classList.add('hidden')" class="flex-1 bg-gray-200 py-3 rounded-full font-bold">سد</button>
-</div>
-</div>
-</div>
-</main>
+<div id="res" class="card" style="display:none">
+<span id="cat" class="badge"></span> <span id="vipTag" style="display:none;background:gold;color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:900">⭐ VIP</span>
+<h3 style="color:#C1272D">1. آش كيقول القانون المغربي</h3>
+<p id="lawText" style="line-height:1.9;font-weight:700"></p>
 
-<!-- HIDDEN ADMIN PANEL -->
-<div id="adminPanel" class="hidden fixed inset-0 bg-[#111] z-[100] p-4 overflow-auto text-white">
-<div class="max-w-[500px] mx-auto">
-<div class="flex justify-between items-center">
-<h2 class="font-black text-2xl">لوحة التحكم السرية 🔒</h2>
-<button onclick="document.getElementById('adminPanel').classList.add('hidden')" class="bg-white text-black px-4 py-2 rounded-full font-bold">خرج</button>
+<h3 style="color:#006233">2. شنو تدير دابا خطوة بخطوة</h3>
+<div id="steps"></div>
+
+<h3>3. فين تمشي</h3>
+<p id="where" style="font-weight:900"></p>
+
+<button class="btn-black" style="background:#006233" onclick="genDoc()">📄 وجد ليا الوثيقة باش نديها</button>
+<button class="btn-black" style="background:#C1272D" onclick="buyVip()">⭐ بغيت الحل الذهبي ب 5 دراهم</button>
+<p class="legal">هذا توجيه أولي بالذكاء الاصطناعي وليس استشارة محاماة رسمية. للاستشارة الرسمية سير عند محامي.</p>
 </div>
 
-<div class="grid grid-cols-2 gap-3 mt-6">
-<div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-70">مجموع الزيارات</p><p id="adminVisits" class="font-black text-2xl mt-1">0</p></div>
-<div class="bg-[#C1272D] rounded-2xl p-4"><p class="text-xs">الأرباح (5 دراهم/سؤال)</p><p id="adminEarn" class="font-black text-2xl mt-1">0 درهم</p></div>
-<div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-70">عدد الأسئلة</p><p id="adminQCount" class="font-black text-2xl mt-1">0</p></div>
-<div class="bg-[#006233] rounded-2xl p-4"><p class="text-xs">أسئلة VIP</p><p id="adminVipCount" class="font-black text-2xl mt-1">0</p></div>
-</div>
+<div id="docBox" class="card" style="display:none;white-space:pre-wrap;line-height:1.9"></div>
 
-<div class="mt-6 bg-white/5 rounded-2xl p-4">
-<h3 class="font-bold mb-3">✅ كاع الأسئلة ديال الناس</h3>
-<div id="allQuestions" class="space-y-2 max-h-[300px] overflow-auto"></div>
-</div>
-
-<div class="mt-6 bg-white/5 rounded-2xl p-4">
-<h3 class="font-bold mb-3">➕ زيادة قوانين ووثائق</h3>
-<input id="newLawCat" placeholder="التصنيف: مثلا: كراء" class="w-full p-3 rounded-xl bg-black/50 border border-white/10 mb-2">
-<input id="newLawArticle" placeholder="المادة: مثلا: المادة 235" class="w-full p-3 rounded-xl bg-black/50 border border-white/10 mb-2">
-<textarea id="newLawText" placeholder="نص القانون بالدارجة" class="w-full p-3 rounded-xl bg-black/50 border border-white/10 mb-2"></textarea>
-<button onclick="addLaw()" class="w-full bg-white text-black py-3 rounded-full font-black">زيد القانون - كيخدم تلقائيا</button>
-<div id="lawsList" class="mt-3 text-xs space-y-1 opacity-70"></div>
-</div>
-
-<div class="mt-6 bg-yellow-500/20 border border-yellow-500/30 rounded-2xl p-4">
-<h3 class="font-bold text-yellow-300">⭐ تفعيل VIP لشي واحد</h3>
-<input id="vipPhone" placeholder="رقم التيليفون ولا الاسم ديالو" class="w-full p-3 rounded-xl bg-black/50 border border-yellow-500/30 mt-2 mb-2">
-<button onclick="activateVip()" class="w-full bg-yellow-400 text-black py-3 rounded-full font-black">فعل VIP - تحليل مفصل + نصائح ذهبية</button>
-</div>
-</div>
+<!-- الادمين السري -->
+<div id="admin">
+<button onclick="document.getElementById('admin').style.display='none'" style="background:#fff;color:#000;border:none;padding:10px 18px;border-radius:20px;font-weight:900">✕ سد</button>
+<h2>🔒 لوحة التحكم السرية - غير انت</h2>
+<p>الزيارات: <b id="vv">0</b> | الأسئلة: <b id="qq">0</b> | الأرباح المتوقعة: <b id="ee">0</b> درهم</p>
+<p>الكود باش يولي VIP : <code>localStorage.setItem('vip','1')</code> فالكونسول</p>
+<div id="qList"></div>
+<hr>
+<h3>زيد قانون جديد</h3>
+<input id="nc" placeholder="التصنيف: مثلا كراء">
+<input id="na" placeholder="المادة: مثلا المادة 67">
+<textarea id="nt" placeholder="الشرح بالدارجة"></textarea>
+<button class="btn-black" onclick="addLaw()">زيد القانون</button>
 </div>
 
 <script>
-// DATA
-let laws = JSON.parse(localStorage.getItem('mochkilti_laws')) || `{
-"كراء": {"article":"المادة 67 من قانون الكراء 49.16","text":"مول الدار ما عندوش الحق يخرجك الا الى ما خلصتيش 3 شهور ولا عندو سبب قانوني وخاصو يعلمك قبل 3 شهور عبر المحكمة","steps":["ما تخرجش بلا حكم ديال المحكمة","سير للمحكمة وطلب مهلة","جمع الوصولات ديال الكراء"],"where":"المحكمة الابتدائية - قسم قضاء القرب","vip":"سير عند مفوض قضائي يدير لك محضر بالوصولات، هادي كتحميك بزاف","doc":"طلب مهلة للإفراغ"},
-"أرض": {"article":"المادة 235 من مدونة الحقوق العينية","text":"اللي حاز أرض 10 سنين بلا نزاع وبشهادة 12 شاهد عندو الحق يطلب التحفيظ","steps":["جمع شهادة 12 شاهد","سير عند العدول يدير لك رسم الحيازة","دفع الطلب للمحافظة العقارية"],"where":"المحافظة العقارية ومكتب العدول","vip":"دير تصوير جوي قديم وجديد كدليل قوي، وجيب فاتورة الماء او الضو قديمة","doc":"طلب شهادة الحيازة والاستمرار"},
-"أسرة": {"article":"المادة 53 من مدونة الأسرة","text":"النفقة واجبة على الزوج من تاريخ الامساك عن النفقة","steps":["سيري للمحكمة - قسم الأسرة","دي معاك عقد الزواج وشهادة السكنى","طلبي النفقة والأجرة ديال الحضانة"],"where":"محكمة الأسرة","vip":"طلبي النفقة المؤقتة كتخرج في 48 ساعة بلا ما تسناي الحكم النهائي","doc":"مقال طلب النفقة"},
-"إدارة": {"article":"المادة 154 من القانون 31.13","text":"عندك الحق تاخد المعلومة من الإدارة في 20 يوم","steps":["كتب طلب كتابي وحطو في مكتب الضبط","الى ما جاوبوكش في 20 يوم سير للوسيط","تقدر تدير شكاية في بوابة شكاية.ما"],"where":"مكتب الضبط ديال الجماعة + بوابة chikaya.ma","vip":"صيفط الطلب ببريد مضمون مع اشعار بالتوصل، كيولي عندك دليل","doc":"طلب الحصول على المعلومة"},
-"نصب": {"article":"المادة 540 من القانون الجنائي","text":"النصب كيعاقب عليه من سنة حتى 5 سنين حبس","steps":["ما تمسح والو - خلي المساجات والتحويلات","سير للشرطة القضائية ودير شكاية","دي معاك الأدلة كاملة مطبوعة"],"where":"الشرطة القضائية - مكتب مكافحة الجريمة الالكترونية","vip":"دير شكاية لوكيل الملك مباشرة كتكون أسرع من الشرطة، وزيد شكاية في بنك المغرب","doc":"شكاية بالنصب والاحتيال"}
-}`);
-if(typeof laws === 'string') laws = JSON.parse(laws);
-let questions = JSON.parse(localStorage.getItem('mochkilti_qs')||'[]');
-let visits = parseInt(localStorage.getItem('mochkilti_visits')||'0')+1;
-localStorage.setItem('mochkilti_visits',visits);
-let isVip = localStorage.getItem('mochkilti_isVip')==='true';
-let currentCat='كراء', currentLaw=null, currentText='';
-
-document.getElementById('visitCounter').innerText = visits + ' زيارة';
-
-function categorize(t){
- t=t.toLowerCase();
- if(t.includes('كراء')||t.includes('دار')||t.includes('مول')||t.includes('يخرجني')) return 'كراء';
- if(t.includes('أرض')||t.includes('بلاد')||t.includes('ورث')||t.includes('تحفيظ')) return 'أرض';
- if(t.includes('مرتي')||t.includes('نفقة')||t.includes('طلاق')||t.includes('ولادي')) return 'أسرة';
- if(t.includes('نصب')||t.includes('نصاب')||t.includes('فلوس')||t.includes('باع ليا')) return 'نصب';
- return 'إدارة';
-}
-
-function analyzeText(){
- let txt = document.getElementById('textInput').value || currentText;
- if(!txt || txt.length<3){ alert('كتب المشكل بعدا'); return; }
- currentText=txt;
- currentCat=categorize(txt);
- currentLaw=laws[currentCat];
-
- // save
- questions.unshift({text:txt, cat:currentCat, time:new Date().toLocaleString('ar-MA'), vip:isVip, name:'زائر'});
- localStorage.setItem('mochkilti_qs', JSON.stringify(questions));
-
- // show
- document.getElementById('result').classList.remove('hidden');
- document.getElementById('categoryBadge').innerText = 'التصنيف: ' + currentCat;
- document.getElementById('lawText').innerText = currentLaw.article + ' - ' + currentLaw.text;
- document.getElementById('stepsList').innerHTML = currentLaw.steps.map(s=>`<li>${s}</li>`).join('');
- document.getElementById('whereText').innerText = currentLaw.where;
-
- if(isVip){
-   document.getElementById('vipTips').classList.remove('hidden');
-   document.getElementById('vipTipsText').innerText = currentLaw.vip;
- } else {
-   document.getElementById('vipTips').classList.add('hidden');
- }
- document.getElementById('result').scrollIntoView({behavior:'smooth'});
- updateAdmin();
-}
-
-// VOICE
-let rec=null;
-const voiceBtn=document.getElementById('voiceBtn');
-if('webkitSpeechRecognition' in window || 'SpeechRecognition' in window){
- const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
- rec = new SR(); rec.lang='ar-MA'; rec.interimResults=false;
- rec.onstart=()=>{ document.getElementById('status').innerText='كنسمعك دابا... هضر'; voiceBtn.classList.add('animate-pulse'); };
- rec.onend=()=>{ voiceBtn.classList.remove('animate-pulse'); document.getElementById('status').innerText='كليكي وهضر'; };
- rec.onresult=(e)=>{
-   let t=e.results[0][0].transcript;
-   document.getElementById('textInput').value=t;
-   currentText=t;
-   document.getElementById('status').innerText='سمعتك: '+t;
-   analyzeText();
- };
- voiceBtn.onclick=()=>{ try{ rec.start(); }catch(e){ rec.stop(); } };
-} else {
- voiceBtn.onclick=()=>{ alert('التيليفون ديالك ما كيدعمش الصوت، كتب المشكل'); };
- document.getElementById('status').innerText='كتب المشكل لتحت';
-}
-
-function generateDoc(){
- if(!currentLaw) return;
- let date = new Date().toLocaleDateString('ar-MA');
- let doc = `المملكة المغربية
-${currentLaw.where}
-
-الموضوع: ${currentLaw.doc}
-التاريخ: ${date}
-
-إلى السيد المحترم،
-
-أنا الموقع أسفله، كنعاني من المشكل التالي:
-"${currentText}"
-
-وحسب ${currentLaw.article} فإن: ${currentLaw.text}
-
-كنطلب منكم التدخل وتطبيق القانون.
-
-ولكم جزيل الشكر
-
-الإمضاء:
-...........................
-
-مرفقات: نسخة البطاقة الوطنية
-`;
- document.getElementById('docContent').innerText=doc;
- document.getElementById('docModal').classList.remove('hidden');
-}
-
-// ADMIN - 5 taps on logo
-let taps=0, lastTap=0;
-document.getElementById('logoTap').onclick=()=>{
- let now=Date.now();
- if(now-lastTap>2000) taps=0;
- taps++; lastTap=now;
- if(taps>=5){
-   let p=prompt('دخل الكود السري باش تدخل للوحة التحكم (غير انت):');
-   if(p==='1234'){ document.getElementById('adminPanel').classList.remove('hidden'); updateAdmin(); } else if(p) alert('كود غالط');
-   taps=0;
- }
+let taps=0;
+let isVip = localStorage.getItem('vip')=='1';
+let LAWS={
+"كراء":{a:"المادة 67 من القانون 49.16 متعلق بكراء المحلات السكنية",t:"مول الدار ما عندوش الحق يخرجك بلا حكم قضائي، وخاصو يصيفط ليك إنذار بالإفراغ قبل 3 شهور عن طريق مفوض قضائي، وعندك الحق تطلب مهلة من المحكمة.",s:["ما تخرجش من الدار بلا ما يعطيك حكم ديال المحكمة","جمع 3 وصولات ديال الكراء و عقد الكراء","سير لمحكمة قضاء القرب وطلب مهلة للإفراغ"],w:"المحكمة الابتدائية - قسم قضاء القرب",doc:"طلب مهلة للإفراغ طبقا للمادة 67",vip:"زيد جيب مفوض قضائي يدير معاينة للدار ويصور الحالة، هادي كتخلي القاضي يعطيك 6 شهور مهلة"},
+"أرض":{a:"المادة 235 من مدونة الحقوق العينية",t:"لي حاز أرض فلاحية أو سكنية لمدة 10 سنوات بلا نزاع وبلا انقطاع وعندو شهادة 12 شاهد، عندو الحق يطلب التحفيظ والتمليك.",s:["جيب 12 شاهد يشهدو أنك حايز الأرض 10 سنين","سير عند العدول باش يديرو ليك شهادة الحيازة","دفع الملف للمحافظة العقارية مع تصاور قديمة"],w:"المحافظة العقارية + العدول",doc:"طلب شهادة الحيازة والتحفيظ",vip:"زيد فاتورة ضو قديمة وصورة من Google Earth من 2014 كدليل قوي"},
+"أسرة":{a:"المادة 53 و 57 من مدونة الأسرة",t:"النفقة واجبة على الزوج من تاريخ الإمساك عن النفقة، والقاضي يقدر يحكم بنفقة مؤقتة في 48 ساعة.",s:["سيري لمحكمة الأسرة ومعاك عقد الزواج وشهادة السكنى","طلبي نفقة مؤقتة مستعجلة","دي معاك شهادة بعدم العمل إلا ما خداماش"],w:"محكمة الأسرة",doc:"مقال طلب النفقة المؤقتة",vip:"طلبي النفقة + السكن + الحضانة في نفس المقال باش تربحي الوقت"},
+"نصب":{a:"المادة 540 من القانون الجنائي",t:"النصب والاحتيال كيعاقب عليه من سنة حتى 5 سنوات حبس وغرامة، إلا كان عندك دليل كتابي أو تحويل بنكي.",s:["ما تمسح والو - خلي الواتساب والتحويلات","سير للشرطة القضائية ودير شكاية بالنصب","دير شكاية ثانية لوكيل الملك + شكاية لبنك المغرب إلا كان تحويل"],w:"الشرطة القضائية + وكيل الملك",doc:"شكاية بالنصب والاحتيال",vip:"دير الشكاية فمدينتك ومدينة النصاب بجوج باش يتحرك الملف دغيا"},
+"شغل":{a:"المادة 40 من مدونة الشغل",t:"إلا طردك المشغل بلا سبب خاصو يعطيك تعويض عن الطرد التعسفي وشهادة العمل.",s:["ما توقعش على الاستقالة","سير لمفتشية الشغل في 48 ساعة","دير محضر وطلب تعويض"],w:"مفتشية الشغل + المحكمة الاجتماعية",doc:"شكاية للطرد التعسفي",vip:"صور عقد العمل والكونجيات والرسائل ديال الواتساب مع الباترون"},
+"ديون":{a:"المادة 118 من قانون الالتزامات والعقود",t:"الدين كيتقادم بعد 5 سنين إلا ما كانش اعتراف به، والقاضي ما يحكمش بالفوائد الربوية.",s:["جمع الاعتراف بالدين إلا كاين","صيفط إنذار عن طريق مفوض","سير للمحكمة الابتدائية"],w:"المحكمة الابتدائية",doc:"إنذار بأداء دين",vip:"إلا كان الدين كبير فوق 10.000 درهم ضروري محامي"}
 };
 
-function updateAdmin(){
- document.getElementById('adminVisits').innerText=visits;
- document.getElementById('adminQCount').innerText=questions.length;
- document.getElementById('adminEarn').innerText=(questions.length*5)+' درهم';
- document.getElementById('adminVipCount').innerText=questions.filter(q=>q.vip).length;
- document.getElementById('allQuestions').innerHTML=questions.map((q,i)=>`
-   <div class="bg-white/10 rounded-xl p-3 text-xs">
-   <div class="flex justify-between"><b>${q.cat}</b><span class="${q.vip?'text-yellow-300':''}">${q.vip?'⭐ VIP':''} ${q.time}</span></div>
-   <p class="mt-1 opacity-90">${q.text}</p>
-   <p class="opacity-50 mt-1">شكون: ${q.name}</p>
-   </div>`).join('') || '<p class="opacity-50">ما كاين والو باقي</p>';
- document.getElementById('lawsList').innerHTML=Object.keys(laws).map(k=>`<div>- ${k}: ${laws[k].article}</div>`).join('');
+function getCat(t){
+t=t.toLowerCase();
+if(t.includes("دار")||t.includes("كراء")||t.includes("خرج")||t.includes("مول الدار")||t.includes("كاري")) return "كراء";
+if(t.includes("ارض")||t.includes("بلاد")||t.includes("ورث")||t.includes("فلاح")) return "أرض";
+if(t.includes("مرتي")||t.includes("راجلي")||t.includes("نفقة")||t.includes("طلاق")||t.includes("حضانة")) return "أسرة";
+if(t.includes("نصب")||t.includes("فلوس")||t.includes("تحويل")||t.includes("باع ليا")) return "نصب";
+if(t.includes("خدمة")||t.includes("طرد")||t.includes("باترون")||t.includes("شغل")) return "شغل";
+if(t.includes("دين")||t.includes("سالني")||t.includes("كريدي")) return "ديون";
+return "كراء";
 }
 
-function addLaw(){
- let cat=document.getElementById('newLawCat').value.trim();
- let art=document.getElementById('newLawArticle').value.trim();
- let txt=document.getElementById('newLawText').value.trim();
- if(!cat||!art||!txt) return alert('عمر كاع الخانات');
- laws[cat]={article:art,text:txt,steps:["سير للمحكمة","جمع الأدلة","كتب شكاية"],where:"المحكمة",vip:"استشر محامي",doc:"طلب"};
- localStorage.setItem('mochkilti_laws',JSON.stringify(laws));
- alert('تزاد القانون وخدام دابا!'); updateAdmin();
- document.getElementById('newLawCat').value='';document.getElementById('newLawArticle').value='';document.getElementById('newLawText').value='';
+function analyze(){
+let txt=document.getElementById('txt').value.trim();
+if(txt.length<3){alert('كتب مشكلتك بعدا');return;}
+let k=getCat(txt);
+let L=LAWS[k]||LAWS["كراء"];
+// حفظ
+let qs=JSON.parse(localStorage.getItem('qs')||'[]');
+qs.unshift({text:txt,cat:k,time:new Date().toLocaleString('ar-MA'),vip:isVip});
+localStorage.setItem('qs',JSON.stringify(qs));
+localStorage.setItem('vis',parseInt(localStorage.getItem('vis')||'0')+1);
+
+document.getElementById('res').style.display='block';
+document.getElementById('cat').innerText=k;
+document.getElementById('vipTag').style.display=isVip?'inline-block':'none';
+document.getElementById('lawText').innerText=L.a+" - "+L.t;
+document.getElementById('steps').innerHTML=L.s.map(s=>`<div class="step">✅ ${s}</div>`).join('') + (isVip?`<div class="step" style="background:gold">⭐ نصيحة VIP الذهبية: ${L.vip}</div>`:'');
+document.getElementById('where').innerText=L.w;
+document.getElementById('docBox').style.display='none';
+window.scrollTo({top:500,behavior:'smooth'});
 }
 
-function activateVip(){
- let phone=document.getElementById('vipPhone').value.trim();
- if(!phone) return alert('كتب السمية');
- localStorage.setItem('mochkilti_isVip','true'); isVip=true;
- alert('تفعّل VIP لـ '+phone+' - دابا التحليل غادي يولي مفصل مع نصائح ذهبية');
- updateAdmin();
+function genDoc(){
+let txt=document.getElementById('txt').value;
+let k=getCat(txt);
+let L=LAWS[k];
+let doc=`المملكة المغربية
+الى السيد رئيس: ${L.w}
+الموضوع: ${L.doc}
+
+سلام تام بوجود مولانا الامام،
+
+أنا الموقع أسفله كنعاني من:
+"${txt}"
+
+وحسب ${L.a} فالقانون كيقول:
+${L.t}
+
+لذلك كنطلب منكم التدخل وتطبيق القانون.
+
+وتقبلوا فائق الاحترام.
+
+الإمضاء:
+الاسم:................
+التاريخ: ${new Date().toLocaleDateString('ar-MA')}
+
+---
+وثيقة موجدة عبر منصة مشكلتي - توجيه أولي`;
+document.getElementById('docBox').style.display='block';
+document.getElementById('docBox').innerText=doc+"\n\n(دير Ctrl+P باش تطبع أو صور الشاشة)";
+window.scrollTo({top:900,behavior:'smooth'});
 }
-updateAdmin();
+
+function buyVip(){
+if(confirm('الحل الذهبي ب 5 دراهم كيعطيك نصائح خفية ديال المحامين ووثيقة واجدة.\nدابا للتجربة غادي نفعّلو ليك فابور - كليكي OK')){localStorage.setItem('vip','1'); isVip=true; alert('مبروك! وليتي VIP ⭐ - عاود حلل مشكلتك دابا غادي يبان لك السر'); analyze();}
+}
+
+// صوت
+let rec=null;
+let btn=document.getElementById('vBtn');
+let st=document.getElementById('status');
+try{
+let SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(SR){rec=new SR(); rec.lang='ar-MA'; rec.interimResults=false;
+rec.onstart=()=>{btn.classList.add('on'); st.innerText='🔴 كنسمعك دابا... هضر'; btn.innerHTML='🔴<br>كنسمع...';}
+rec.onend=()=>{btn.classList.remove('on'); st.innerText='كليكي وهضر'; btn.innerHTML='🎙️<br>عود لمشكلتك<br>بصوتك';}
+rec.onerror=()=>{st.innerText='ما سمعتكش مزيان، عاود كليكي وسمح للميكرو'; btn.classList.remove('on');}
+rec.onresult=(e)=>{let t=e.results[0][0].transcript; document.getElementById('txt').value=t; st.innerText='سمعتك: '+t; analyze();}
+btn.onclick=()=>{try{rec.start();}catch{rec.stop();}}
+}else{st.innerText='تيليفونك ما كيدعمش الصوت - كتب لتحت';}
+}catch(e){st.innerText='الصوت ما خدامش فالبيسي، جرب من أندرويد';}
+
+// ادمين 5 كليكات
+document.getElementById('logo').addEventListener('click',()=>{
+taps++; if(taps>=5){let p=prompt('الكود السري ديال الادمين:'); if(p=='1234'){document.getElementById('admin').style.display='block'; let qs=JSON.parse(localStorage.getItem('qs')||'[]'); document.getElementById('vv').innerText=localStorage.getItem('vis')||0; document.getElementById('qq').innerText=qs.length; document.getElementById('ee').innerText=qs.length*5; document.getElementById('qList').innerHTML=qs.map(q=>`<div class="qbox"><b>${q.cat}</b> ${q.vip?'⭐':''} - ${q.time}<br>${q.text}</div>`).join('');} taps=0;} setTimeout(()=>taps=0,3000);
+});
 </script>
 </body>
 </html>
