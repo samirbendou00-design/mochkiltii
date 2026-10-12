@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7493926171525023"
-     crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a56db">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>مشكلتي - Mochkilti - ⵎⵓⵛⴽⵉⵍⵜⵉ</title>
@@ -402,5 +403,9 @@ function resetAll(){if(confirm('متأكد بغيتي تمسح كلشي؟ الز
 renderDomains();renderDocsPreview();
 if(isVip)document.getElementById('vipBadge').classList.remove('hidden');
 </script>
-</body>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script></body>
 </html>
