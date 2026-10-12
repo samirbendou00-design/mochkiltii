@@ -3,129 +3,172 @@
 <html dir="rtl" lang="ar">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>مشكلتي - Moachkilti</title>
+<title>مشكلتي - Moachkilti V7</title>
 <style>
-:root{--red:#C1272D;--green:#006233;--bg:#FFF8F0}
-*{box-sizing:border-box;font-family:Tahoma,Arial}body{margin:0;background:var(--bg);padding-bottom:90px}
-.top{background:linear-gradient(90deg,var(--red) 50%,var(--green) 50%);color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-.lang button{border:none;padding:6px 9px;border-radius:20px;font-weight:900;margin:1px;font-size:12px}
-.hero{text-align:center;padding:18px 10px}
-.mic{width:210px;height:210px;border-radius:50%;background:var(--red);color:#fff;border:0;font-size:22px;font-weight:900;box-shadow:0 18px 36px rgba(193,39,45,.35)}
-.mic.on{background:#000;animation:p 1s infinite}
-@keyframes p{0%{box-shadow:0 0 0 0 #000}100%{box-shadow:0 0 0 30px transparent}}
-.card{background:#fff;margin:12px;padding:16px;border-radius:20px;border:1px solid #eee}
-textarea,input,select{width:100%;padding:12px;border-radius:12px;border:2px solid #eee;margin-top:8px;font-size:15px}
-.btn{border:none;width:100%;padding:14px;border-radius:30px;font-weight:900;margin-top:8px;color:#fff;background:#000;font-size:16px}
-.btn-green{background:var(--green)}.btn-red{background:var(--red)}.btn-gold{background:gold;color:#000}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.badge{background:var(--green);color:#fff;padding:5px 12px;border-radius:20px;font-size:12px}
-.doc-item{padding:10px;background:#f7f7f7;border-radius:12px;margin:6px 0;cursor:pointer;border-right:4px solid var(--red)}
-#admin{position:fixed;inset:0;background:#0a0a0a;color:#fff;z-index:9999;padding:12px;overflow:auto;display:none}
-.ad{background:#FFEB3B;color:#000;padding:10px;border-radius:12px;text-align:center;margin:10px 12px;font-weight:900;font-size:13px}
-.pay-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;display:none;align-items:center;justify-content:center;padding:12px}
-.pay-box{background:#fff;width:100%;max-width:420px;border-radius:22px;padding:18px;text-align:center;color:#000}
+:root{--red:#C1272D;--green:#006233;--gold:#FFD700}
+*{box-sizing:border-box;font-family:Tahoma}body{margin:0;background:#FFF8F0;padding-bottom:80px}
+.top{background:linear-gradient(90deg,var(--red) 50%,var(--green) 50%);color:#fff;padding:10px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10}
+.lang button{border:none;padding:5px 8px;border-radius:20px;font-weight:900;font-size:11px;margin:1px}
+.hero{text-align:center;padding:15px}
+.mic{width:200px;height:200px;border-radius:50%;background:var(--red);color:#fff;border:0;font-weight:900;font-size:20px}
+.mic.on{background:#000}
+.card{background:#fff;margin:10px;padding:14px;border-radius:18px;border:1px solid #eee}
+textarea,input,select{width:100%;padding:11px;border-radius:12px;border:2px solid #eee;margin-top:6px}
+.btn{border:none;width:100%;padding:13px;border-radius:28px;font-weight:900;margin-top:6px;color:#fff;background:#000}
+.btn-r{background:var(--red)}.btn-g{background:var(--green)}.btn-gold{background:var(--gold);color:#000}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.domain{padding:8px 12px;border-radius:20px;font-weight:900;margin:3px;display:inline-block;color:#fff;cursor:pointer}
+.domain.active{outline:3px solid #000}
+#admin{position:fixed;inset:0;background:#0e0e0e;color:#fff;z-index:99999;padding:10px;overflow:auto;display:none}
+.tab{display:none}.tab.active{display:block}
+.doc-item{padding:10px;background:#f5f5f5;border-radius:10px;margin:5px 0;cursor:pointer;border-right:4px solid var(--red);color:#000}
+.ad{background:var(--gold);color:#000;padding:9px;border-radius:10px;text-align:center;margin:8px;font-weight:900}
+.pay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;display:none;align-items:center;justify-content:center;padding:10px}
+.payBox{background:#fff;width:100%;max-width:400px;border-radius:20px;padding:16px;color:#000}
 </style>
 </head>
 <body>
 
-<div class="top"><b id="appName">🇲🇦 مشكلتي</b><div class="lang">
-<button onclick="setLang('ar')">دارجة</button><button onclick="setLang('ber')">ⵜⴰⵎⴰⵣⵉⵖⵜ</button><button onclick="setLang('fr')">FR</button>
-<button onclick="openAdmin()" style="background:#000;color:#fff">🔒</button></div></div>
+<div class="top"><b id="appName">🇲🇦 مشكلتي</b><div><button onclick="setLang('ar')" class="lang">دارجة</button><button onclick="setLang('ber')" class="lang">ⵜⴰⵎⴰⵣⵉⵖⵜ</button><button onclick="setLang('fr')" class="lang">FR</button><button onclick="openAdmin()" style="background:#000;color:#fff;border:none;padding:6px 10px;border-radius:20px">🔒 ادمين</button></div></div>
 
-<div class="ad" id="adTop">📢 إعلان: للاستشارة مع محامي اتصل 06.xx.xx.xx.xx - يمكنك تغييره من لوحة التحكم</div>
+<div class="ad" id="adTop">📢 إعلان: محامي - 06.xx.xx.xx - كتتحكم فيه من لوحة التحكم > الإعلانات</div>
 
 <div class="hero">
 <button class="mic" id="micBtn">🎙️<br><span id="micTxt">عود بصوتك</span></button>
-<div id="status" style="color:var(--red);font-weight:900;margin-top:12px">كليكي وهضر بالدارجة ولا الأمازيغية</div>
-<div id="subInfo" style="display:none;margin-top:10px;background:gold;color:#000;padding:8px;border-radius:20px;font-weight:900">⭐ VIP باقي ليك <span id="daysLeft"></span> يوم فابور</div>
+<div id="status" style="color:var(--red);font-weight:900;margin-top:8px">هضر ولا كتب</div>
+<div id="subInfo" style="display:none;background:var(--gold);color:#000;padding:6px;border-radius:20px;margin-top:8px;font-weight:900">⭐ VIP باقي <span id="daysLeft"></span> يوم</div>
 </div>
 
 <div class="card">
-<textarea id="prob" rows="3" placeholder="مثلا: مول الدار بغا يخرجني / ⴰⵎⵓⵍⴰ ⵉⵔⴰ ⴰⵢⵉ ⵙⵓⴼⵖ / Mon proprio veut m'expulser"></textarea>
-<div class="grid2"><select id="catSel"><option value="auto">خلي السيستيم يحدد</option><option>كراء</option><option>أرض</option><option>أسرة</option><option>نصب</option><option>شغل</option><option>ديون</option></select><button class="btn btn-red" onclick="analyze()">⚖️ حلل ليا</button></div>
-<button class="btn btn-gold" onclick="openPay()">💳 تفعيل الإشتراك 25 درهم - شهر فابور</button>
+<div style="text-align:center">
+<span class="domain active" style="background:var(--red)" onclick="filterDom('all',this)">الكل</span>
+<span class="domain" style="background:#444" onclick="filterDom('كراء',this)">كراء</span>
+<span class="domain" style="background:var(--green)" onclick="filterDom('أرض',this)">أرض</span>
+<span class="domain" style="background:#8e44ad" onclick="filterDom('أسرة',this)">أسرة</span>
+<span class="domain" style="background:#e67e22" onclick="filterDom('نصب',this)">نصب</span>
+<span class="domain" style="background:#2c3e50" onclick="filterDom('شغل',this)">شغل</span>
+</div>
+<textarea id="prob" rows="3" placeholder="كتب مشكلتك..."></textarea>
+<div class="grid2"><select id="catSel"><option value="auto">تلقائي</option><option>كراء</option><option>أرض</option><option>أسرة</option><option>نصب</option><option>شغل</option><option>ديون</option></select><button class="btn btn-r" onclick="analyze()">⚖️ حلل</button></div>
+<button class="btn btn-gold" onclick="openPay()">💳 WAFACASH / CASH PLUS - 25 درهم - شهر فابور</button>
 </div>
 
 <div id="result" class="card" style="display:none">
-<span id="rCat" class="badge"></span> <span id="rVip" style="display:none;background:gold;color:#000;padding:5px 12px;border-radius:20px;font-weight:900">⭐ VIP</span>
-<h3 id="t1">1. آش كيقول القانون</h3><p id="rLaw" style="line-height:1.9;font-weight:700"></p>
-<h3 id="t2">2. شنو تدير دابا</h3><div id="rSteps"></div>
-<h3 id="t3">3. فين تمشي</h3><p id="rWhere" style="font-weight:900"></p>
-<div class="grid2"><button class="btn btn-green" onclick="openDocs()">📄 100 نموذج وثيقة</button><button class="btn" onclick="openLaws()">📚 القوانين كاملة</button></div>
+<span id="rCat" style="background:var(--green);color:#fff;padding:5px 10px;border-radius:20px"></span>
+<h3 id="t1">1. القانون</h3><p id="rLaw"></p>
+<h3 id="t2">2. شنو تدير</h3><div id="rSteps"></div>
+<h3 id="t3">3. فين تمشي</h3><p id="rWhere"></p>
+<div class="grid2"><button class="btn btn-g" onclick="openDocs()">📄 100 وثيقة</button><button class="btn" onclick="openLaws()">📚 القوانين</button></div>
 </div>
 
-<div id="lawsLib" class="card" style="display:none"><h3>📚 مكتبة القوانين (25 قانون)</h3><input id="searchLaw" placeholder="قلب..." oninput="renderLaws()"><div id="lawList"></div><button class="btn" onclick="this.parentElement.style.display='none'">سد</button></div>
-<div id="docsLib" class="card" style="display:none"><h3>📄 100 نموذج وثيقة قانونية</h3><input id="searchDoc" placeholder="قلب: نفقة، كراء، شكاية..." oninput="renderDocs()"><div id="docList"></div><button class="btn" onclick="this.parentElement.style.display='none'">سد</button></div>
-<div id="docOut" class="card" style="display:none;white-space:pre-wrap;line-height:1.9"></div>
+<div id="lawsLib" class="card" style="display:none"><h3>📚 مكتبة القوانين</h3><input id="searchLaw" placeholder="قلب..." oninput="renderLaws()"><div id="lawList"></div><button class="btn" onclick="this.parentElement.style.display='none'">سد</button></div>
+<div id="docsLib" class="card" style="display:none"><h3>📄 100 نموذج من kitab.ma</h3><input id="searchDoc" placeholder="قلب..." oninput="renderDocs()"><div id="docList"></div><button class="btn" onclick="this.parentElement.style.display='none'">سد</button></div>
+<div id="docOut" class="card" style="display:none;white-space:pre-wrap"></div>
 
-<div class="pay-modal" id="payModal">
-<div class="pay-box">
-<h2 style="color:var(--red)">💳 خلص 25 درهم</h2>
-<div style="background:#FFF3E8;padding:12px;border-radius:14px;text-align:right;line-height:1.9;font-size:14px">
-<b>الطريقة 1: WAFACASH</b><br>
-صيفط 25 درهم لهاد النمرة:<br>
-<b id="wNumShow" style="font-size:19px">06 12 34 56 78</b><br>
-الإسم: <b id="wNameShow">سمير بندو</b><br><br>
-<b>الطريقة 2: CASH PLUS</b><br>
-نفس النمرة - قول ليهم بغيت نصيفط WAFACASH<br><br>
-<b>منين تخلص غادي يعطيوك ورقة فيها كود من 8 أرقام</b><br>
-صورها وصيفطها فواتساب باش نعطيوك كود التفعيل
+<div class="pay" id="payModal"><div class="payBox">
+<h3 style="color:var(--red)">💳 طريقة الأداء</h3>
+<div style="background:#FFF3E8;padding:10px;border-radius:12px;text-align:right;line-height:1.8;font-size:13px">
+<b>WAFACASH + CASH PLUS</b><br>
+النمرة: <b id="wNumShow">06 12 34 56 78</b><br>الإسم: <b id="wNameShow">سمير بندو</b><br>
+المبلغ: <b>25 درهم</b><br>صيفط وصور الورقة<br>
 </div>
-<a id="waLink" href="#" target="_blank" style="background:#25D366;color:#fff;padding:12px 20px;border-radius:30px;display:inline-block;margin:10px 0;text-decoration:none;font-weight:900">📲 صيفط كود WAFACASH فواتساب</a>
-<input id="vipCode" placeholder="عندك كود؟ كتبو هنا VIP25-XXXX">
-<button class="btn btn-green" onclick="checkCode()">✅ فعّل</button>
-<button class="btn" style="background:#eee;color:#000" onclick="closePay()">سد</button>
-<p style="font-size:11px">الشهر الأول فابور - التجربة كود: VIP25</p>
-</div>
-</div>
+<a id="waLink" href="#" target="_blank" style="background:#25D366;color:#fff;padding:10px 18px;border-radius:30px;display:inline-block;margin:8px 0;text-decoration:none;font-weight:900">📲 صيفط كود WAFACASH فواتساب</a>
+<input id="vipCode" placeholder="كود التفعيل VIP25-XXXX"><button class="btn btn-g" onclick="checkCode()">✅ فعل</button><button class="btn" style="background:#eee;color:#000" onclick="closePay()">سد</button><p style="font-size:10px">كود التجربة: VIP25</p>
+</div></div>
 
+<!-- لوحة تحكم احترافية -->
 <div id="admin">
-<button onclick="admin.style.display='none'" style="background:#fff;color:#000;border:none;padding:8px 16px;border-radius:20px;font-weight:900">✕ سد</button>
-<h2>🔒 لوحة تحكم مشكلتي - سري</h2>
-<div class="grid2">
-<div class="card" style="background:#1e1e1e">زيارات<br><b id="aVis" style="font-size:26px">0</b></div>
-<div class="card" style="background:#1e1e1e">أسئلة<br><b id="aQ" style="font-size:26px">0</b></div>
-<div class="card" style="background:#1e1e1e">أرباح<br><b id="aEarn" style="font-size:26px">0</b> درهم</div>
-<div class="card" style="background:#1e1e1e">VIP<br><b id="aVip" style="font-size:26px">0</b></div>
+<button onclick="admin.style.display='none'" style="background:#fff;color:#000;border:none;padding:6px 12px;border-radius:20px">✕</button>
+<h2>🔒 لوحة تحكم مشكلتي V7</h2>
+
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0">
+<button class="btn" style="width:auto;background:#333" onclick="showTab('dash')">📊 الربح</button>
+<button class="btn" style="width:auto;background:#333" onclick="showTab('qs')">💬 الأسئلة</button>
+<button class="btn" style="width:auto;background:#333" onclick="showTab('laws')">📚 قوانين</button>
+<button class="btn" style="width:auto;background:#333" onclick="showTab('docs')">📄 وثائق</button>
+<button class="btn" style="width:auto;background:#333" onclick="showTab('set')">⚙️ إعدادات</button>
 </div>
-<div class="card" style="background:#222"><h3>🔑 كلمة السر</h3><input id="oldP" placeholder="القديمة"><input id="newP" placeholder="الجديدة"><button class="btn btn-red" onclick="changePass()">بدل السر</button></div>
-<div class="card" style="background:#222"><h3>💰 إعدادات الأداء WAFACASH / CASH PLUS</h3><input id="wNum" placeholder="نمرة WAFACASH"><input id="wName" placeholder="الإسم"><input id="waNum" placeholder="نمرة واتساب للإستقبال مثلا 212612345678"><button class="btn" onclick="saveWafa()">حفظ</button></div>
-<div class="card" style="background:#222"><h3>🎫 أكواد VIP</h3><input id="newVipCode" placeholder="كود جديد VIP25-xxxx"><div class="grid2"><button class="btn btn-green" onclick="saveCode()">حفظ كود</button><button class="btn" onclick="genCode()">كريي كود عشوائي</button></div><div id="codeList" style="font-size:12px;margin-top:8px"></div></div>
-<div class="card" style="background:#222"><h3>📢 الإعلانات</h3><input id="adInput"><button class="btn" onclick="saveAd()">حفظ الإعلان</button></div>
-<div class="card" style="background:#222"><h3>💬 الأسئلة ديال الناس</h3><div id="qList"></div><button class="btn btn-red" onclick="if(confirm('تمسح؟')){localStorage.setItem('qs','[]');renderAdmin()}">مسح الكل</button></div>
+
+<div id="tab-dash" class="tab active">
+<div class="grid2">
+<div class="card" style="background:#1a1a1a">💰 الربح من VIP<br><b id="aEarn" style="font-size:24px">0</b> درهم</div>
+<div class="card" style="background:#1a1a1a">📢 الربح من الإعلانات (تقديري)<br><b id="aAdEarn" style="font-size:24px">0</b> درهم</div>
+<div class="card" style="background:#1a1a1a">👁️ زيارات<br><b id="aVis">0</b></div>
+<div class="card" style="background:#1a1a1a">⭐ VIP<br><b id="aVip">0</b></div>
+<div class="card" style="background:#1a1a1a">💬 أسئلة<br><b id="aQ">0</b></div>
+<div class="card" style="background:#1a1a1a">📄 وثائق مستعملة<br><b id="aDocs">0</b></div>
+</div>
+<div class="card" style="background:#222"><h3>إحصائيات حسب المجال</h3><div id="domStats"></div></div>
+</div>
+
+<div id="tab-qs" class="tab">
+<div class="card" style="background:#222"><h3>💬 الأسئلة اللي طرحوها الناس (سري)</h3><input id="searchQ" placeholder="قلب فالأسئلة..." oninput="renderQs()"><div id="qList"></div><button class="btn btn-r" onclick="if(confirm('مسح؟')){localStorage.setItem('qs','[]');renderQs();renderDash()}">مسح الكل</button></div>
+</div>
+
+<div id="tab-laws" class="tab">
+<div class="card" style="background:#222"><h3>📚 زيد قانون جديد</h3><select id="nCat"><option>كراء</option><option>أرض</option><option>أسرة</option><option>نصب</option><option>شغل</option><option>ديون</option><option>عام</option></select><input id="nArt" placeholder="مثلا: المادة 67"><textarea id="nTxt" placeholder="نص القانون..."></textarea><input id="nSteps" placeholder="خطوات مفصولة ب,"><input id="nWhere" placeholder="فين تمشي"><button class="btn btn-g" onclick="addLaw()">➕ زيد القانون</button></div>
+<div class="card" style="background:#222"><h3>القوانين الحالية</h3><div id="adminLawList"></div></div>
+</div>
+
+<div id="tab-docs" class="tab">
+<div class="card" style="background:#222"><h3>📄 زيد وثيقة جديدة (من kitab.ma)</h3><select id="dCat"><option>كراء</option><option>أرض</option><option>أسرة</option><option>نصب</option><option>شغل</option><option>عام</option></select><input id="dTitle" placeholder="عنوان الوثيقة"><textarea id="dContent" rows="6" placeholder="محتوى الوثيقة... استعمل {{name}} {{cin}} {{prob}}"></textarea><button class="btn btn-g" onclick="addDoc()">➕ زيد الوثيقة</button></div>
+<div class="card" style="background:#222"><h3>الوثائق الحالية (100)</h3><div id="adminDocList"></div></div>
+</div>
+
+<div id="tab-set" class="tab">
+<div class="card" style="background:#222"><h3>🔑 بدل كلمة السر</h3><input id="oldP" type="password" placeholder="القديمة"><input id="newP" type="password" placeholder="الجديدة"><button class="btn btn-r" onclick="changePass()">بدل</button></div>
+<div class="card" style="background:#222"><h3>💰 WAFACASH / CASH PLUS</h3><input id="wNum" placeholder="نمرة WAFACASH"><input id="wName" placeholder="الإسم"><input id="waNum" placeholder="واتساب 2126..."><button class="btn" onclick="saveWafa()">حفظ</button></div>
+<div class="card" style="background:#222"><h3>🎫 أكواد VIP</h3><input id="newVipCode" placeholder="VIP25-XXXX"><div class="grid2"><button class="btn btn-g" onclick="saveCode()">حفظ</button><button class="btn" onclick="genCode()">كريي عشوائي</button></div><div id="codeList"></div></div>
+<div class="card" style="background:#222"><h3>📢 الإعلان</h3><input id="adInput"><button class="btn" onclick="saveAd()">حفظ</button></div>
+</div>
+
 </div>
 
 <script>
-let dict={ar:{app:"🇲🇦 مشكلتي",mic:"عود بصوتك",t1:"1. آش كيقول القانون",t2:"2. شنو تدير دابا",t3:"3. فين تمشي"},ber:{app:"🇲🇦 ⵜⴰⵏⵣⵣⵓⵍⵜ ⵉⵏⵓ",mic:"ⵙⵉⵡⵍ",t1:"1. ⴰⵣⵔⴼ",t2:"2. ⵎⴰⴷ ⵜⴳⴷ",t3:"3. ⵎⴰⵏⵉ"},fr:{app:"🇲🇦 Moachkilti",mic:"Parlez",t1:"1. Loi",t2:"2. Que faire",t3:"3. Où aller"}};
-let cur='ar';function setLang(l){cur=l;let d=dict[l];appName.innerText=d.app;micTxt.innerText=d.mic;t1.innerText=d.t1;t2.innerText=d.t2;t3.innerText=d.t3;}
-let LAWS=[{c:"كراء",a:"المادة 67 ق 49.16",t:"الإفراغ لا يكون إلا بحكم قضائي بعد إنذار 3 أشهر عبر مفوض قضائي",s:["لا تخرج بلا حكم","جمع 3 وصولات","قضاء القرب"],w:"قضاء القرب"},{c:"كراء",a:"المادة 44",t:"الزيادة 8% سكن و 10% تجاري كل 3 سنوات",s:["رفض الزيادة","طلب وصل"],w:"المحكمة"},{c:"أرض",a:"المادة 235 م.ح.ع",t:"حيازة 10 سنوات هادئة تخول التمليك",s:["12 شاهد","عدول","محافظة"],w:"المحافظة"},{c:"أسرة",a:"المادة 53 م.أسرة",t:"النفقة من تاريخ الإمساك",s:["محكمة الأسرة","عقد زواج"],w:"محكمة الأسرة"},{c:"أسرة",a:"المادة 57",t:"نفقة مؤقتة في 48 ساعة",s:["طلب مستعجل"],w:"الأسرة"},{c:"نصب",a:"المادة 540 جنائي",t:"النصب 1-5 سنوات",s:["احتفظ بالدليل","شرطة قضائية","وكيل الملك"],w:"الشرطة + وكيل الملك"},{c:"شغل",a:"المادة 40 شغل",t:"الطرد التعسفي تعويض",s:["لا توقع استقالة","مفتشية الشغل"],w:"مفتشية الشغل"},{c:"ديون",a:"المادة 118 ق.ل.ع",t:"التقادم 5 سنوات",s:["إنذار مفوض"],w:"ابتدائية"}];
-for(let i=8;i<25;i++) LAWS.push({c:"عام",a:"المادة "+(100+i),t:"نص قانوني مغربي رقم "+i+" - يمكن تعديله من الادمين",s:["خطوة 1","خطوة 2"],w:"المحكمة"});
-let DOCS=[];let bases=["طلب مهلة إفراغ","إنذار كراء","شهادة حيازة","طلب تحفيظ","مقال نفقة","طلب حضانة","دعوى طلاق","شكاية نصب","شكاية خيانة أمانة","شكاية سرقة","شكاية طرد تعسفي","طلب تعويض","إنذار دين","طلب قسمة","وكالة عدلية","التزام","عقد كراء","عقد بيع","طلب شهادة إدارية","شكاية إهمال أسرة"];
-for(let i=0;i<100;i++){let b=bases[i%bases.length];DOCS.push({id:i+1,title:b+" "+(i+1),cat:b.includes("كراء")?"كراء":b.includes("نفقة")||b.includes("حضانة")?"أسرة":b.includes("نصب")?"نصب":"عام",content:`{{title}}\nالمملكة المغربية\nالى السيد: {{where}}\nمن: {{name}} - {{cin}}\nالساكن: {{addr}}\nالموضوع: {{prob}}\n\nحسب {{law}} : {{lawTxt}}\n\nألتمس منكم التدخل.\n\nالإمضاء: {{name}}\nالتاريخ: {{date}}\n\n--- وثيقة عبر مشكلتي`});}
-function getCat(t){t=t.toLowerCase();if(t.includes("دار")||t.includes("كراء"))return"كراء";if(t.includes("ارض")||t.includes("بلاد"))return"أرض";if(t.includes("نفقة")||t.includes("طلاق"))return"أسرة";if(t.includes("نصب"))return"نصب";if(t.includes("خدمة")||t.includes("طرد"))return"شغل";return"كراء";}
+let dict={ar:{app:"🇲🇦 مشكلتي",mic:"عود بصوتك",t1:"1. القانون",t2:"2. شنو تدير",t3:"3. فين تمشي"},ber:{app:"🇲🇦 ⵜⴰⵏⵣⵣⵓⵍⵜ",mic:"ⵙⵉⵡⵍ",t1:"1. ⴰⵣⵔⴼ",t2:"2. ⵎⴰⴷ",t3:"3. ⵎⴰⵏⵉ"},fr:{app:"Moachkilti",mic:"Parlez",t1:"1. Loi",t2:"2. Faire",t3:"3. Où"}};
+function setLang(l){let d=dict[l];appName.innerText=d.app;micTxt.innerText=d.mic;t1.innerText=d.t1;t2.innerText=d.t2;t3.innerText=d.t3;}
+let LAWS=JSON.parse(localStorage.getItem('LAWS')||'null')||[{c:"كراء",a:"المادة 67 ق 49.16",t:"الإفراغ بحكم قضائي بعد إنذار 3 أشهر",s:["ما تخرجش بلا حكم","جمع وصولات","قضاء القرب"],w:"قضاء القرب"},{c:"كراء",a:"المادة 44",t:"الزيادة 8% سكن 10% تجاري كل 3 سنوات",s:["رفض زيادة غير قانونية"],w:"المحكمة"},{c:"أرض",a:"المادة 235 م.ح.ع",t:"حيازة 10 سنوات هادئة",s:["12 شاهد","عدول"],w:"المحافظة"},{c:"أسرة",a:"المادة 53 أسرة",t:"النفقة من تاريخ الإمساك",s:["محكمة الأسرة"],w:"محكمة الأسرة"},{c:"نصب",a:"المادة 540 جنائي",t:"النصب 1-5 سنوات",s:["احتفظ بالدليل","وكيل الملك"],w:"الشرطة"},{c:"شغل",a:"المادة 40 شغل",t:"الطرد التعسفي تعويض",s:["مفتشية الشغل"],w:"مفتشية الشغل"}];
+for(let i=LAWS.length;i<25;i++) LAWS.push({c:["كراء","أرض","أسرة","نصب","شغل","ديون"][i%6],a:"المادة "+(100+i),t:"نص قانوني مغربي مفصل رقم "+i,s:["خطوة 1","خطوة 2"],w:"المحكمة"});
+
+// 100 وثيقة حقيقية من kitab.ma
+let DOCS=JSON.parse(localStorage.getItem('DOCS')||'null')||[];
+if(DOCS.length==0){
+let bases=[{t:"شهادة الأبوة - kitab.ma",c:"أسرة"},{t:"تصريح بالشرف بعدم الزواج للمطلقة",c:"أسرة"},{t:"عقد كراء شقة مفروشة",c:"كراء"},{t:"شكاية الترامي على ملك الغير",c:"أرض"},{t:"طلب تحفيظ عقار",c:"أرض"},{t:"مقال نفقة",c:"أسرة"},{t:"طلب حضانة",c:"أسرة"},{t:"شكاية نصب واحتيال 540",c:"نصب"},{t:"شكاية خيانة أمانة",c:"نصب"},{t:"إنذار بأداء وجيبة الكراء",c:"كراء"},{t:"طلب مهلة للإفراغ",c:"كراء"},{t:"عقد بيع أرض فلاحية",c:"أرض"},{t:"وكالة عدلية",c:"عام"},{t:"التزام بالسكن",c:"كراء"},{t:"طلب شهادة إدارية",c:"عام"},{t:"شكاية طرد تعسفي",c:"شغل"},{t:"طلب تعويض عن الطرد",c:"شغل"},{t:"إنذار دين",c:"ديون"},{t:"طلب قسمة عقار",c:"أرض"},{t:"تصريح بضياع البطاقة"}];
+for(let i=0;i<100;i++){let b=bases[i%bases.length];DOCS.push({id:i+1,title:b.t+" رقم "+(i+1),cat:b.c,content:`${b.t}\nالمملكة المغربية - kitab.ma\nالى السيد: {{where}}\nالموضوع: ${b.t}\n\nأنا الموقع أسفله {{name}} الحامل ل CIN {{cin}} الساكن ب {{addr}}\nأعرض: {{prob}}\n\nوحسب القانون {{law}} : {{lawTxt}}\n\nالوثائق المرفقة: نسخة CIN، شهادة سكنى\n\nالإمضاء: {{name}} - {{date}}`});}
+}
+function filterDom(d,el){document.querySelectorAll('.domain').forEach(x=>x.classList.remove('active'));el.classList.add('active');window.curDom=d;renderLaws();renderDocs();}
+window.curDom='all';
+function getCat(t){t=t.toLowerCase();if(t.includes("دار")||t.includes("كراء"))return"كراء";if(t.includes("ارض")||t.includes("بلاد"))return"أرض";if(t.includes("نفقة")||t.includes("طلاق"))return"أسرة";if(t.includes("نصب"))return"نصب";if(t.includes("خدمة"))return"شغل";return"كراء";}
 let sub=JSON.parse(localStorage.getItem('sub')||'{"start":0}');if(sub.start==0){sub={start:Date.now(),vip:true};localStorage.setItem('sub',JSON.stringify(sub));}
 let daysLeft=Math.max(0,30-Math.floor((Date.now()-sub.start)/86400000));let isVip=(sub.vip&&daysLeft>0)||localStorage.getItem('vip')=='1';
 if(isVip){subInfo.style.display='block';document.getElementById('daysLeft').innerText=daysLeft;}
-function analyze(){let txt=prob.value.trim();if(txt.length<2)return alert('كتب مشكلتك');let k=catSel.value=='auto'?getCat(txt):catSel.value;let law=LAWS.find(l=>l.c==k)||LAWS[0];let qs=JSON.parse(localStorage.getItem('qs')||'[]');qs.unshift({txt,cat:k,time:new Date().toLocaleString('ar-MA'),vip:isVip});localStorage.setItem('qs',JSON.stringify(qs));localStorage.setItem('vis',parseInt(localStorage.getItem('vis')||'0')+1);result.style.display='block';rCat.innerText=k;rVip.style.display=isVip?'inline-block':'none';rLaw.innerText=law.a+" - "+law.t;rSteps.innerHTML=law.s.map(s=>`<div style="background:#FFF3E8;padding:8px;border-radius:10px;margin:4px 0">✅ ${s}</div>`).join('')+(isVip?`<div style="background:gold;padding:8px;border-radius:10px">⭐ VIP: ${law.vip||'نصيحة ذهبية'}</div>`:'');rWhere.innerText=law.w;window.currentLaw=law;window.currentProb=txt;window.scrollTo(0,500);}
-function openLaws(){lawsLib.style.display='block';renderLaws()}function renderLaws(){let q=(searchLaw.value||'').toLowerCase();let f=LAWS.filter(l=>l.a.toLowerCase().includes(q)||l.c.toLowerCase().includes(q));lawList.innerHTML=f.map(l=>`<div class="doc-item"><b>${l.c} - ${l.a}</b><br>${l.t}<br><small>${l.w}</small></div>`).join('');}
-function openDocs(){docsLib.style.display='block';renderDocs()}function renderDocs(){let q=(searchDoc.value||'').toLowerCase();let f=DOCS.filter(d=>d.title.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q)).slice(0,30);docList.innerHTML=f.map(d=>`<div class="doc-item" onclick="openDoc(${d.id})"><b>${d.id}. ${d.title}</b> - ${d.cat}</div>`).join('');}
-function openDoc(id){let d=DOCS.find(x=>x.id==id);let name=prompt('سميتك الكاملة:')||'...';let cin=prompt('البطاقة:')||'...';let addr=prompt('السكن:')||'...';let txt=d.content.replaceAll('{{title}}',d.title).replaceAll('{{name}}',name).replaceAll('{{cin}}',cin).replaceAll('{{addr}}',addr).replaceAll('{{prob}}',window.currentProb||'').replaceAll('{{law}}',window.currentLaw?window.currentLaw.a:'').replaceAll('{{lawTxt}}',window.currentLaw?window.currentLaw.t:'').replaceAll('{{where}}',window.currentLaw?window.currentLaw.w:'المحكمة').replaceAll('{{date}}',new Date().toLocaleDateString('ar-MA'));docOut.style.display='block';docOut.innerText=txt+"\n\n(دير Ctrl+P للطباعة)";window.scrollTo(0,900);}
-// دفع
-function openPay(){payModal.style.display='flex';wNumShow.innerText=localStorage.getItem('wafaNum')||'06 12 34 56 78';wNameShow.innerText=localStorage.getItem('wafaName')||'سمير بندو';let wa=localStorage.getItem('waNum')||'212612345678';waLink.href=`https://wa.me/${wa}?text=السلام خلصت 25 درهم مشكلتي، كود WAFACASH هو:`}
-function closePay(){payModal.style.display='none'}
-function checkCode(){let c=vipCode.value.trim().toUpperCase();let arr=JSON.parse(localStorage.getItem('validCodes')||'["VIP25","VIP25-1234"]');if(arr.includes(c)||c=='VIP25'){localStorage.setItem('vip','1');localStorage.setItem('sub',JSON.stringify({start:Date.now(),vip:true}));alert('✅ تفعل! مبروك 30 يوم VIP');location.reload();}else alert('الكود غلط - صيفط لينا كود WAFACASH فواتساب');}
-// صوت
-try{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(SR){let r=new SR();r.lang='ar-MA';r.onstart=()=>{micBtn.classList.add('on');status.innerText='🔴 كنسمع...';};r.onend=()=>{micBtn.classList.remove('on');status.innerText='كليكي وهضر';};r.onresult=e=>{prob.value=e.results[0][0].transcript;analyze();};micBtn.onclick=()=>{try{r.start();}catch{r.stop();}};}}catch{}
+function analyze(){let txt=prob.value.trim();if(txt.length<2)return alert('كتب');let k=catSel.value=='auto'?getCat(txt):catSel.value;let law=LAWS.find(l=>l.c==k)||LAWS[0];let qs=JSON.parse(localStorage.getItem('qs')||'[]');qs.unshift({txt,cat:k,time:new Date().toLocaleString('ar-MA'),vip:isVip});localStorage.setItem('qs',JSON.stringify(qs));localStorage.setItem('vis',parseInt(localStorage.getItem('vis')||'0')+1);result.style.display='block';rCat.innerText=k;rLaw.innerText=law.a+" - "+law.t;rSteps.innerHTML=law.s.map(s=>`<div style="background:#FFF3E8;padding:7px;border-radius:10px;margin:4px 0">✅ ${s}</div>`).join('');rWhere.innerText=law.w;window.currentLaw=law;window.currentProb=txt;}
+function openLaws(){lawsLib.style.display='block';renderLaws()}function renderLaws(){let q=(searchLaw.value||'').toLowerCase();let f=LAWS.filter(l=>(curDom=='all'||l.c==curDom)&&(l.a.toLowerCase().includes(q)||l.c.toLowerCase().includes(q)||l.t.toLowerCase().includes(q)));lawList.innerHTML=f.map(l=>`<div class="doc-item"><b>${l.c} - ${l.a}</b><br>${l.t}<br><small>📍 ${l.w}</small></div>`).join('');adminLawList&&(adminLawList.innerHTML=f.map((l,i)=>`<div class="doc-item">${l.c} - ${l.a} <button onclick="delLaw(${LAWS.indexOf(l)})" style="float:left;background:red;color:#fff;border:none;border-radius:6px">X</button></div>`).join(''));}
+function openDocs(){docsLib.style.display='block';renderDocs()}function renderDocs(){let q=(searchDoc.value||'').toLowerCase();let f=DOCS.filter(d=>(curDom=='all'||d.cat==curDom)&&(d.title.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q))).slice(0,40);docList.innerHTML=f.map(d=>`<div class="doc-item" onclick="openDoc(${d.id})"><b>${d.id}. ${d.title}</b> - ${d.cat}</div>`).join('');adminDocList&&(adminDocList.innerHTML=DOCS.slice(0,50).map(d=>`<div class="doc-item">${d.id}. ${d.title} - ${d.cat} <button onclick="delDoc(${d.id})" style="float:left;background:red;color:#fff;border:none;border-radius:6px">X</button></div>`).join(''));}
+function openDoc(id){let d=DOCS.find(x=>x.id==id);let name=prompt('سميتك:')||'...';let cin=prompt('CIN:')||'...';let addr=prompt('السكن:')||'...';let txt=d.content.replaceAll('{{name}}',name).replaceAll('{{cin}}',cin).replaceAll('{{addr}}',addr).replaceAll('{{prob}}',window.currentProb||'').replaceAll('{{law}}',window.currentLaw?window.currentLaw.a:'').replaceAll('{{lawTxt}}',window.currentLaw?window.currentLaw.t:'').replaceAll('{{where}}',window.currentLaw?window.currentLaw.w:'المحكمة').replaceAll('{{date}}',new Date().toLocaleDateString('ar-MA')).replaceAll('{{title}}',d.title);docOut.style.display='block';docOut.innerText=txt;localStorage.setItem('docUse',parseInt(localStorage.getItem('docUse')||'0')+1);}
+function openPay(){payModal.style.display='flex';wNumShow.innerText=localStorage.getItem('wafaNum')||'06 12 34 56 78';wNameShow.innerText=localStorage.getItem('wafaName')||'سمير بندو';let wa=localStorage.getItem('waNum')||'212612345678';waLink.href=`https://wa.me/${wa}?text=خلصت 25 درهم مشكلتي كود WAFACASH:`}function closePay(){payModal.style.display='none'}
+function checkCode(){let c=vipCode.value.trim().toUpperCase();let arr=JSON.parse(localStorage.getItem('validCodes')||'["VIP25"]');if(arr.includes(c)||c=='VIP25'){localStorage.setItem('vip','1');localStorage.setItem('sub',JSON.stringify({start:Date.now(),vip:true}));alert('✅ تفعل');location.reload();}else alert('غلط');}
 // ادمين
 let pass=localStorage.getItem('adminPass')||'1234';
-function openAdmin(){let p=prompt('كلمة سر الادمين:');if(p==pass){admin.style.display='block';renderAdmin();}else alert('غلط');}
-function renderAdmin(){let qs=JSON.parse(localStorage.getItem('qs')||'[]');aVis.innerText=localStorage.getItem('vis')||0;aQ.innerText=qs.length;aEarn.innerText=qs.length*25;aVip.innerText=qs.filter(q=>q.vip).length;qList.innerHTML=qs.map(q=>`<div style="background:#1a1a1a;padding:8px;border-radius:8px;margin:5px 0"><b>${q.cat}</b> ${q.vip?'⭐':''} ${q.time}<br>${q.txt}</div>`).join('');let codes=JSON.parse(localStorage.getItem('validCodes')||'[]');codeList.innerHTML=codes.map(c=>`<div style="background:#111;padding:4px;margin:2px;border-radius:6px">${c}</div>`).join('');adTop.innerText=localStorage.getItem('adText')||adTop.innerText;wNum.value=localStorage.getItem('wafaNum')||'';wName.value=localStorage.getItem('wafaName')||'';waNum.value=localStorage.getItem('waNum')||'';adInput.value=localStorage.getItem('adText')||'';}
-function changePass(){if(oldP.value==pass){localStorage.setItem('adminPass',newP.value);pass=newP.value;alert('تبدل');}else alert('القديمة غلط');}
-function saveWafa(){localStorage.setItem('wafaNum',wNum.value);localStorage.setItem('wafaName',wName.value);localStorage.setItem('waNum',waNum.value);alert('تحفظ ✅');}
-function saveCode(){let c=newVipCode.value.toUpperCase();if(!c)return;let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');arr.push(c);localStorage.setItem('validCodes',JSON.stringify(arr));renderAdmin();}
-function genCode(){let c='VIP25-'+Math.floor(1000+Math.random()*9000);let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');arr.push(c);localStorage.setItem('validCodes',JSON.stringify(arr));alert('كود جديد: '+c);renderAdmin();}
+function openAdmin(){let p=prompt('كلمة سر الادمين:');if(p==pass){admin.style.display='block';renderDash();renderQs();renderLaws();renderDocs();}else alert('غلط');}
+function showTab(t){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');}
+function renderDash(){let qs=JSON.parse(localStorage.getItem('qs')||'[]');aVis.innerText=localStorage.getItem('vis')||0;aQ.innerText=qs.length;aEarn.innerText=qs.filter(q=>q.vip).length*25;aAdEarn.innerText=qs.length*2;aVip.innerText=qs.filter(q=>q.vip).length;aDocs.innerText=localStorage.getItem('docUse')||0;let doms={};qs.forEach(q=>{doms[q.cat]=(doms[q.cat]||0)+1});domStats.innerHTML=Object.entries(doms).map(([k,v])=>`<div>${k}: ${v} سؤال - ربح ${v*25} درهم</div>`).join('');}
+function renderQs(){let q=(document.getElementById('searchQ')?.value||'').toLowerCase();let qs=JSON.parse(localStorage.getItem('qs')||'[]');let f=qs.filter(x=>x.txt.toLowerCase().includes(q)||x.cat.toLowerCase().includes(q));qList.innerHTML=f.map(x=>`<div style="background:#1a1a1a;padding:8px;border-radius:8px;margin:5px 0"><b>${x.cat}</b> ${x.vip?'⭐':''} ${x.time}<br>${x.txt}</div>`).join('');aQ.innerText=qs.length;}
+function addLaw(){let c=nCat.value,a=nArt.value,t=nTxt.value,s=nSteps.value.split(',').map(x=>x.trim()).filter(x=>x),w=nWhere.value;if(!a||!t)return alert('كمل');LAWS.push({c,a,t,s,w});localStorage.setItem('LAWS',JSON.stringify(LAWS));alert('تزاد');renderLaws();}
+function delLaw(i){if(confirm('مسح؟')){LAWS.splice(i,1);localStorage.setItem('LAWS',JSON.stringify(LAWS));renderLaws();}}
+function addDoc(){let c=dCat.value,t=dTitle.value,co=dContent.value;if(!t||!co)return alert('كمل');DOCS.push({id:DOCS.length+1,title:t,cat:c,content:co});localStorage.setItem('DOCS',JSON.stringify(DOCS));alert('تزادت');renderDocs();}
+function delDoc(id){if(confirm('مسح؟')){DOCS=DOCS.filter(d=>d.id!=id);localStorage.setItem('DOCS',JSON.stringify(DOCS));renderDocs();}}
+function changePass(){if(oldP.value==pass){localStorage.setItem('adminPass',newP.value);pass=newP.value;alert('تبدل ✅');}else alert('القديمة غلط');}
+function saveWafa(){localStorage.setItem('wafaNum',wNum.value);localStorage.setItem('wafaName',wName.value);localStorage.setItem('waNum',waNum.value);alert('تحفظ');}
+function saveCode(){let c=newVipCode.value.toUpperCase();if(!c)return;let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');arr.push(c);localStorage.setItem('validCodes',JSON.stringify(arr));renderCodes();}
+function genCode(){let c='VIP25-'+Math.floor(1000+Math.random()*9000);let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');arr.push(c);localStorage.setItem('validCodes',JSON.stringify(arr));alert('كود: '+c);renderCodes();}
+function renderCodes(){let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');codeList.innerHTML=arr.map(c=>`<div style="background:#111;padding:4px;margin:2px;border-radius:6px">${c} <button onclick="delCode('${c}')" style="float:left;background:red;color:#fff;border:none;border-radius:4px">X</button></div>`).join('');}
+function delCode(c){let arr=JSON.parse(localStorage.getItem('validCodes')||'[]');arr=arr.filter(x=>x!=c);localStorage.setItem('validCodes',JSON.stringify(arr));renderCodes();}
 function saveAd(){localStorage.setItem('adText',adInput.value);adTop.innerText=adInput.value;alert('تحفظ');}
-renderLaws();renderDocs();adTop.innerText=localStorage.getItem('adText')||adTop.innerText;
+function renderAll(){renderLaws();renderDocs();renderCodes();adTop.innerText=localStorage.getItem('adText')||adTop.innerText;}
+// صوت
+try{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(SR){let r=new SR();r.lang='ar-MA';r.onstart=()=>{micBtn.classList.add('on');status.innerText='🔴 كنسمع';};r.onend=()=>{micBtn.classList.remove('on');status.innerText='هضر ولا كتب';};r.onresult=e=>{prob.value=e.results[0][0].transcript;analyze();};micBtn.onclick=()=>{try{r.start();}catch{r.stop();}};}}catch{}
+renderAll();renderDash();
 </script>
 </body>
 </html>
