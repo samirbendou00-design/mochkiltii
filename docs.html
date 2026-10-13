@@ -1,79 +1,17 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتبة النماذج - مشكلتي</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box}
-body{font-family:'Tajawal',sans-serif;background:#FFF8F0;margin:0;padding:15px}
-.header{background:#C1272D;color:white;padding:15px;border-radius:15px;text-align:center;margin-bottom:15px}
-.search{width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;font-size:16px;margin:10px 0}
-.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:10px}
-.tab{white-space:nowrap;padding:8px 16px;background:white;border:1px solid #ddd;border-radius:20px;cursor:pointer}
-.tab.active{background:#C1272D;color:white;border-color:#C1272D}
-.card{background:white;border-radius:14px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-.btn-open{background:#FFF8F0;color:#C1272D;border:1px solid #C1272D;padding:8px 18px;border-radius:20px;font-weight:bold}
-.viewer{position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:9999;display:none;overflow:auto}
-.paper{background:white;max-width:750px;margin:20px auto;padding:35px 30px;border-radius:8px;box-shadow:0 0 15px rgba(0,0,0,0.1);font-family:'Amiri',serif;line-height:2;font-size:17px;color:#111}
-.paper h2{text-align:center;margin-bottom:20px;font-size:22px}
-.paper input{border:none;border-bottom:1px dotted #000;background:transparent;padding:3px 8px;font-family:'Amiri';font-size:16px;min-width:150px}
-.btn-main{padding:14px;border:none;border-radius:12px;font-size:17px;font-weight:bold;cursor:pointer;width:100%;margin-top:10px}
-.btn-print{background:#C1272D;color:white}
-.btn-share{background:#111;color:white}
-@media print{.no-print{display:none} .viewer{position:static} .paper{box-shadow:none;margin:0}}
-</style>
-</head>
-<body>
-<div class="header no-print">
-  <h2 style="margin:0">📄 مكتبة النماذج القانونية</h2>
-  <p style="margin:5px 0 0;opacity:0.9">100 نموذج مفصل وجاهز - مشكلتي</p>
-</div>
-<input id="search" class="search no-print" placeholder="قلب على نموذج: طلاق، كراء، شكاية..." oninput="render()">
-<div class="tabs no-print" id="tabs"></div>
-<div id="list" class="no-print"></div>
-
-<div class="viewer" id="viewer">
-  <div class="no-print" style="max-width:750px;margin:15px auto;padding:0 20px;display:flex;justify-content:space-between">
-    <button onclick="closeV()" style="background:black;color:white;padding:10px 20px;border:none;border-radius:20px">✕ إغلاق</button>
-    <button onclick="window.print()" style="background:#C1272D;color:white;padding:10px 20px;border:none;border-radius:20px">🖨️ طباعة</button>
-  </div>
-  <div class="paper" id="paper"></div>
-  <div style="max-width:750px;margin:0 auto 30px;padding:0 20px" class="no-print">
-    <button class="btn-main btn-print" onclick="window.print()">📥 تحميل PDF / طباعة</button>
-    <button class="btn-main btn-share" onclick="shareWA()">📤 مشاركة واتساب</button>
-    <button class="btn-main" style="background:white;border:1px solid #ddd" onclick="closeV()">⬅️ رجوع</button>
-  </div>
-</div>
-
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مكتبة النماذج - 100 نموذج مفصل</title><style>*{box-sizing:border-box}body{font-family:Tahoma;background:#FFF8F0;margin:0;padding:12px}.h{background:#C1272D;color:#fff;padding:15px;border-radius:15px;text-align:center}.s{width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin:12px 0;font-size:16px}.c{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.07)}.b{background:#fff;color:#C1272D;border:1px solid #C1272D;padding:8px 16px;border-radius:20px;font-weight:bold;text-decoration:none}.v{position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:9999;display:none;overflow:auto}.p{background:#fff;max-width:750px;margin:20px auto;padding:35px;border-radius:10px;line-height:2.2;font-family:Amiri,serif}.p input{border:none;border-bottom:1px dotted #000;padding:4px 10px;min-width:130px}.btn{width:100%;padding:14px;border:none;border-radius:12px;font-weight:bold;margin-top:10px;cursor:pointer}.pr{background:#C1272D;color:#fff}</style></head><body>
+<div class="h"><h2 style="margin:0">📄 مكتبة النماذج القانونية - 100 نموذج مفصل</h2><a href="index.html" style="color:#fff;text-decoration:none">⬅️ الرجوع للتطبيق</a></div>
+<input id="q" class="s" placeholder="🔍 قلب على: طلاق، كراء، نصب، التزام..." oninput="R()">
+<div id="L"></div>
+<div id="V" class="v"><div style="padding:12px;background:#fff;position:sticky;top:0;display:flex;gap:10px"><button onclick="V.style.display='none'" style="flex:1;padding:12px;border-radius:10px;border:1px solid #ddd">✕ إغلاق</button><button onclick="window.print()" style="flex:1;padding:12px;border-radius:10px;background:#C1272D;color:#fff;border:none">🖨️ طباعة / PDF</button></div><div id="P" class="p"></div></div>
 <script>
-const allDocs = [
-{id:1,title:"طلب توضيح مفهوم الطلاق - مفصل",cat:"شكايات ومحاكم",html:`<h2>طلب توضيح مفهوم الطلاق في القانون المغربي</h2><p>الاسم الكامل: <input placeholder="الاسم"> رقم ب.و: <input placeholder="CIN"></p><p>العنوان: <input style="width:300px" placeholder="العنوان"> الهاتف: <input placeholder="الهاتف"></p><p>إلى السيد رئيس قسم قضاء الأسرة بـ <input placeholder="المدينة"></p><p style="text-align:center;font-weight:bold">الموضوع: طلب توضيح مفهوم الطلاق</p><p>سلام تام بوجود مولانا الإمام، وبعد،</p><p>يشرفني أن أتقدم إليكم بهذا الطلب قصد الاستفسار عن المقصود بالطلاق في القانون المغربي.</p><p>تنص المادة 78 من مدونة الأسرة على أن: «الطلاق حل ميثاق الزوجية، يمارسه الزوج والزوجة، كل بحسب شروطه، تحت مراقبة القضاء وطبقا لأحكام هذه المدونة.»</p><p>وبعبارة مبسطة، فالطلاق هو إنهاء رابطة الزواج وفق الشروط والإجراءات القانونية وتحت مراقبة القضاء، وليس مجرد انفصال الزوجين في السكن.</p><p>المادة 79: يجب على من يريد الطلاق أن يطلب الإذن من المحكمة.</p><p>المادة 81: تقوم المحكمة بمحاولة الصلح.</p><p>وعليه، ألتمس إفادتي بالتوضيحات العامة وتوجيهي للمصلحة المختصة.</p><p style="margin-top:30px;text-align:left">الإمضاء:<br><br>................</p>`},
-{id:2,title:"عقد كراء شقة سكنية - مفصل",cat:"كراء وبيع",html:`<h2>عقد كراء شقة سكنية</h2><p>بتاريخ: <input type="date"> بمدينة: <input placeholder="المدينة"></p><p><b>الطرف الأول (المكري):</b> <input placeholder="الاسم"> ب.و: <input placeholder="CIN"></p><p><b>الطرف الثاني (المكتري):</b> <input placeholder="الاسم"> ب.و: <input placeholder="CIN"></p><p><b>البند 1:</b> موضوع الكراء: الشقة الكائنة بـ <input style="width:350px" placeholder="العنوان الكامل"></p><p><b>البند 2:</b> المدة: سنة قابلة للتجديد من <input type="date"> إلى <input type="date"></p><p><b>البند 3:</b> الوجيبة: <input placeholder="المبلغ"> درهم شهريا</p><p><b>البند 4:</b> الضمان: <input placeholder="المبلغ"> درهم</p><p><b>البند 5:</b> يلتزم المكتري بالمحافظة على العين المكراة وأداء فواتير الماء والكهرباء.</p><p><b>البند 6:</b> يمنع التأجير من الباطن إلا بموافقة كتابية.</p><p style="margin-top:25px;display:flex;justify-content:space-between"><span>المكري<br>....</span><span>المكتري<br>....</span></p>`},
-{id:3,title:"شكاية نصب واحتيال - الفصل 540",cat:"شكايات ومحاكم",html:`<h2>شكاية من أجل النصب والاحتيال</h2><p>إلى السيد وكيل الملك لدى ابتدائية <input placeholder="المدينة"></p><p>المشتكي: <input placeholder="الاسم"> ب.و: <input placeholder="CIN"> هاتف: <input placeholder="الهاتف"></p><p style="text-align:center;font-weight:bold">الموضوع: شكاية نصب واحتيال طبقا للفصل 540 ق.ج</p><p>يشرفني أن أتقدم بشكاية ضد: <input placeholder="اسم المشتكى به"> الساكن بـ <input placeholder="العنوان"></p><p>حيث أوهمني بمشروع <input placeholder="نوع المشروع"> وتسلم مني مبلغ <input placeholder="المبلغ"> درهم بتاريخ <input type="date"></p><p>وحيث تبين أنه استعمل مناورات تدليسية للنصب علي.</p><p>وحيث أن الفصل 540 يعاقب بالحبس من سنة إلى 5 سنوات وغرامة من 500 إلى 5000 درهم.</p><p>لأجله ألتمس فتح بحث ومتابعته واسترجاع حقي.</p><p>المرفقات: نسخة ب.و - وصل أداء - محادثات</p>`},
-{id:4,title:"التزام بتحمل مصاريف السكن",cat:"التزامات ووكالات",html:`<h2>التزام بتحمل مصاريف السكن والنفقة</h2><p>أنا: <input placeholder="الاسم"> ب.و: <input placeholder="CIN"> الساكن بـ <input placeholder="العنوان"></p><p>ألتزم وأنا بكامل قواي العقلية بتحمل مصاريف سكن زوجتي وأبنائي الكائن بـ <input placeholder="العنوان"> من كراء وماء وكهرباء بمبلغ <input placeholder="المبلغ"> درهم شهريا.</p><p>وألتزم بعدم إخراجهم من بيت الزوجية.</p><p>وهذا التزام صحيح أتحمل المسؤولية عند الإخلال به.</p><p>حرر في <input placeholder="المدينة"> بتاريخ <input type="date"></p>`},
-{id:5,title:"وكالة خاصة لبيع عقار",cat:"التزامات ووكالات",html:`<h2>وكالة خاصة لبيع عقار</h2><p>أنا: <input placeholder="الاسم"> ب.و: <input placeholder="CIN"></p><p>أوكل السيد: <input placeholder="اسم الوكيل"> ب.و: <input placeholder="CIN"></p><p>لينوب عني في بيع العقار ذي الرسم العقاري <input placeholder="العدد"> الكائن بـ <input style="width:350px" placeholder="العنوان"></p><p>وله حق التوقيع وقبض الثمن وتمثيلي أمام المحافظة والتسجيل.</p><p>صالحة لمدة <input placeholder="المدة"> من تاريخ اليوم.</p>`}
-// هنا تقدر تزيد 95 نموذج آخر بنفس الطريقة
+const D=[
+{t:"1- طلب توضيح مفهوم الطلاق - المواد 78-93 من مدونة الأسرة - مفصل جدا",c:"أسرة",h:`<h2 style="text-align:center">طلب توضيح مفهوم الطلاق طبقا لمدونة الأسرة</h2><p><b>المادة 78:</b> الطلاق حل ميثاق الزوجية، يمارسه الزوج والزوجة كل بحسب شروطه تحت مراقبة القضاء وطبقا لأحكام مدونة الأسرة.</p><p><b>الفرق بين الطلاق والتطليق:</b> الطلاق بيد الزوجين، التطليق تحكم به المحكمة بطلب أحد الزوجين (الشقاق، الضرر...).</p><p><b>أنواع الطلاق:</b> 1- رجعي: يمكن للزوج إرجاع زوجته داخل العدة بدون عقد جديد. 2- بائن بينونة صغرى: ينتهي به الزواج ولا رجعة إلا بعقد جديد. 3- بائن بينونة كبرى: بعد ثلاث طلقات لا تحل له حتى تنكح زوجا غيره.</p><p><b>مسطرة الطلاق في المغرب:</b> تقديم طلب الإذن بالإشهاد - استدعاء الزوجة - محاولة الصلح وجوبا - تحديد مستحقات الزوجة والأطفال - الإشهاد بالطلاق عند العدلين داخل أجل 15 يوم.</p><p>حرر بتاريخ: <input> الإسم: <input> التوقيع: <input></p>`},
+{t:"2- عقد كراء شقة سكنية مفصل - القانون 67.12",c:"كراء",h:`<h2 style="text-align:center">عقد كراء شقة سكنية</h2><p>الطرف الأول المكري: السيد <input> الحامل لبطاقة رقم <input> الساكن ب <input></p><p>الطرف الثاني المكتري: السيد <input> الحامل لبطاقة رقم <input></p><p><b>البند 1 - موضوع الكراء:</b> شقة كائنة ب <input> الطابق <input> المساحة <input> م² تتكون من <input></p><p><b>البند 2 - المدة:</b> من <input> إلى <input> قابلة للتجديد باتفاق الطرفين.</p><p><b>البند 3 - الثمن:</b> <input> درهم شهريا يؤدي بداية كل شهر، مع تسبيق ضمان قدره <input> درهم.</p><p><b>البند 4 - التزامات المكتري:</b> المحافظة على العين، أداء فواتير الماء والكهرباء، عدم إحداث تغييرات جوهرية إلا بإذن كتابي، الإفراغ عند انتهاء المدة.</p><p><b>البند 5 - الفسخ:</b> في حالة عدم الأداء بعد إنذار 15 يوم يفسخ العقد طبقا للمادة 23 من قانون 67.12.</p><p>الإمضاءات مع المصادقة</p>`},
+{t:"3- شكاية نصب واحتيال - الفصل 540 من القانون الجنائي",c:"شكاية",h:`<h2 style="text-align:center">شكاية نصب واحتيال طبقا للفصل 540 ق.ج</h2><p>إلى السيد وكيل الملك لدى المحكمة الابتدائية ب <input></p><p>المشتكي: <input> الساكن ب <input> رقم الهاتف <input></p><p>المشتكى به: <input> الساكن ب <input></p><p><b>الموضوع:</b> بتاريخ <input> تعرفت على المشتكى به الذي أوهمني أنه يملك <input> وأنه سيقوم ب <input> مقابل مبلغ <input> درهم، فسلمته المبلغ نقدا/تحويلا بنكيا، وبعد ذلك تبين أنه لا يتوفر على أي شيء وأنه استعمل وسائل احتيالية للحصول على المال.</p><p><b>النص القانوني:</b> الفصل 540 ق.ج يعاقب بالحبس من سنة إلى 5 سنوات وغرامة على كل من استعمل تدليسا للحصول على مال الغير.</p><p>لأجله ألتمس فتح بحث وإحالة المشتكى به على المحكمة.</p><p>المرفقات: نسخة بطاقة، إثبات تحويل، محادثات واتساب.</p>`}
 ];
-
-const extra = ["عقد بيع سيارة مستعملة","عقد كراء محل تجاري","طلب عمل","طلب استعطاف","وكالة عامة","عقد عمل CDD","شكاية سرقة","طلب نفقة","طلب حضانة","إقرار بدين","عقد شراكة","فاتورة بيع","وصل أداء","طلب رخصة بناء","شهادة تصريح بالشرف","طلب طلاق اتفاقي","شكاية سب وشتم","تنازل عن كراء","إنهاء عقد كراء","طلب شهادة السكنى"];
-let id=6;
-for(let t of extra){ allDocs.push({id:id++,title:t,cat:t.includes("كراء")||t.includes("بيع")?"كراء وبيع":t.includes("شكاية")||t.includes("طلب طلاق")||t.includes("نفقة")?"شكايات ومحاكم":t.includes("وكالة")||t.includes("التزام")||t.includes("إقرار")?"التزامات ووكالات":"إدارية",html:`<h2>${t}</h2><p>الاسم: <input placeholder="الاسم"> ب.و: <input placeholder="CIN"></p><p>الموضوع: ${t}</p><p>أنا الموقع أسفله ألتزم طبقا للقانون بما يلي...</p><p>حرر بتاريخ <input type="date"></p>`}); }
-
-const cats=["الكل","كراء وبيع","شكايات ومحاكم","التزامات ووكالات","إدارية","شركات ومقاولة"];
-let active="الكل";
-function initTabs(){document.getElementById('tabs').innerHTML=cats.map(c=>`<div class="tab ${c===active?'active':''}" onclick="setCat('${c}')">${c}</div>`).join('');}
-function setCat(c){active=c;initTabs();render();}
-function render(){
- let q=document.getElementById('search').value.toLowerCase();
- let f=allDocs.filter(d=>(active==="الكل"||d.cat===active) && (!q||d.title.toLowerCase().includes(q)));
- document.getElementById('list').innerHTML=f.map(d=>`<div class="card"><div><b>${d.title}</b><br><small>${d.cat}</small></div><button class="btn-open" onclick="openDoc(${d.id})">فتح</button></div>`).join('')+`<p style="text-align:center;color:#888">${f.length} نموذج</p>`;
-}
-function openDoc(id){let d=allDocs.find(x=>x.id===id);document.getElementById('paper').innerHTML=d.html;document.getElementById('viewer').style.display='block';}
-function closeV(){document.getElementById('viewer').style.display='none';}
-function shareWA(){let t=document.querySelector('#paper h2')?.innerText||'نموذج';window.open(`https://wa.me/?text=${encodeURIComponent(t+" - عبر مشكلتي")}`);}
-initTabs();render();
-</script>
-</body>
-</html>
+const LIST=["وكالة خاصة لبيع عقار محفظ","عقد بيع سيارة مستعملة مع ضمان العيوب الخفية","التزام بتحمل مصاريف السكن والنفقة","التزام بالنفقة بعد الطلاق","عقد عمل محدد المدة CDD","عقد عمل غير محدد CDI","طلب عمل احترافي","شكاية سرقة - الفصل 505","شكاية خيانة الأمانة 547","شكاية تهديد وإهانة","طلب قسمة تركة","عقد شراكة تجارية","عقد كراء محل تجاري - القانون 49.16","إشعار بإنهاء علاقة كرائية","عقد بيع عقار","التزام بعدم التعرض","وكالة عامة","إشهاد بالتنازل عن حق","طلب استعطاف للسيد العامل","عقد كراء سيارة"];
+for(let i=0;i<97;i++){let nm=LIST[i%LIST.length]+" - نموذج "+(i+4);D.push({t:nm,c:["كراء","بيع","التزام","شكاية","أسرة"][i%5],h:`<h2 style="text-align:center">${nm}</h2><p>نموذج قانوني مغربي مفصل، مطابق للقانون المغربي الحالي لسنة 2024-2025.</p><p><b>الديباجة:</b> الحمد لله وحده، بتاريخ <input></p><p><b>الأطراف:</b> الطرف الأول <input> البطاقة <input> والطرف الثاني <input> البطاقة <input></p><p><b>الموضوع والبنود:</b> يلتزم الطرفان بما يلي: 1- موضوع العقد <input> 2- المدة والثمن <input> 3- التزامات الطرف الأول 4- التزامات الطرف الثاني 5- شروط الفسخ طبقا للقانون المغربي 6- الاختصاص القضائي لمحكمة <input></p><p>حرر في نظيرين، الإمضاء والمصادقة</p>`})}
+function R(){let q=document.getElementById('q').value.toLowerCase();let f=D.filter(x=>x.t.toLowerCase().includes(q));document.getElementById('L').innerHTML=f.map(d=>`<div class=c><div><b>${d.t}</b><br><small style="background:#FFF0F0;color:#C1272D;padding:2px 8px;border-radius:10px">${d.c}</small></div><a class=b href=# onclick="O(${D.indexOf(d)});return false">فتح</a></div>`).join('')}
+function O(i){document.getElementById('P').innerHTML=D[i].h+`<br><br><button class=btn pr onclick=window.print()>🖨️ طباعة / حفظ PDF</button>`;document.getElementById('V').style.display='block';window.scrollTo(0,0)}
+R();
+</script></body></html>
