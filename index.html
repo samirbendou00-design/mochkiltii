@@ -412,5 +412,75 @@ if('serviceWorker' in navigator){
 <!-- زر مكتبة النماذج -->
 <a href="docs.html" style="display:block; width:100%; background:#C1272D; color:white; padding:18px; text-align:center; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; margin:20px 0;">📄 مكتبة النماذج - 100 نموذج مفصل</a>
 
-</body>
+<!-- ==== PATCH - ربط الميكرو بالمكتبة بلا ما نبدل والو ==== -->
+<script>
+// هاد السكريبت كيربط الميكرو اللي عندك دابا بالمكتبة
+(function(){
+  // قلب على الميكرو والبحث اللي عندك دابا
+  const micBtn = document.querySelector('[onclick*="startVoice"], #micBtn, button:has(🎤)') || document.getElementById('micBtn');
+  const searchInput = document.getElementById('voiceText') || document.getElementById('search') || document.querySelector('input[placeholder*="قلب"], input[placeholder*="هنا غادي يبان"]');
+  const statusEl = document.getElementById('voiceStatus');
+
+  // إلا كان عندك دالة filterDocs خدامة، نخليوها هي اللي تخدم
+  function doFilter(){
+    if(typeof filterDocs === 'function'){
+      filterDocs(); // هادي ديالك القديمة
+    }
+    // إلا كان عندك دالة أخرى سميتها filter
+    if(typeof filter === 'function'){
+      filter();
+    }
+    // كنهبطو للمكتبة تلقائيا
+    const lib = document.getElementById('library') || document.getElementById('grid');
+    if(lib) lib.scrollIntoView({behavior:'smooth'});
+  }
+
+  // دالة الصوت الجديدة - مربوطة
+  window.startVoicePatched = function(){
+    if(!('webkitSpeechRecognition' in window) &&!('SpeechRecognition' in window)){
+      alert('استعمل Google Chrome باش يخدم الصوت');
+      return;
+    }
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const rec = new SR();
+    rec.lang = 'ar-MA';
+    rec.interimResults = false;
+
+    const btn = document.getElementById('micBtn');
+    if(btn) btn.style.background = '#000';
+    if(statusEl) statusEl.innerText = '🎙️ كنهضر... قول مثلا "شكاية نصب"';
+
+    rec.onresult = function(e){
+      const text = e.results[0][0].transcript;
+      if(searchInput){
+        searchInput.value = text;
+        searchInput.dispatchEvent(new Event('input')); // كيحفز البحث القديم ديالك
+        doFilter(); // كيقلب فالمكتبة
+      }
+      if(statusEl) statusEl.innerText = '✅ قلبت لك على: ' + text;
+      if(btn) btn.style.background = '';
+    };
+    rec.onerror = function(){
+      if(btn) btn.style.background = '';
+      if(statusEl) statusEl.innerText = '❌ عاود جرب';
+    };
+    rec.onend = function(){
+      if(btn) btn.style.background = '';
+    };
+    rec.start();
+  };
+
+  // نبدلو onclick ديال الميكرو باش يخدم بالربط الجديد
+  if(micBtn){
+    micBtn.setAttribute('onclick','startVoicePatched()');
+  }
+
+  // إلا كتكتب بيدك حتى هو يقلب تلقائيا
+  if(searchInput){
+    searchInput.addEventListener('input', doFilter);
+  }
+
+  console.log('✅ Patch تثبت - الميكرو دابا مربوط بالمكتبة بلا ما تبدل والو');
+})();
+</script></body>
 </html>
