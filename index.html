@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7493926171525023"
-     crossorigin="anonymous"></script><link rel="manifest" href="manifest.json">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7493926171525023" crossorigin="anonymous"></script><link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1a56db">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -98,8 +97,9 @@ body{background:#FFFBF5}
 <div id="domainsList" class="mt-4 space-y-2"></div>
 </div>
 <div class="bg-white rounded-[24px] p-5 big-shadow border">
-<h3 class="font-black">📄 100 نموذج وثيقة</h3>
+<h3 class="font-black">📄 100 نموذج وثيقة - مربوطة بالصوت 🎤</h3>
 <div class="mt-3 flex gap-2"><input id="docSearch" oninput="filterDocs()" placeholder="قلب على وثيقة... طلاق، كراء..." class="flex-1 bg-gray-50 border rounded-xl px-3 py-2 text-sm font-bold outline-none"><button onclick="openDocModal()" class="bg-black text-white px-3 rounded-xl text-sm font-black">قلب</button></div>
+<div id="voiceLinkStatus" class="hidden mt-2 bg-green-50 border border-green-200 text-green-700 text-[11px] font-bold p-2 rounded-xl"></div>
 <div id="docsPreview" class="mt-4 space-y-2 max-h-[400px] overflow-y-auto"></div>
 </div>
 <div class="bg-black rounded-[24px] p-5 text-white">
@@ -121,7 +121,7 @@ body{background:#FFFBF5}
 </div>
 <div id="docModal" class="hidden fixed inset-0 bg-black/70 z-[100] p-4 overflow-y-auto">
 <div class="bg-white max-w-4xl mx-auto rounded-[28px] p-6 mt-4">
-<div class="flex justify-between items-center"><h3 class="font-black text-2xl">📄 مكتبة الوثائق - 100 نموذج</h3><button onclick="closeDocModal()" class="w-10 h-10 bg-gray-100 rounded-full font-black">✕</button></div>
+<div class="flex justify-between items-center"><h3 class="font-black text-2xl">📄 مكتبة الوثائق - 100 نموذج - مربوطة بالصوت</h3><button onclick="closeDocModal()" class="w-10 h-10 bg-gray-100 rounded-full font-black">✕</button></div>
 <div class="mt-4 flex gap-2 overflow-x-auto pb-2"><button onclick="filterDocsByCat('all')" class="whitespace-nowrap bg-black text-white font-black px-4 py-2 rounded-full text-sm">الكل 100</button><button onclick="filterDocsByCat('rent')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🏠 كراء</button><button onclick="filterDocsByCat('family')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">👨‍👩‍👧 أسرة</button><button onclick="filterDocsByCat('land')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🌿 أرض</button><button onclick="filterDocsByCat('work')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">💼 شغل</button><button onclick="filterDocsByCat('admin')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🏢 إدارة</button><button onclick="filterDocsByCat('scam')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">⚠️ شكايات</button></div>
 <div class="flex gap-2 mt-4"><button id="langAR" onclick="setDocLang('ar')" class="flex-1 bg-[#006233] text-white font-black py-3 rounded-xl">عربية</button><button id="langFR" onclick="setDocLang('fr')" class="flex-1 bg-gray-100 font-black py-3 rounded-xl">Français</button><button onclick="window.print()" class="bg-black text-white font-black px-6 rounded-xl">🖨️ طبع</button></div>
 <div id="docListFull" class="mt-4 grid md:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto"></div>
@@ -205,6 +205,7 @@ body{background:#FFFBF5}
 </div>
 </div>
 <div id="adSticky" class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 p-2 z-30 shadow-2xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div class="flex-1 bg-gray-50 border-2 border-dashed rounded-xl h-[60px] flex items-center justify-center text-gray-400 font-black text-xs">📢 إعلان لاصق - Sticky Ad - مربح ديما - AdSense</div><button onclick="this.parentElement.parentElement.style.display='none'" class="mr-2 w-8 h-8 bg-gray-100 rounded-full">✕</button></div></div>
+<a href="docs.html" style="display:block; width:100%; background:#C1272D; color:white; padding:18px; text-align:center; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; margin:20px 0;">📄 مكتبة النماذج - 100 نموذج مفصل - اضغط هنا</a>
 <script>
 const tr={ar:{appTitle:"مشكلتي",subtitle:"Mochkilti - ⵎⵓⵛⴽⵉⵍⵜⵉ - دليلك القانوني",heroTitle:"شنو مشكلتك اليوم؟",heroSub:"هضر معايا بالدارجة، بالأمازيغية ولا الفرنسية، أنا نفهمك"},tz:{appTitle:"ⵎⵓⵛⴽⵉⵍⵜⵉ",subtitle:"Mochkilti - مشكلتي - ⴰⴱⵔⵉⴷ ⵏⵏⴽ ⴰⵣⵔⴼⴰⵏ",heroTitle:"ⵎⴰ ⴷ ⵎⵓⵛⴽⵉⵍ ⵏⵏⴽ?",heroSub:"ⵙⵉⵡⵍ ⵙ ⵜⴰⵎⴰⵣⵉⵖⵜ, ⵏⴽ ⴰⴷ ⴰⴽ ⵉⴼⵀⵎⵏ"},fr:{appTitle:"Mochkilti",subtitle:"Votre guide juridique - مشكلتي",heroTitle:"Quel est votre problème?",heroSub:"Parlez en Darija, Tamazight ou Français"}};
 let curLang='ar';
@@ -273,12 +274,13 @@ let finalTranscript="",currentLaw=null,docLang='ar',curDomain='all',selectedDoc=
 function selectDomain(d){curDomain=d; document.getElementById('textInput').placeholder=`كتب مشكل ${baseLaws[d]?baseLaws[d].name:d} هنا...`; document.getElementById('textInput').focus(); renderDomains(); filterDocsByCat(d);}
 function renderDomains(){const el=document.getElementById('domainsList'); el.innerHTML=Object.keys(baseLaws).map(k=>{const d=baseLaws[k]; return `<div class="flex items-center justify-between bg-gray-50 rounded-xl p-3"><div class="flex items-center gap-2"><span class="text-xl">${d.icon}</span><div><p class="font-black text-sm">${d.name}</p><p class="text-[11px] text-gray-400 font-bold">${d.laws.length} قانون • ${get100Docs().filter(x=>x.cat===k).length} وثيقة</p></div></div><button onclick="selectDomain('${k}')" class="bg-black text-white text-xs font-black px-3 py-1 rounded-full">دخول</button></div>`}).join('');}
 function renderDocsPreview(){const docs=get100Docs().slice(0,8); document.getElementById('docsPreview').innerHTML=docs.map((d,i)=>`<div class="flex justify-between items-center bg-gray-50 rounded-xl p-3 hover:bg-gray-100 cursor-pointer" onclick="openDocFromList(${i})"><div><p class="font-black text-xs">${d.title}</p><p class="text-[10px] text-gray-400">${d.cat}</p></div><span class="text-[10px] bg-black text-white px-2 py-1 rounded-full">📄</span></div>`).join('');}
-function filterDocs(){const q=document.getElementById('docSearch').value.toLowerCase(); const docs=get100Docs().filter(d=>d.title.toLowerCase().includes(q)); document.getElementById('docsPreview').innerHTML=docs.slice(0,20).map((d,i)=>`<div class="flex justify-between items-center bg-gray-50 rounded-xl p-3 cursor-pointer" onclick="openDocFromList(${get100Docs().indexOf(d)})"><p class="font-black text-xs">${d.title}</p><span class="text-[10px] bg-black text-white px-2 py-1 rounded-full">📄</span></div>`).join('');}
-function filterDocsByCat(cat){curDomain=cat; const docs=cat==='all'?get100Docs():get100Docs().filter(d=>d.cat===cat); const list=document.getElementById('docListFull'); if(list) list.innerHTML=docs.map((d,i)=>`<button onclick="openDocFromList(${get100Docs().indexOf(d)})" class="text-right bg-gray-50 hover:bg-black hover:text-white rounded-xl p-3 font-bold text-xs transition"><p>${d.title}</p><p class="text-[10px] opacity-60">${d.titleFr} • ${d.cat}</p></button>`).join('');}let recognition;if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;recognition=new SR();recognition.lang='ar-MA';recognition.onstart=()=>{document.getElementById('recordBtn').classList.add('voice-pulse');document.getElementById('recordText').innerHTML="كنسمع...<br>هضر دابا";document.getElementById('wave').classList.remove('hidden');};recognition.onend=()=>{document.getElementById('recordBtn').classList.remove('voice-pulse');document.getElementById('recordText').innerHTML="عود لمشكلتك<br>بصوتك";document.getElementById('wave').classList.add('hidden');};recognition.onresult=(e)=>{finalTranscript=e.results[0][0].transcript;showTranscription(finalTranscript);};recognition.onerror=()=>{alert("ما سمعتكش مزيان، عاود");recognition.onend();};}
+function filterDocs(){const q=document.getElementById('docSearch').value.toLowerCase(); const docs=q?get100Docs().filter(d=>d.title.toLowerCase().includes(q)):get100Docs().slice(0,20); document.getElementById('docsPreview').innerHTML=docs.slice(0,20).map((d,i)=>`<div class="flex justify-between items-center bg-gray-50 rounded-xl p-3 cursor-pointer hover:bg-gray-100" onclick="openDocFromList(${get100Docs().indexOf(d)})"><p class="font-black text-xs">${d.title}</p><span class="text-[10px] bg-black text-white px-2 py-1 rounded-full">📄</span></div>`).join(''); if(q){ const st=document.getElementById('voiceLinkStatus'); if(st){ st.classList.remove('hidden'); st.innerText=`🔍 لقيت ${docs.length} وثيقة مطابقة لـ "${q}" - الصوت مربوط ✓`; }}}
+function filterDocsByCat(cat){curDomain=cat; const docs=cat==='all'?get100Docs():get100Docs().filter(d=>d.cat===cat); const list=document.getElementById('docListFull'); if(list) list.innerHTML=docs.map((d,i)=>`<button onclick="openDocFromList(${get100Docs().indexOf(d)})" class="text-right bg-gray-50 hover:bg-black hover:text-white rounded-xl p-3 font-bold text-xs transition"><p>${d.title}</p><p class="text-[10px] opacity-60">${d.titleFr} • ${d.cat}</p></button>`).join('');}
+let recognition;if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;recognition=new SR();recognition.lang='ar-MA';recognition.onstart=()=>{document.getElementById('recordBtn').classList.add('voice-pulse');document.getElementById('recordText').innerHTML="كنسمع...<br>هضر دابا";document.getElementById('wave').classList.remove('hidden');};recognition.onend=()=>{document.getElementById('recordBtn').classList.remove('voice-pulse');document.getElementById('recordText').innerHTML="عود لمشكلتك<br>بصوتك";document.getElementById('wave').classList.add('hidden');};recognition.onresult=(e)=>{finalTranscript=e.results[0][0].transcript;showTranscription(finalTranscript); document.getElementById('docSearch').value=finalTranscript; filterDocs(); const linkSt=document.getElementById('voiceLinkStatus'); if(linkSt){ linkSt.classList.remove('hidden'); linkSt.innerText=`🎤 سمعتك قلتي "${finalTranscript}" - قلبت لك فالمكتبة لتحت ✓`; } document.getElementById('docsPreview').scrollIntoView({behavior:'smooth',block:'center'});};recognition.onerror=()=>{alert("ما سمعتكش مزيان، عاود");recognition.onend();};}
 document.getElementById('recordBtn').onclick=()=>{if(!recognition){alert("كتب لتحت");return;}try{recognition.start();}catch{recognition.stop();}};
 function showTranscription(t){document.getElementById('transBox').classList.remove('hidden');document.getElementById('transText').innerText=t;document.getElementById('transBox').scrollIntoView({behavior:'smooth'});}
 function reset(){document.getElementById('transBox').classList.add('hidden');document.getElementById('result').classList.add('hidden');finalTranscript="";document.getElementById('textInput').value="";}
-function analyzeFromText(){const v=document.getElementById('textInput').value.trim();if(v.length<5){alert("كتب كتر");return;}finalTranscript=v;showTranscription(v);analyze();}
+function analyzeFromText(){const v=document.getElementById('textInput').value.trim();if(v.length<5){alert("كتب كتر");return;}finalTranscript=v;showTranscription(v);document.getElementById('docSearch').value=v;filterDocs();analyze();}
 function analyze(){
  if(!finalTranscript)return;
  currentLaw=detectLaw(finalTranscript);
@@ -302,7 +304,7 @@ function speakLaw(){speak(document.getElementById('lawText').innerText);}
 function openDocModal(){document.getElementById('docModal').classList.remove('hidden');filterDocsByCat(curDomain); if(!selectedDoc) openDocFromList(0);}
 function closeDocModal(){document.getElementById('docModal').classList.add('hidden');}
 function setDocLang(l){docLang=l;document.getElementById('langAR').className=l==='ar'?"flex-1 bg-[#006233] text-white font-black py-3 rounded-xl":"flex-1 bg-gray-100 font-black py-3 rounded-xl";document.getElementById('langFR').className=l==='fr'?"flex-1 bg-[#006233] text-white font-black py-3 rounded-xl":"flex-1 bg-gray-100 font-black py-3 rounded-xl"; if(selectedDoc) updateDocContent();}
-function openDocFromList(idx){selectedDoc=get100Docs()[idx]; updateDocContent();}
+function openDocFromList(idx){selectedDoc=get100Docs()[idx]; updateDocContent(); openDocModal();}
 function updateDocContent(){
  if(!selectedDoc)return; let name=prompt(docLang==='ar'?"سميتك الكاملة؟":"Nom complet?")||"فلان الفلاني";
  let problem=finalTranscript||"........";
@@ -403,84 +405,6 @@ function resetAll(){if(confirm('متأكد بغيتي تمسح كلشي؟ الز
 renderDomains();renderDocsPreview();
 if(isVip)document.getElementById('vipBadge').classList.remove('hidden');
 </script>
-<script>
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js');
-}
-</script>
-
-<!-- زر مكتبة النماذج -->
-<a href="docs.html" style="display:block; width:100%; background:#C1272D; color:white; padding:18px; text-align:center; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; margin:20px 0;">📄 مكتبة النماذج - 100 نموذج مفصل</a>
-
-<!-- ==== PATCH - ربط الميكرو بالمكتبة بلا ما نبدل والو ==== -->
-<script>
-// هاد السكريبت كيربط الميكرو اللي عندك دابا بالمكتبة
-(function(){
-  // قلب على الميكرو والبحث اللي عندك دابا
-  const micBtn = document.querySelector('[onclick*="startVoice"], #micBtn, button:has(🎤)') || document.getElementById('micBtn');
-  const searchInput = document.getElementById('voiceText') || document.getElementById('search') || document.querySelector('input[placeholder*="قلب"], input[placeholder*="هنا غادي يبان"]');
-  const statusEl = document.getElementById('voiceStatus');
-
-  // إلا كان عندك دالة filterDocs خدامة، نخليوها هي اللي تخدم
-  function doFilter(){
-    if(typeof filterDocs === 'function'){
-      filterDocs(); // هادي ديالك القديمة
-    }
-    // إلا كان عندك دالة أخرى سميتها filter
-    if(typeof filter === 'function'){
-      filter();
-    }
-    // كنهبطو للمكتبة تلقائيا
-    const lib = document.getElementById('library') || document.getElementById('grid');
-    if(lib) lib.scrollIntoView({behavior:'smooth'});
-  }
-
-  // دالة الصوت الجديدة - مربوطة
-  window.startVoicePatched = function(){
-    if(!('webkitSpeechRecognition' in window) &&!('SpeechRecognition' in window)){
-      alert('استعمل Google Chrome باش يخدم الصوت');
-      return;
-    }
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const rec = new SR();
-    rec.lang = 'ar-MA';
-    rec.interimResults = false;
-
-    const btn = document.getElementById('micBtn');
-    if(btn) btn.style.background = '#000';
-    if(statusEl) statusEl.innerText = '🎙️ كنهضر... قول مثلا "شكاية نصب"';
-
-    rec.onresult = function(e){
-      const text = e.results[0][0].transcript;
-      if(searchInput){
-        searchInput.value = text;
-        searchInput.dispatchEvent(new Event('input')); // كيحفز البحث القديم ديالك
-        doFilter(); // كيقلب فالمكتبة
-      }
-      if(statusEl) statusEl.innerText = '✅ قلبت لك على: ' + text;
-      if(btn) btn.style.background = '';
-    };
-    rec.onerror = function(){
-      if(btn) btn.style.background = '';
-      if(statusEl) statusEl.innerText = '❌ عاود جرب';
-    };
-    rec.onend = function(){
-      if(btn) btn.style.background = '';
-    };
-    rec.start();
-  };
-
-  // نبدلو onclick ديال الميكرو باش يخدم بالربط الجديد
-  if(micBtn){
-    micBtn.setAttribute('onclick','startVoicePatched()');
-  }
-
-  // إلا كتكتب بيدك حتى هو يقلب تلقائيا
-  if(searchInput){
-    searchInput.addEventListener('input', doFilter);
-  }
-
-  console.log('✅ Patch تثبت - الميكرو دابا مربوط بالمكتبة بلا ما تبدل والو');
-})();
-</script></body>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
+</body>
 </html>
