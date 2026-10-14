@@ -21,7 +21,7 @@
 </head>
 <body class="min-h-screen">
 <div class="bg-black text-white text-[11px] font-bold py-1.5 px-4 flex justify-between"><span>🇲🇦 Mochkilti.ma</span><span>دليلك القانوني الذكي</span></div>
-<header class="morocco-gradient text-white p-4 sticky top-0 z-40 shadow-xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div class="flex items-center gap-3"><div id="secretLogo" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#C1272D] font-black text-2xl">م</div><div><h1 class="font-black text-[22px]">مشكلتي</h1><p class="text-[11px]">دليلك القانوني بالدارجة</p></div></div><div id="vipBadge" class="hidden bg-yellow-400 text-black text-[10px] font-black px-3 py-1 rounded-full">VIP PRO</div></div></header>
+<header class="morocco-gradient text-white p-4 sticky top-0 z-40 shadow-xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div class="flex items-center gap-3"><div id="secretLogo" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#C1272D] font-black text-2xl cursor-pointer">م</div><div><h1 class="font-black text-[22px]">مشكلتي</h1><p class="text-[11px]">دليلك القانوني بالدارجة</p></div></div><a href="my-cases.html" class="bg-white text-[#C1272D] text-[10px] font-black px-3 py-1 rounded-full">💾 قضاياي</a><div id="vipBadge" class="hidden bg-yellow-400 text-black text-[10px] font-black px-3 py-1 rounded-full">VIP PRO</div></div></header>
 <div class="max-w-6xl mx-auto p-4 pb-28 grid lg:grid-cols-3 gap-6">
 <div class="lg:col-span-2 space-y-5">
 <div class="bg-white rounded-[32px] p-8 big-shadow border text-center"><h2 class="font-black text-[28px]">شنو مشكلتك اليوم؟</h2><p class="text-gray-500 font-bold mt-2">هضر بالدارجة، أنا نفهمك ونجبد لك النموذج + PDF</p></div>
@@ -32,19 +32,32 @@
 </div>
 <p id="recordHint" class="mt-6 text-sm text-gray-400 font-bold">مثلا: موظف ما بغاش يعطيني وثيقة، نصب عليا، ضربني، جناية، جنحة، مخالفة...</p>
 <div id="wave" class="hidden mt-4 flex justify-center gap-1"><div class="w-1 h-6 bg-[#C1272D] rounded animate-bounce"></div><div class="w-1 h-8 bg-[#C1272D] rounded animate-bounce"></div><div class="w-1 h-10 bg-[#C1272D] rounded animate-bounce"></div></div>
-<div class="mt-6 relative"><textarea id="textInput" placeholder="ولا كتب هنا: موظف ما بغاش يعطيني وثيقة الإثارة..." class="w-full bg-[#FFFBF5] rounded-[20px] p-4 border-2 border-gray-100 outline-none font-bold min-h-[110px] text-[15px]"></textarea><button onclick="analyzeFromText()" class="absolute left-3 bottom-3 bg-black text-white font-black px-5 py-2 rounded-xl text-sm">حلل ✓</button></div>
+<div class="mt-6 relative">
+<textarea id="textInput" placeholder="ولا كتب هنا: موظف ما بغاش يعطيني وثيقة..." class="w-full bg-[#FFFBF5] rounded-[20px] p-4 border-2 border-gray-100 outline-none font-bold min-h-[110px] text-[15px]"></textarea>
+<button onclick="analyzeFromText()" class="absolute left-3 bottom-3 bg-black text-white font-black px-5 py-2 rounded-xl text-sm">حلل ✓</button>
 </div>
-<div id="transBox" class="hidden bg-white rounded-[24px] p-5 border-2 border-dashed border-[#006233]/30"><p class="text-xs font-black text-[#006233]">🎧 سمعتك قلتي:</p><p id="transText" class="font-black text-lg mt-2"></p><div class="mt-4 flex gap-2"><button onclick="analyze()" class="flex-1 green-gradient text-white font-black py-3 rounded-xl">حلل ليا المشكل ✓</button><button onclick="resetAll()" class="px-6 py-3 bg-gray-100 rounded-xl font-bold">مسح</button></div></div><div id="result" class="hidden space-y-4">
+<!-- حقول الاسم للـ PDF - مخفية ولكن خدامة -->
+<div class="mt-4 grid grid-cols-2 gap-2">
+<input id="userName" placeholder="سميتك (لـ PDF والحفظ)" class="bg-[#FFFBF5] border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none">
+<input id="userCity" placeholder="المدينة" class="bg-[#FFFBF5] border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none">
+</div>
+<div id="pdfPreview" class="hidden mt-4 bg-gray-50 p-4 rounded-xl text-xs font-bold text-left whitespace-pre-wrap"></div>
+</div>
+<div id="transBox" class="hidden bg-white rounded-[24px] p-5 border-2 border-dashed border-[#006233]/30"><p class="text-xs font-black text-[#006233]">🎧 سمعتك قلتي:</p><p id="transText" class="font-black text-lg mt-2"></p><div class="mt-4 flex gap-2"><button onclick="analyze()" class="flex-1 green-gradient text-white font-black py-3 rounded-xl">حلل ليا المشكل ✓</button><button onclick="resetAll()" class="px-6 py-3 bg-gray-100 rounded-xl font-bold">مسح</button></div></div>
+
+<div id="result" class="hidden space-y-4">
 <div class="bg-white rounded-[28px] overflow-hidden big-shadow border">
 <div class="green-gradient text-white p-5 flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl" id="catIcon">⚖️</div><div><p class="text-xs opacity-80 font-bold">الموضوع ديالك</p><p id="catName" class="font-black text-xl"></p><p id="catLawCount" class="text-[11px] opacity-80 font-bold"></p></div></div>
 <div class="p-6 space-y-5">
 <div class="bg-[#FFF8F0] rounded-2xl p-5 border-r-[8px] border-[#C1272D]"><div class="flex items-center gap-2 mb-3"><span class="bg-[#C1272D] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">1</span><h3 class="font-black text-[#C1272D] text-lg">آش كيقول القانون؟</h3></div><p id="lawText" class="font-bold leading-loose text-[15px]"></p><div class="mt-3 flex flex-wrap gap-2"><span id="lawArticle" class="bg-[#006233] text-white text-xs font-black px-3 py-1 rounded-full"></span></div></div>
 <div class="bg-[#F0F7FF] rounded-2xl p-5 border-r-[8px] border-[#006233]"><div class="flex items-center gap-2 mb-4"><span class="bg-[#006233] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">2</span><h3 class="font-black text-[#006233] text-lg">آش خاصك تدير دابا؟</h3></div><div id="steps" class="space-y-3"></div></div>
 <div class="bg-gray-50 rounded-2xl p-5 border-r-[8px] border-black"><div class="flex items-center gap-2 mb-4"><span class="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center font-black">3</span><h3 class="font-black text-lg">فين تمشي؟ والوثائق لي خاصك</h3></div><div id="where" class="space-y-2 font-bold text-sm"></div><div id="docsNeeded" class="mt-4 bg-white p-4 rounded-xl border"></div></div>
-
-<!-- الجديد - مولد PDF + واتساب -->
-<div class="grid gap-2"><button onclick="generatePDF()" class="bg-[#006233] text-white font-black py-4 rounded-xl">📄 حمل PDF دابا بسميتك</button><button onclick="shareWhatsApp()" class="bg-[#25D366] text-white font-black py-4 rounded-xl">📤 صيفط الحل لواتساب</button><button onclick="saveMyCase()" class="w-full bg-black border-2 border-[#006233] text-white font-black py-3 rounded-xl text-sm mt-2">💾 حفظ في قضاياي + حساب الآجال</button><button id="docLinkBtn" class="bg-black text-white font-black py-3 rounded-xl text-sm">📚 شوف النموذج</button></div>
-
+<div class="grid gap-2">
+<button onclick="generatePDF()" class="bg-[#006233] text-white font-black py-4 rounded-xl">📄 حمل PDF دابا بسميتك</button>
+<button onclick="shareWhatsApp()" class="bg-[#25D366] text-white font-black py-4 rounded-xl">📤 صيفط الحل لواتساب</button>
+<button onclick="saveMyCase()" class="w-full bg-black border-2 border-[#006233] text-white font-black py-3 rounded-xl text-sm mt-2">💾 حفظ في قضاياي + حساب الآجال</button>
+<button id="docLinkBtn" class="bg-black text-white font-black py-3 rounded-xl text-sm">📚 شوف النموذج</button>
+</div>
 </div>
 </div>
 <button onclick="window.location.href='docs.html'" class="w-full morocco-gradient text-white font-black text-lg py-5 rounded-[20px] big-shadow">📄 شوف كاع النماذج فالمكتبة →</button>
@@ -57,12 +70,12 @@
 </div>
 </div>
 
-<footer class="max-w-6xl mx-auto mt-6 p-6 bg-black rounded-[24px] text-white text-center"><div class="flex justify-center gap-4 text-[12px] font-black"><a href="about.html" class="underline">من نحن</a><a href="privacy.html" class="underline">الخصوصية</a><a href="contact.html" class="underline">اتصل بنا</a><a href="docs.html" class="underline">النماذج</a></div><p class="text-[11px] mt-3 opacity-60">© 2026 Mochkilti.ma - توجيه قانوني أولي فقط</p></footer>
+<footer class="max-w-6xl mx-auto mt-6 p-6 bg-black rounded-[24px] text-white text-center"><div class="flex justify-center gap-4 text-[12px] font-black"><a href="about.html" class="underline">من نحن</a><a href="privacy.html" class="underline">الخصوصية</a><a href="contact.html" class="underline">اتصل بنا - 07.66.33.64.35</a><a href="docs.html" class="underline">النماذج</a></div><p class="text-[11px] mt-3 opacity-60">© 2026 Mochkilti.ma - توجيه قانوني أولي فقط</p></footer>
 
 <div id="adminLogin" class="hidden fixed inset-0 bg-black/80 z-[300] p-4 flex items-center justify-center"><div class="bg-white rounded-[28px] p-8 max-w-sm w-full text-center"><h3 class="font-black text-xl">دخول الإدارة</h3><input id="adminPassInput" type="password" placeholder="كلمة السر" class="w-full mt-6 bg-gray-50 border-2 rounded-xl p-4 font-bold text-center"><button onclick="loginAdmin()" class="w-full mt-3 bg-black text-white font-black py-4 rounded-xl">دخول</button><button onclick="closeLogin()" class="w-full mt-2 text-gray-400 font-bold text-sm">إلغاء</button></div></div>
 
 <div id="adminPanel" class="hidden fixed inset-0 bg-[#0A0A0A] z-[250] overflow-y-auto"><div class="max-w-4xl mx-auto p-4 text-white pb-28">
-<div class="flex justify-between items-center"><h2 class="font-black text-3xl">لوحة التحكم - كاملة</h2><button onclick="closeAdmin()" class="w-10 h-10 bg-white/10 rounded-full">✕</button></div>
+<div class="flex justify-between items-center"><h2 class="font-black text-3xl">لوحة التحكم</h2><button onclick="closeAdmin()" class="w-10 h-10 bg-white/10 rounded-full">✕</button></div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
 <div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-60">الزيارات</p><p id="statVisits" class="font-black text-2xl">0</p></div>
 <div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-60">الأسئلة</p><p id="statQuestions" class="font-black text-2xl">0</p></div>
@@ -70,17 +83,17 @@
 <div class="bg-[#C1272D] rounded-2xl p-4"><p class="text-xs">PDF تحميلات</p><p id="statDL" class="font-black text-2xl">0</p><p id="adsenseStatus" class="text-[10px] mt-1">بانتظار الموافقة</p></div>
 </div>
 <div class="mt-8 space-y-6">
-<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📢 إعدادات الإعلانات - كود Adsense</h3><textarea id="adsenseCode" placeholder="حط هنا كود Adsense ca-pub-7493926171525023" class="w-full bg-black border border-white/20 rounded-xl p-3 text-xs h-20"></textarea><button onclick="saveAdsense()" class="mt-3 w-full bg-[#C1272D] font-black py-3 rounded-xl">حفظ كود Adsense ✓</button>
-<div class="mt-4 grid grid-cols-2 gap-3"><div><p class="text-xs mb-1">إعلان جانبي</p><textarea id="adSideCode" placeholder="كود الإعلان الجانبي" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div><div><p class="text-xs mb-1">إعلان لاصق سفلي</p><textarea id="adStickyCode" placeholder="كود الإعلان اللاصق" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div></div>
+<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📢 إعدادات الإعلانات</h3><textarea id="adsenseCode" placeholder="كود Adsense" class="w-full bg-black border border-white/20 rounded-xl p-3 text-xs h-20"></textarea><button onclick="saveAdsense()" class="mt-3 w-full bg-[#C1272D] font-black py-3 rounded-xl">حفظ كود Adsense ✓</button>
+<div class="mt-4 grid grid-cols-2 gap-3"><div><p class="text-xs mb-1">إعلان جانبي</p><textarea id="adSideCode" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div><div><p class="text-xs mb-1">إعلان لاصق سفلي</p><textarea id="adStickyCode" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div></div>
 <button onclick="saveAdCodes()" class="mt-3 w-full bg-white text-black font-black py-3 rounded-xl">حفظ كل الإعلانات</button>
 </div>
-<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📚 إدارة القوانين - فين كاين القانون - الكراء - قضية مقدارية...</h3><div class="grid grid-cols-2 gap-2"><input id="lawTitle" placeholder="عنوان القانون" class="bg-black border border-white/10 rounded-xl p-3 text-sm"><input id="lawArticleInput" placeholder="المادة - مثلا 55.19" class="bg-black border border-white/10 rounded-xl p-3 text-sm"></div><textarea id="lawContent" placeholder="نص القانون بالدارجة" class="w-full mt-2 bg-black border border-white/10 rounded-xl p-3 text-sm h-16"></textarea><button onclick="addLaw()" class="mt-2 w-full bg-[#006233] font-black py-3 rounded-xl">+ زيد قانون جديد</button><div id="lawsList" class="mt-3 space-y-2 text-xs"></div></div>
-<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">❓ الأسئلة الأخيرة من الزوار</h3><div id="questionsList" class="space-y-2 max-h-[300px] overflow-y-auto"></div></div>
+<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📚 إدارة القوانين</h3><div class="grid grid-cols-2 gap-2"><input id="lawTitle" placeholder="عنوان القانون" class="bg-black border border-white/10 rounded-xl p-3 text-sm"><input id="lawArticleInput" placeholder="المادة" class="bg-black border border-white/10 rounded-xl p-3 text-sm"></div><textarea id="lawContent" placeholder="نص القانون بالدارجة" class="w-full mt-2 bg-black border border-white/10 rounded-xl p-3 text-sm h-16"></textarea><button onclick="addLaw()" class="mt-2 w-full bg-[#006233] font-black py-3 rounded-xl">+ زيد قانون جديد</button><div id="lawsList" class="mt-3 space-y-2 text-xs"></div></div>
+<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">❓ الأسئلة الأخيرة</h3><div id="questionsList" class="space-y-2 max-h-[300px] overflow-y-auto"></div></div>
 <button onclick="closeAdmin()" class="w-full bg-white text-black font-black py-4 rounded-xl">خروج وحفظ</button>
 </div>
 </div></div>
 
-<div id="adSticky" class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 p-2 z-30 shadow-2xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div id="adStickyContent" class="flex-1 bg-gray-50 border-2 border-dashed rounded-xl h-[60px] flex items-center justify-center text-gray-400 font-black text-xs">📢 إعلان لاصق - Sticky Ad</div><button onclick="this.parentElement.parentElement.style.display='none'" class="mr-2 w-8 h-8 bg-gray-100 rounded-full">✕</button></div></div>
+<div id="adSticky" class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 p-2 z-30 shadow-2xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div id="adStickyContent" class="flex-1 bg-gray-50 border-2 border-dashed rounded-xl h-[60px] flex items-center justify-center text-gray-400 font-black text-xs">📢 إعلان لاصق</div><button onclick="this.parentElement.parentElement.style.display='none'" class="mr-2 w-8 h-8 bg-gray-100 rounded-full">✕</button></div></div>
 
 <script>
 let visits=parseInt(localStorage.getItem('moch_visits')||'0'); let questions=JSON.parse(localStorage.getItem('moch_q')||'[]'); let adminPass=localStorage.getItem('moch_pass')||'admin123'; let adsenseCode=localStorage.getItem('moch_adsense')||''; let adSide=localStorage.getItem('moch_adSide')||''; let adSticky=localStorage.getItem('moch_adSticky')||''; let earnings=localStorage.getItem('moch_earn')||'0.00'; let customLaws=JSON.parse(localStorage.getItem('moch_customLaws')||'[]'); visits++; localStorage.setItem('moch_visits',visits);
@@ -115,23 +128,25 @@ function analyze(){
  document.getElementById('docLinkBtn').onclick=()=>{window.location.href='docs.html?search='+encodeURIComponent(currentLaw.docKeyword);};
  document.getElementById('result').classList.remove('hidden'); document.getElementById('result').scrollIntoView({behavior:'smooth'});
 }
+
+// === الإصلاح: PDF و واتساب و الحفظ ===
 function generatePDF(){
   if(!currentLaw){alert("حلل أولا");return;}
-  const name=document.getElementById('userName').value||'................';
-  const cin=document.getElementById('userCIN').value||'................';
-  const city=document.getElementById('userCity').value||'................';
-  const phone=document.getElementById('userPhone').value||'................';
+  const name=document.getElementById('userName')?.value||'بدون اسم';
+  const city=document.getElementById('userCity')?.value||'................';
   const date=new Date().toLocaleDateString('ar-MA');
-  const content = `المملكة المغربية\nشكاية - ${currentLaw.title}\n--------------------------\nالاسم: ${name}\nCIN: ${cin}\nالمدينة: ${city}\nالهاتف: ${phone}\nالتاريخ: ${date}\n\nموضوع الشكاية: ${finalTranscript}\n\nالنص القانوني: ${currentLaw.law}\nالمرجع: ${currentLaw.article}\n\nالحلول:\n${currentLaw.steps.join('\n')}\n\nالجهة المختصة:\n${currentLaw.where.join('\n')}\n\nالإمضاء:\n${name}`;
-  document.getElementById('pdfPreview').classList.remove('hidden'); document.getElementById('pdfPreview').innerText=content;
-  const { jsPDF } = window.jspdf; const doc = new jsPDF(); const lines = doc.splitTextToSize(content, 180); doc.text(lines, 10, 10); doc.save(`Mochkilti-${currentLaw.docKeyword}-${name}.pdf`);
-  let dl=parseInt(localStorage.getItem('moch_dl')||'0')+1; localStorage.setItem('moch_dl',dl);
+  const content = `Mochkilti.ma - ${currentLaw.title}\n--------------------------\nName: ${name}\nCity: ${city}\nDate: ${date}\n\nProblem: ${finalTranscript}\n\nLaw: ${currentLaw.law}\nRef: ${currentLaw.article}\n\nSteps:\n${currentLaw.steps.join('\n')}\n\nWhere:\n${currentLaw.where.join('\n')}\n\nSignature: ${name}`;
+  try{
+    const { jsPDF } = window.jspdf; const doc = new jsPDF(); const lines = doc.splitTextToSize(content, 180); doc.text(lines, 10, 10); doc.save(`Mochkilti-${name}-${Date.now()}.pdf`);
+    let dl=parseInt(localStorage.getItem('moch_dl')||'0')+1; localStorage.setItem('moch_dl',dl);
+    document.getElementById('pdfPreview').classList.remove('hidden'); document.getElementById('pdfPreview').innerText=content;
+  }catch(e){ alert("PDF: "+e.message); }
 }
 function shareWhatsApp(){
   if(!currentLaw){alert("حلل أولا");return;}
-  const name=document.getElementById('userName').value||'';
-  let text=`${name? 'أنا '+name+' - ':''}عندي مشكل: ${finalTranscript}%0A%0A📌 القانون: ${currentLaw.law}%0A%0A✅ الحلول: ${currentLaw.steps.join(' - ')}%0A%0A📍 فين نمشي: ${currentLaw.where.join(' - ')}%0A%0A📄 النموذج: ${currentLaw.docTitle}%0A%0AMochkilti.ma 🇲🇦`;
-  window.open(`https://wa.me/?text=${text}`,'_blank');
+  const name=document.getElementById('userName')?.value||'';
+  let text=`${name? 'Ana '+name+' - ':''}3ndi mochkil: ${finalTranscript}\n\nLaw: ${currentLaw.law}\n\nSteps: ${currentLaw.steps.join(' - ')}\n\nWhere: ${currentLaw.where.join(' - ')}\n\nDoc: ${currentLaw.docTitle}\nMochkilti.ma`;
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,'_blank');
 }
 function saveMyCase(){
  if(!currentLaw){alert("حل المشكل أولا");return;}
@@ -140,13 +155,13 @@ function saveMyCase(){
  const startDate=new Date();
  let deadlineDays=60;
  if(currentLaw.docKeyword=='كراء') deadlineDays=30;
- if(currentLaw.docKeyword=='عمل') deadlineDays=15;
- if(currentLaw.docKeyword=='نفقة') deadlineDays=30;
+ if(currentLaw.docKeyword=='وثيقة') deadlineDays=60;
+ if(currentLaw.docKeyword=='نصب') deadlineDays=90;
  const deadline=new Date(startDate.getTime()+deadlineDays*24*60*60*1000);
  myCases.unshift({
   id:Date.now(),
   title:currentLaw.title,
-  problem:document.getElementById('problemInput')?.value?.substring(0,100)||'',
+  problem:finalTranscript.substring(0,120),
   startDate:startDate.toLocaleDateString('ar-MA'),
   deadlineDate:deadline.toLocaleDateString('ar-MA'),
   deadlineTime:deadline.getTime(),
@@ -154,10 +169,10 @@ function saveMyCase(){
   name:name
  });
  localStorage.setItem('moch_myCases',JSON.stringify(myCases));
- alert('✅ تحفظ فـ قضاياي! الأجل: '+deadlineDays+' يوم');
+ alert('✅ تحفظ فـ قضاياي! الأجل: '+deadlineDays+' يوم - غادي نديك دابا');
  window.location.href='my-cases.html';
 }
-let clickCount=0; document.getElementById('secretLogo').onclick=()=>{...
+let clickCount=0; document.getElementById('secretLogo').onclick=()=>{clickCount++; if(clickCount>=5){document.getElementById('adminLogin').classList.remove('hidden'); clickCount=0;} setTimeout(()=>clickCount=0,3000);};
 function closeLogin(){document.getElementById('adminLogin').classList.add('hidden');}
 function loginAdmin(){const p=document.getElementById('adminPassInput').value; if(p===adminPass){document.getElementById('adminLogin').classList.add('hidden'); openAdmin();} else alert("غالطة");}
 function openAdmin(){
