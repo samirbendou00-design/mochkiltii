@@ -43,7 +43,7 @@
 <div class="bg-gray-50 rounded-2xl p-5 border-r-[8px] border-black"><div class="flex items-center gap-2 mb-4"><span class="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center font-black">3</span><h3 class="font-black text-lg">فين تمشي؟ والوثائق لي خاصك</h3></div><div id="where" class="space-y-2 font-bold text-sm"></div><div id="docsNeeded" class="mt-4 bg-white p-4 rounded-xl border"></div></div>
 
 <!-- الجديد - مولد PDF + واتساب -->
-<div class="bg-white rounded-[20px] p-5 border-2 border-dashed border-[#006233]/30"><h3 class="font-black text-[#006233]">📝 عمر معلوماتك باش نوجد لك PDF بسميتك</h3><div class="grid grid-cols-2 gap-3 mt-4"><input id="userName" placeholder="الاسم الكامل" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userCIN" placeholder="CIN" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userCity" placeholder="المدينة" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userPhone" placeholder="الهاتف" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"></div><div class="mt-4 grid grid-cols-1 gap-2"><button onclick="generatePDF()" class="bg-[#006233] text-white font-black py-4 rounded-xl">📄 حمل PDF بسميتك دابا</button><button onclick="shareWhatsApp()" class="bg-[#25D366] text-white font-black py-4 rounded-xl">📤 صيفط الحل لواتساب</button><button id="docLinkBtn" class="bg-black text-white font-black py-3 rounded-xl text-sm">📚 شوف النموذج فالمكتبة ديالك</button></div><div id="pdfPreview" class="hidden mt-4 bg-[#FFFBF5] p-4 rounded-xl border text-[12px] font-bold leading-loose whitespace-pre-wrap"></div></div>
+<div class="grid gap-2"><button onclick="generatePDF()" class="bg-[#006233] text-white font-black py-4 rounded-xl">📄 حمل PDF دابا بسميتك</button><button onclick="shareWhatsApp()" class="bg-[#25D366] text-white font-black py-4 rounded-xl">📤 صيفط الحل لواتساب</button><button onclick="saveMyCase()" class="w-full bg-black border-2 border-[#006233] text-white font-black py-3 rounded-xl text-sm mt-2">💾 حفظ في قضاياي + حساب الآجال</button><button id="docLinkBtn" class="bg-black text-white font-black py-3 rounded-xl text-sm">📚 شوف النموذج</button></div>
 
 </div>
 </div>
@@ -133,7 +133,24 @@ function shareWhatsApp(){
   let text=`${name? 'أنا '+name+' - ':''}عندي مشكل: ${finalTranscript}%0A%0A📌 القانون: ${currentLaw.law}%0A%0A✅ الحلول: ${currentLaw.steps.join(' - ')}%0A%0A📍 فين نمشي: ${currentLaw.where.join(' - ')}%0A%0A📄 النموذج: ${currentLaw.docTitle}%0A%0AMochkilti.ma 🇲🇦`;
   window.open(`https://wa.me/?text=${text}`,'_blank');
 }
-let clickCount=0; document.getElementById('secretLogo').onclick=()=>{clickCount++; if(clickCount>=7){document.getElementById('adminLogin').classList.remove('hidden'); clickCount=0;} setTimeout(()=>clickCount=0,3000);};
+  function saveMyCase(){
+  if(!currentLaw){alert("حلل أولا");return;}
+  const name=document.getElementById('userName').value||'بدون اسم';
+  let myCases=JSON.parse(localStorage.getItem('moch_myCases')||'[]');
+  const startDate=new Date();
+  let deadlineDays=60;
+  if(currentLaw.docKeyword==='كراء') deadlineDays=30;
+  if(currentLaw.docKeyword==='جناية') deadlineDays=15;
+  if(currentLaw.docKeyword==='نصب') deadlineDays=30;
+  let deadline=new Date(); deadline.setDate(startDate.getDate()+deadlineDays);
+  let appeal=new Date(); appeal.setDate(deadline.getDate()+30);
+  const c={id:Date.now(),name:name,problem:finalTranscript,law:currentLaw.title,date:startDate.toLocaleDateString('ar-MA'),deadline:deadline.toLocaleDateString('ar-MA'),appeal:appeal.toLocaleDateString('ar-MA'),days:deadlineDays,status:'مفتوحة'};
+  myCases.unshift(c);
+  localStorage.setItem('moch_myCases',JSON.stringify(myCases));
+  alert(`✅ تحفظات! الآجال: ${c.deadline}`);
+  window.location.href='my-cases.html';
+}
+let clickCount=0; document.getElementById('secretLogo').onclick=()=>{...
 function closeLogin(){document.getElementById('adminLogin').classList.add('hidden');}
 function loginAdmin(){const p=document.getElementById('adminPassInput').value; if(p===adminPass){document.getElementById('adminLogin').classList.add('hidden'); openAdmin();} else alert("غالطة");}
 function openAdmin(){
