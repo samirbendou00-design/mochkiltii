@@ -1,776 +1,1032 @@
-<!-- زيد هاد البلوك الجديد مورا <div id="docsPreview"> اللي عندك -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7493926171525023" crossorigin="anonymous"></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a56db">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>مشكلتي - Mochkilti - ⵎⵓⵛⴽⵉⵍⵜⵉ</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{font-family:'Tajawal',sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:#FFFBF5}
+.morocco-gradient{background:linear-gradient(135deg,#C1272D 0%,#A01E24 100%)}
+.green-gradient{background:linear-gradient(135deg,#006233 0%,#004d29 100%)}
+.big-shadow{box-shadow:0 20px 40px rgba(193,39,45,0.15)}
+.card-hover{transition:all.3s}
+.card-hover:active{transform:scale(0.97)}
+.voice-pulse{animation:pulse 1.5s infinite}
+@keyframes pulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(193,39,45,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(193,39,45,0)}100%{transform:scale(1)}}
+.glass{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px)}
+.domain-card{border-right:6px solid}
+</style>
+</head>
+<body class="min-h-screen">
+<div class="bg-black text-white text-[11px] font-bold py-1.5 px-4 flex justify-between items-center">
+<span>🇲🇦 Mochkilti.ma - دليلك القانوني الذكي</span>
+<div class="flex gap-2">
+<button onclick="setLang('ar')" id="btn-ar" class="bg-white text-black px-2 py-0.5 rounded-full">دارجة</button>
+<button onclick="setLang('tz')" id="btn-tz" class="bg-white/20 px-2 py-0.5 rounded-full">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
+<button onclick="setLang('fr')" id="btn-fr" class="bg-white/20 px-2 py-0.5 rounded-full">FR</button>
+</div>
+</div>
+<header class="morocco-gradient text-white p-4 sticky top-0 z-40 shadow-xl">
+<div class="max-w-6xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div id="secretLogo" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#C1272D] font-black text-2xl shadow-lg cursor-pointer">م</div>
+<div>
+<h1 class="font-black text-[22px] leading-none" data-tr="appTitle">مشكلتي</h1>
+<p class="text-[11px] opacity-90 font-bold" data-tr="subtitle">Mochkilti - ⵎⵓⵛⴽⵉⵍⵜⵉ - دليلك القانوني</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span id="vipBadge" class="hidden bg-yellow-400 text-black text-[10px] font-black px-3 py-1 rounded-full">VIP PRO</span>
+<div class="w-8 h-6 rounded overflow-hidden flex shadow"><div class="w-1/2 bg-[#C1272D]"></div><div class="w-1/2 bg-[#006233] flex items-center justify-center text-[10px]">★</div></div>
+</div>
+</div>
+</header>
+<div id="adTop" class="max-w-6xl mx-auto mt-3 px-4"><div class="bg-gradient-to-r from-gray-100 to-gray-50 border-2 border-dashed border-gray-200 rounded-2xl h-[90px] flex items-center justify-center text-gray-400 font-bold text-sm">📢 مساحة إعلانية - AdSense Top - 728x90</div></div>
+<div class="max-w-6xl mx-auto p-4 pb-28 grid lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 space-y-5">
+<div class="bg-white rounded-[32px] p-8 big-shadow border border-[#006233]/10 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#C1272D]/5 rounded-full -mr-16 -mt-16"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-[#006233]/5 rounded-full -ml-12 -mb-12"></div>
+<div class="relative">
+<div class="w-20 h-20 bg-[#FFF3E0] rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">🎙️</div>
+<h2 class="font-black text-[28px] text-[#1A1A1A]" data-tr="heroTitle">شنو مشكلتك اليوم؟</h2>
+<p class="text-gray-500 font-bold mt-2" data-tr="heroSub">هضر معايا بالدارجة، بالأمازيغية ولا الفرنسية، أنا نفهمك</p>
+<div class="mt-4 flex justify-center gap-2"><span class="bg-[#006233]/10 text-[#006233] text-xs font-black px-3 py-1 rounded-full">🎤 صوت</span><span class="bg-[#C1272D]/10 text-[#C1272D] text-xs font-black px-3 py-1 rounded-full">⚖️ قانون</span><span class="bg-black/5 text-black text-xs font-black px-3 py-1 rounded-full">📄 وثائق</span></div>
+</div>
+</div>
+<div class="grid grid-cols-3 lg:grid-cols-6 gap-2">
+<button onclick="selectDomain('rent')" class="domain-card bg-white rounded-2xl p-3 border-r-[#FF6B00] big-shadow card-hover text-center"><div class="text-2xl">🏠</div><p class="font-black text-[11px] mt-1">الكراء</p></button>
+<button onclick="selectDomain('family')" class="domain-card bg-white rounded-2xl p-3 border-r-[#C1272D] big-shadow card-hover text-center"><div class="text-2xl">👨‍👩‍👧</div><p class="font-black text-[11px] mt-1">الأسرة</p></button>
+<button onclick="selectDomain('land')" class="domain-card bg-white rounded-2xl p-3 border-r-[#006233] big-shadow card-hover text-center"><div class="text-2xl">🌿</div><p class="font-black text-[11px] mt-1">الأرض</p></button>
+<button onclick="selectDomain('work')" class="domain-card bg-white rounded-2xl p-3 border-r-[#1E88E5] big-shadow card-hover text-center"><div class="text-2xl">💼</div><p class="font-black text-[11px] mt-1">الشغل</p></button>
+<button onclick="selectDomain('admin')" class="domain-card bg-white rounded-2xl p-3 border-r-[#7B1FA2] big-shadow card-hover text-center"><div class="text-2xl">🏢</div><p class="font-black text-[11px] mt-1">الإدارة</p></button>
+<button onclick="selectDomain('scam')" class="domain-card bg-white rounded-2xl p-3 border-r-[#000] big-shadow card-hover text-center"><div class="text-2xl">⚠️</div><p class="font-black text-[11px] mt-1">النصب</p></button>
+</div>
+<div class="bg-white rounded-[32px] p-8 big-shadow border text-center">
+<div class="flex justify-center"><button id="recordBtn" class="w-[200px] h-[200px] rounded-full morocco-gradient text-white font-black text-[20px] big-shadow flex flex-col items-center justify-center gap-2 border-[12px] border-white shadow-2xl card-hover"><span class="text-5xl">🎤</span><span id="recordText">عود لمشكلتك<br>بصوتك</span></button></div>
+<p id="recordHint" class="mt-4 text-sm text-gray-400 font-bold">كليكي وهضر - دارجة / تمازيغت / فرنسية 👂</p>
+<div id="wave" class="hidden mt-4 flex justify-center gap-1"><div class="w-1 h-6 bg-[#C1272D] rounded animate-bounce"></div><div class="w-1 h-8 bg-[#C1272D] rounded animate-bounce" style="animation-delay:.1s"></div><div class="w-1 h-10 bg-[#C1272D] rounded animate-bounce" style="animation-delay:.2s"></div><div class="w-1 h-8 bg-[#C1272D] rounded animate-bounce" style="animation-delay:.3s"></div></div>
+<div class="mt-6 relative"><textarea id="textInput" placeholder="ولا كتب مشكلتك هنا... مثلا: مول الدار بغا يخرجني بلا سبة، مراتي ما بغاتش تعطيني ولادي، نصبو عليا فالفلوس" class="w-full bg-[#FFFBF5] rounded-[20px] p-4 border-2 border-gray-100 focus:border-[#006233] outline-none font-bold min-h-[110px] text-[15px]"></textarea><button onclick="analyzeFromText()" class="absolute left-3 bottom-3 bg-black text-white font-black px-5 py-2 rounded-xl text-sm">حلل ✓</button></div>
+</div>
+<div id="transBox" class="hidden bg-white rounded-[24px] p-5 border-2 border-dashed border-[#006233]/30"><p class="text-xs font-black text-[#006233]">🎧 سمعتك قلتي:</p><p id="transText" class="font-black text-lg mt-2"></p><div class="mt-4 flex gap-2"><button onclick="analyze()" class="flex-1 green-gradient text-white font-black py-3 rounded-xl">حلل ليا المشكل ✓</button><button onclick="reset()" class="px-6 py-3 bg-gray-100 rounded-xl font-bold">مسح</button></div></div>
+<div id="adMid" class="bg-gradient-to-r from-[#FFF3E0] to-[#FFE0B2] border-2 border-dashed border-orange-200 rounded-2xl h-[120px] flex items-center justify-center text-orange-600 font-black">📢 إعلان وسط - الأداء العالي - مربح جدا</div><div id="result" class="hidden space-y-4">
+<div class="bg-white rounded-[28px] overflow-hidden big-shadow border">
+<div class="green-gradient text-white p-5 flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl" id="catIcon">⚖️</div><div><p class="text-xs opacity-80 font-bold">نوع المشكل</p><p id="catName" class="font-black text-xl"></p><p id="catLawCount" class="text-[11px] opacity-80 font-bold"></p></div><span id="resultVip" class="hidden mr-auto bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full">VIP تحليل عميق</span></div>
+<div class="p-6 space-y-5">
+<div class="bg-[#FFF8F0] rounded-2xl p-5 border-r-[8px] border-[#C1272D]"><div class="flex items-center gap-2 mb-3"><span class="bg-[#C1272D] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">1</span><h3 class="font-black text-[#C1272D] text-lg">آش كيقول القانون المغربي؟</h3></div><p id="lawText" class="font-bold leading-loose text-[15px]"></p><div class="mt-3 flex flex-wrap gap-2"><span id="lawArticle" class="bg-[#006233] text-white text-xs font-black px-3 py-1 rounded-full"></span><span id="lawArticle2" class="bg-black text-white text-xs font-black px-3 py-1 rounded-full"></span></div><p id="lawExtra" class="hidden mt-4 bg-yellow-50 border-2 border-yellow-200 p-4 rounded-xl font-bold text-sm"></p><button onclick="speakLaw()" class="mt-4 w-full bg-white border-2 border-[#C1272D]/20 text-[#C1272D] font-black py-3 rounded-xl flex items-center justify-center gap-2">🔊 سمع الجواب بصوت - illiterate friendly</button></div><div class="bg-[#F0F7FF] rounded-2xl p-5 border-r-[8px] border-[#006233]"><div class="flex items-center gap-2 mb-4"><span class="bg-[#006233] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">2</span><h3 class="font-black text-[#006233] text-lg">آش خاصك تدير دابا؟ (خطوة بخطوة)</h3></div><div id="steps" class="space-y-3"></div></div>
+<div class="bg-gray-50 rounded-2xl p-5 border-r-[8px] border-black"><div class="flex items-center gap-2 mb-4"><span class="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center font-black">3</span><h3 class="font-black text-lg">فين تمشي؟ والوثائق المطلوبة</h3></div><div id="where" class="space-y-2 font-bold text-sm"></div><div id="docsNeeded" class="mt-4 bg-white p-4 rounded-xl border"></div></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button onclick="openDocModal()" class="morocco-gradient text-white font-black text-lg py-5 rounded-[20px] big-shadow flex flex-col items-center gap-1"><span class="text-3xl">📄</span><span>وجد ليا الوثيقة</span><span class="text-[10px] opacity-80">100 نموذج واجد</span></button>
+<button onclick="openLawsModal()" class="bg-white border-2 border-[#006233] text-[#006233] font-black text-lg py-5 rounded-[20px] big-shadow flex flex-col items-center gap-1"><span class="text-3xl">📚</span><span>النص القانوني الكامل</span><span class="text-[10px]">المادة بالنص</span></button>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-[24px] p-5 big-shadow border">
+<h3 class="font-black text-lg flex items-center gap-2">📚 كاع المجالات</h3>
+<p class="text-xs text-gray-400 font-bold mt-1">كول مجال بوحدو - احترافي 100%</p>
+<div id="domainsList" class="mt-4 space-y-2"></div>
+</div>
+<div class="bg-white rounded-[24px] p-5 big-shadow border">
+<h3 class="font-black">📄 100 نموذج وثيقة</h3>
+<div class="mt-3 flex gap-2"><input id="docSearch" oninput="filterDocs()" placeholder="قلب على وثيقة... طلاق، كراء..." class="flex-1 bg-gray-50 border rounded-xl px-3 py-2 text-sm font-bold outline-none"><button onclick="openDocModal()" class="bg-black text-white px-3 rounded-xl text-sm font-black">قلب</button></div>
+<div id="docsPreview" class="mt-4 space-y-2 max-h-[400px] overflow-y-auto"></div>
 
-<!-- ==== مكتبة الكاتب العمومي الجديدة - 90 نموذج مفصل ==== -->
-<div id="katibLibraryFull" class="bg-white rounded-[24px] p-5 big-shadow border mt-4">
+<!-- ==== الجديد - مكتبة الكاتب العمومي 90 نموذج مفصل ==== -->
+<div id="katibLibraryFull" class="bg-white rounded-[24px] p-5 big-shadow border mt-4 border-2 border-[#C1272D]/20">
 <h3 class="font-black text-lg">📚 مكتبة الكاتب العمومي - 90 نموذج مفصل</h3>
-<p class="text-xs text-gray-400 font-bold">هضر بالميكرو وغنجيب لك النموذج تلقائيا</p>
+<p class="text-xs text-gray-400 font-bold mt-1">هضر بالميكرو وغنجيب لك النموذج تلقائيا - بأسلوب كاتب عمومي</p>
 <div class="mt-3 flex gap-2">
-<input id="katibSearch" oninput="katibFilter()" placeholder="قلب: عقد كراء، التزام، شكاية..." class="flex-1 bg-[#FFFBF5] border-2 rounded-xl px-3 py-2 text-sm font-bold outline-none">
-<button onclick="katibSpeakSearch()" class="bg-black text-white px-3 rounded-xl text-sm font-black">🎤</button>
+<input id="katibSearch" oninput="katibFilter()" placeholder="قلب: عقد كراء، التزام، شكاية نصب، نفقة..." class="flex-1 bg-[#FFFBF5] border-2 rounded-xl px-3 py-2 text-sm font-bold outline-none">
+<button onclick="katibSpeakSearch()" class="bg-black text-white px-4 rounded-xl text-sm font-black">🎤</button>
 </div>
 <div id="katibGrid" class="mt-4 grid gap-2 max-h-[600px] overflow-y-auto"></div>
-<div id="katibPreview" class="hidden mt-6 border-2 border-[#006233] p-6 rounded-2xl bg-[#FFFEF8] font-bold leading-loose text-[14px] whitespace-pre-wrap"></div>
-<div class="hidden mt-2 gap-2" id="katibActions">
+<div id="katibPreview" class="hidden mt-6 border-2 border-[#006233] p-6 rounded-2xl bg-[#FFFEF8] font-bold leading-loose text-[14px] whitespace-pre-wrap min-h-[200px]"></div>
+<div class="hidden mt-3 gap-2" id="katibActions">
 <button onclick="katibPrint()" class="flex-1 bg-black text-white font-black py-3 rounded-xl">🖨️ طباعة</button>
 <button onclick="katibShare()" class="flex-1 bg-[#006233] text-white font-black py-3 rounded-xl">📤 مشاركة</button>
 </div>
 </div>
 
+</div>
+<div class="bg-black rounded-[24px] p-5 text-white">
+<h3 class="font-black">💡 علاش مشكلتي؟</h3>
+<ul class="mt-3 space-y-2 text-xs font-bold opacity-80">
+<li>✅ بالدارجة والأمازيغية والفرنسية</li>
+<li>✅ للناس اللي ما كيقراوش - بالصوت</li>
+<li>✅ 100 وثيقة واجدة للطبع</li>
+<li>✅ القوانين بالنصوص الأصلية</li>
+<li>✅ ألوان الراية المغربية 🇲🇦</li>
+</ul>
+</div>
+<div class="bg-gradient-to-br from-[#FFF3E0] to-white rounded-[24px] p-5 border-2 border-orange-100">
+<p class="font-black text-sm text-[#856404] text-center">⚠️ تنبيه قانوني</p>
+<p class="text-xs font-bold text-[#856404] mt-2 leading-relaxed text-center">هذا توجيه أولي وليس استشارة محاماة رسمية<br>للقضايا المعقدة، استشر محامي أو توجه للمحكمة المختصة</p>
+</div>
+<div id="adSide" class="bg-gray-50 border-2 border-dashed rounded-2xl h-[250px] flex items-center justify-center text-gray-400 font-bold">📢 إعلان جانبي<br>Side Ad 300x250</div>
+</div>
+</div>
+<div id="docModal" class="hidden fixed inset-0 bg-black/70 z-[100] p-4 overflow-y-auto">
+<div class="bg-white max-w-4xl mx-auto rounded-[28px] p-6 mt-4">
+<div class="flex justify-between items-center"><h3 class="font-black text-2xl">📄 مكتبة الوثائق - 100 نموذج</h3><button onclick="closeDocModal()" class="w-10 h-10 bg-gray-100 rounded-full font-black">✕</button></div>
+<div class="mt-4 flex gap-2 overflow-x-auto pb-2"><button onclick="filterDocsByCat('all')" class="whitespace-nowrap bg-black text-white font-black px-4 py-2 rounded-full text-sm">الكل 100</button><button onclick="filterDocsByCat('rent')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🏠 كراء</button><button onclick="filterDocsByCat('family')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">👨‍👩‍👧 أسرة</button><button onclick="filterDocsByCat('land')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🌿 أرض</button><button onclick="filterDocsByCat('work')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">💼 شغل</button><button onclick="filterDocsByCat('admin')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">🏢 إدارة</button><button onclick="filterDocsByCat('scam')" class="whitespace-nowrap bg-gray-100 font-black px-4 py-2 rounded-full text-sm">⚠️ شكايات</button></div>
+<div class="flex gap-2 mt-4"><button id="langAR" onclick="setDocLang('ar')" class="flex-1 bg-[#006233] text-white font-black py-3 rounded-xl">عربية</button><button id="langFR" onclick="setDocLang('fr')" class="flex-1 bg-gray-100 font-black py-3 rounded-xl">Français</button><button onclick="window.print()" class="bg-black text-white font-black px-6 rounded-xl">🖨️ طبع</button></div>
+<div id="docListFull" class="mt-4 grid md:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto"></div>
+<div id="docContent" class="mt-6 border-2 border-dashed p-6 rounded-2xl bg-[#FFFEF8] font-bold leading-loose text-[14px] whitespace-pre-wrap min-h-[350px]"></div>
+<div class="mt-4 flex gap-2"><button onclick="shareDoc()" class="flex-1 bg-[#006233] text-white font-black py-4 rounded-xl">📤 بارطاجي الوثيقة</button><button onclick="downloadDoc()" class="flex-1 bg-[#C1272D] text-white font-black py-4 rounded-xl">📥 تحميل Word</button></div>
+</div>
+</div>
+<div id="lawsModal" class="hidden fixed inset-0 bg-black/70 z-[100] p-4 overflow-y-auto">
+<div class="bg-white max-w-3xl mx-auto rounded-[28px] p-6 mt-4">
+<div class="flex justify-between items-center"><h3 class="font-black text-2xl">📚 النص القانوني الكامل</h3><button onclick="closeLawsModal()" class="w-10 h-10 bg-gray-100 rounded-full">✕</button></div>
+<div id="lawsFullText" class="mt-6 space-y-4"></div>
+</div>
+</div><div id="adminLogin" class="hidden fixed inset-0 bg-black/80 z-[300] p-4 flex items-center justify-center">
+<div class="bg-white rounded-[28px] p-8 max-w-sm w-full">
+<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl mx-auto">🔐</div>
+<h3 class="font-black text-xl text-center mt-4">دخول الإدارة</h3><p class="text-center text-xs text-gray-400 font-bold mt-1">خاص بيك بوحدك</p>
+<input id="adminPassInput" type="password" placeholder="كلمة السر" class="w-full mt-6 bg-gray-50 border-2 border-gray-100 rounded-xl p-4 font-bold text-center outline-none focus:border-black">
+<button onclick="loginAdmin()" class="w-full mt-3 bg-black text-white font-black py-4 rounded-xl">دخول</button>
+<p class="text-center text-[11px] text-gray-400 mt-3">الافتراضي: admin123 - تقدر تبدلو فالداخل</p>
+<button onclick="closeLogin()" class="w-full mt-2 text-gray-400 font-bold text-sm">إلغاء</button>
+</div>
+</div>
+<div id="adminPanel" class="hidden fixed inset-0 bg-[#0A0A0A] z-[250] overflow-y-auto">
+<div class="max-w-6xl mx-auto p-4">
+<div class="flex justify-between items-center text-white mt-2"><h2 class="font-black text-3xl">🔐 لوحة التحكم الاحترافية</h2><div class="flex gap-2"><button onclick="closeAdmin()" class="w-10 h-10 bg-white/10 rounded-full">✕</button></div></div>
+<p class="text-white/50 text-xs font-bold mt-1">Mochkilti Pro Dashboard - تا واحد ما كيشوفها غير انت</p>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10"><p class="text-white/50 text-xs font-bold">👁️ الزيارات</p><p id="statVisits" class="text-white font-black text-3xl mt-1">0</p><p class="text-[#00FF88] text-[10px] font-bold mt-1">اليوم + مباشر</p></div>
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10"><p class="text-white/50 text-xs font-bold">💬 الأسئلة</p><p id="statQuestions" class="text-white font-black text-3xl mt-1">0</p><p class="text-white/50 text-[10px]">مجموع الأسئلة</p></div>
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10"><p class="text-white/50 text-xs font-bold">💰 الربح الإعلانات</p><p id="statProfit" class="text-yellow-400 font-black text-2xl mt-1">0 DH</p><p id="statAdViews" class="text-white/50 text-[10px]">0 مشاهدة</p></div>
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10"><p class="text-white/50 text-xs font-bold">⭐ VIP</p><p id="statVip" class="text-white font-black text-xl mt-1">لا</p><div class="flex gap-2 mt-2"><button onclick="toggleVip()" class="bg-yellow-400 text-black font-black text-[11px] px-3 py-1 rounded-full">تفعيل</button><button onclick="changePassword()" class="bg-white/10 text-white font-black text-[11px] px-3 py-1 rounded-full">بدل الباسورد</button></div></div>
+</div>
+<div class="grid lg:grid-cols-2 gap-4 mt-6">
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10">
+<div class="flex justify-between items-center"><h3 class="text-white font-black">💬 كاع الأسئلة - شكون سول وشنو سول وفوقاش</h3><div class="flex gap-2"><button onclick="exportData()" class="bg-white text-black font-black text-xs px-3 py-1 rounded-full">Excel</button><button onclick="clearQuestions()" class="text-red-400 text-xs bg-red-400/10 px-3 py-1 rounded-full">مسح</button></div></div>
+<input id="adminSearch" oninput="renderQuestions()" placeholder="قلب فالأسئلة..." class="w-full mt-3 bg-black border border-white/10 rounded-xl px-3 py-2 text-white text-sm outline-none">
+<div id="questionsList" class="mt-4 space-y-2 max-h-[400px] overflow-y-auto"></div>
+</div>
+<div class="space-y-4">
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10">
+<h3 class="text-white font-black">📢 إدارة الإعلانات والربح</h3>
+<div class="mt-4 space-y-3">
+<div><label class="text-white/50 text-xs font-bold">كود AdSense (ca-pub-...)</label><input id="adsenseCode" placeholder="ca-pub-123456789" class="w-full mt-1 bg-black border border-white/10 rounded-xl p-3 text-white text-sm"></div>
+<div class="grid grid-cols-2 gap-2"><div><label class="text-white/50 text-xs">سعر كل سؤال (DH)</label><input id="profitPerQ" type="number" value="5" class="w-full mt-1 bg-black border border-white/10 rounded-xl p-2 text-white text-sm"></div><div><label class="text-white/50 text-xs">سعر كل 1000 مشاهدة إعلان</label><input id="profitPerAd" type="number" value="25" class="w-full mt-1 bg-black border border-white/10 rounded-xl p-2 text-white text-sm"></div></div>
+<button onclick="saveAdSettings()" class="w-full bg-[#006233] text-white font-black py-3 rounded-xl">💾 حفظ الإعدادات</button>
+<div class="bg-black rounded-xl p-3 mt-3"><p class="text-white/50 text-xs">الربح اليوم: <span id="profitToday" class="text-yellow-400 font-black">0 DH</span></p><p class="text-white/50 text-xs">الربح الشهر: <span id="profitMonth" class="text-yellow-400 font-black">0 DH</span></p></div>
+</div>
+</div><div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10">
+<h3 class="text-white font-black">📚 فين تزيد قوانين خرين ووثائق؟</h3>
+<p class="text-white/50 text-xs font-bold mt-1">زيد قانون جديد - كولا مجال بوحدو - احترافي</p>
+<div class="mt-3 space-y-2">
+<select id="newLawDomain" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm"><option value="rent">🏠 الكراء</option><option value="family">👨‍👩‍👧 الأسرة</option><option value="land">🌿 الأرض</option><option value="work">💼 الشغل</option><option value="admin">🏢 الإدارة</option><option value="scam">⚠️ النصب</option><option value="other">📚 عام</option></select>
+<input id="newLawKey" placeholder="كلمة مفتاحية: مثلا تعويض" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm">
+<input id="newLawTitle" placeholder="عنوان القانون" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm">
+<textarea id="newLawText" placeholder="نص القانون بالدارجة..." class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm min-h-[80px]"></textarea>
+<input id="newLawArticle" placeholder="المادة والمرجع: مثلا المادة 231 ق.ل.ع" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm">
+<textarea id="newLawFull" placeholder="النص القانوني الكامل الأصلي (اختياري)" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm min-h-[80px]"></textarea>
+<button onclick="addNewLaw()" class="w-full bg-[#006233] text-white font-black py-3 rounded-xl">➕ زيد القانون فالمجال</button>
+</div>
+<div id="customLawsList" class="mt-4 space-y-2 max-h-[200px] overflow-y-auto"></div>
+</div>
+<div class="bg-[#1A1A1A] rounded-2xl p-5 border border-white/10">
+<h3 class="text-white font-black">📄 إدارة الوثائق - 100 نموذج</h3>
+<div class="mt-3 space-y-2">
+<select id="newDocDomain" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm"><option value="rent">🏠 كراء</option><option value="family">👨‍👩‍👧 أسرة</option><option value="land">🌿 أرض</option><option value="work">💼 شغل</option><option value="admin">🏢 إدارة</option><option value="scam">⚠️ شكايات</option></select>
+<input id="newDocTitle" placeholder="عنوان الوثيقة الجديدة" class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm">
+<textarea id="newDocContent" placeholder="محتوى الوثيقة..." class="w-full bg-black border border-white/10 rounded-xl p-3 text-white text-sm min-h-[80px]"></textarea>
+<button onclick="addNewDoc()" class="w-full bg-[#C1272D] text-white font-black py-3 rounded-xl">➕ زيد الوثيقة</button>
+</div>
+<div id="customDocsList" class="mt-4 space-y-2 max-h-[200px] overflow-y-auto"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 bg-[#1A1A1A] rounded-2xl p-4 border border-white/10 flex gap-2">
+<button onclick="exportAll()" class="flex-1 bg-white text-black font-black py-3 rounded-xl text-sm">📥 تحميل كل البيانات</button>
+<button onclick="resetAll()" class="flex-1 bg-red-500/20 text-red-400 font-black py-3 rounded-xl text-sm">🗑️ Reset كلشي</button>
+<button onclick="closeAdmin()" class="flex-1 bg-white/10 text-white font-black py-3 rounded-xl text-sm">خروج</button>
+</div>
+<div class="h-20"></div>
+</div>
+</div>
+<div id="adSticky" class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 p-2 z-30 shadow-2xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div class="flex-1 bg-gray-50 border-2 border-dashed rounded-xl h-[60px] flex items-center justify-center text-gray-400 font-black text-xs">📢 إعلان لاصق - Sticky Ad - مربح ديما - AdSense</div><button onclick="this.parentElement.parentElement.style.display='none'" class="mr-2 w-8 h-8 bg-gray-100 rounded-full">✕</button></div></div>
+
+<!-- ==== السكريبت القديم كامل محفوظ ==== -->
 <script>
-// ================== مكتبة 90 نموذج بأسلوب كاتب عمومي ==================
-const KATIB_LIB = {
-rent: [
-{title:"عقد كراء سكني - قانون 67.12", content: `عقد كراء سكني
-طبقا لأحكام القانون رقم 67.12 المتعلق بتنظيم العلاقات التعاقدية بين المكري والمكتري
-
+const tr={ar:{appTitle:"مشكلتي",subtitle:"Mochkilti - ⵎⵓⵛⴽⵉⵍⵜⵉ - دليلك القانوني",heroTitle:"شنو مشكلتك اليوم؟",heroSub:"هضر معايا بالدارجة، بالأمازيغية ولا الفرنسية، أنا نفهمك"},tz:{appTitle:"ⵎⵓⵛⴽⵉⵍⵜⵉ",subtitle:"Mochkilti - مشكلتي - ⴰⴱⵔⵉⴷ ⵏⵏⴽ ⴰⵣⵔⴼⴰⵏ",heroTitle:"ⵎⴰ ⴷ ⵎⵓⵛⴽⵉⵍ ⵏⵏⴽ?",heroSub:"ⵙⵉⵡⵍ ⵙ ⵜⴰⵎⴰⵣⵉⵖⵜ, ⵏⴽ ⴰⴷ ⴰⴽ ⵉⴼⵀⵎⵏ"},fr:{appTitle:"Mochkilti",subtitle:"Votre guide juridique - مشكلتي",heroTitle:"Quel est votre problème?",heroSub:"Parlez en Darija, Tamazight ou Français"}};
+let curLang='ar';
+function setLang(l){curLang=l;document.querySelectorAll('[data-tr]').forEach(el=>{const k=el.dataset.tr; if(tr[l]&&tr[l][k]) el.innerText=tr[l][k];});document.getElementById('btn-ar').className=l==='ar'?'bg-white text-black px-2 py-0.5 rounded-full':'bg-white/20 px-2 py-0.5 rounded-full';document.getElementById('btn-tz').className=l==='tz'?'bg-white text-black px-2 py-0.5 rounded-full':'bg-white/20 px-2 py-0.5 rounded-full';document.getElementById('btn-fr').className=l==='fr'?'bg-white text-black px-2 py-0.5 rounded-full':'bg-white/20 px-2 py-0.5 rounded-full';}
+let visits=parseInt(localStorage.getItem('moch_visits')||'0');
+let questions=JSON.parse(localStorage.getItem('moch_q')||'[]');
+let customLaws=JSON.parse(localStorage.getItem('moch_claws')||'[]');
+let customDocs=JSON.parse(localStorage.getItem('moch_cdocs')||'[]');
+let isVip=localStorage.getItem('moch_vip')==='true';
+let adminPass=localStorage.getItem('moch_pass')||'admin123';
+let adSettings=JSON.parse(localStorage.getItem('moch_ads')||'{"code":"","perQ":5,"perAd":25,"views":0}');
+visits++;localStorage.setItem('moch_visits',visits);
+adSettings.views=(adSettings.views||0)+3;localStorage.setItem('moch_ads',JSON.stringify(adSettings));
+const baseLaws={
+rent:{icon:"🏠",name:"الكراء",color:"#FF6B00",laws:[
+{title:"الإفراغ التعسفي",key:"افراغ",law:"مول الدار ما عندوش الحق يخرجك بلا حكم قضائي. خاصو يصيفط لك إنذار بالإفراغ كتابي ويحترم الآجال.",article:"قانون 67.12 المادة 45",full:"المادة 45: لا يمكن تنفيذ الإفراغ إلا بمقتضى حكم قضائي مكتسب لقوة الشيء المقضي به، بعد توجيه إنذار بالإفراغ طبقا للمادة 44.",steps:["ما تخرجش بلا حكم","طلب الإنذار كتابي","سير للمقاطعة دير إشهاد","جمع الوصولات"],where:["🏛️ محكمة قضاء القرب","🏢 المقاطعة"],docs:["وصل الكراء","عقد الكراء"]},
+{title:"الزيادة في الكراء",key:"زيادة كراء",law:"الزيادة محددة قانونا: 8% للسكن كل 3 سنين، 10% للمحلات التجارية كل 3 سنين.",article:"قانون 67.12 المادة 34-36",full:"المادة 34: تحدد الزيادة في سومة الكراء في 8% بالنسبة للمحلات المعدة للسكنى...",steps:["حسب الزيادة القانونية","ما تخلصش كتر من القانون","طلب وصل"],where:["🏛️ المحكمة"],docs:["الوصولات القديمة"]}
+]},
+family:{icon:"👨‍👩‍👧",name:"الأسرة",color:"#C1272D",laws:[
+{title:"النفقة",key:"نفقة",law:"النفقة واجبة على الزوج من نهار كتخرج المرا. نفقة الوليدات واجبة حتى يكبرو (25 سنة إلا كيقراو).",article:"مدونة الأسرة 187-197",full:"المادة 187: النفقة واجبة على الزوج لزوجته بمجرد البناء... المادة 198: تستمر نفقة الأب على أولاده إلى حين بلوغهم سن الرشد أو 25 سنة بالنسبة لمن يتابع دراسته.",steps:["جمع عقد الزواج وازدياد الوليدات","دعوى فمحكمة الأسرة","طلب نفقة مؤقتة"],where:["🏛️ محكمة الأسرة","🤝 خلية المرأة"],docs:["عقد الزواج","عقود ازدياد"]},
+{title:"الحضانة",key:"حضانة",law:"الحضانة للأم حتى 15 سنة، ومن بعد كيخير القاضي الولد. الأب عندو حق الزيارة.",article:"مدونة الأسرة 163-171",full:"المادة 163: الحضانة حفظ الولد... المادة 166: تستمر الحضانة إلى بلوغ سن 15.",steps:["طلب حضانة","إثبات الصلاحية","تنظيم الزيارة"],where:["🏛️ محكمة الأسرة"],docs:["عقد الزواج","شهادة السكنى"]}
+]},
+land:{icon:"🌿",name:"الأرض والورث",color:"#006233",laws:[
+{title:"الشياع",key:"شياع ورث",law:"أرض الشياع ما كتتباعش بلا موافقة كاع الورثة. أي بيع بلا موافقة قابل للإبطال.",article:"مدونة الحقوق العينية 221",full:"المادة 221: لا يجوز لأحد الشركاء في الشياع أن يتصرف في حصته...",steps:["ما توقعش","جيب عقد الاراثة","دير تعرض فالمحافظة"],where:["🏛️ المحافظة العقارية","📜 العدول"],docs:["رسم الاراثة","رسم الملكية"]}
+]},
+work:{icon:"💼",name:"الشغل",color:"#1E88E5",laws:[
+{title:"الطرد التعسفي",key:"طرد شغل",law:"المشغل ما عندوش الحق يطردك بلا سبب. عندك الحق فتعويض: شهر ونص على كل عام خدمة.",article:"مدونة الشغل المادة 40 و 53",full:"المادة 40: يعد طردا تعسفيا كل فصل... المادة 53: يستحق الأجير تعويضا قدره شهر ونصف عن كل سنة.",steps:["طلب محضر الطرد","سير لمفتش الشغل ف 90 يوم","دعوى فالمحكمة الاجتماعية"],where:["🏢 مفتشية الشغل","🏛️ المحكمة الاجتماعية"],docs:["عقد الشغل","شهادة العمل"]}
+]},
+admin:{icon:"🏢",name:"الإدارة",color:"#7B1FA2",laws:[
+{title:"تبسيط المساطر",key:"ادارة ورقة",law:"الإدارة خاصها تجاوبك ف 60 يوم، وإلا كتعتبر موافقة. عندك الحق تطلب وصل.",article:"قانون 55.19 المادة 7",full:"المادة 7: يجب على الإدارة أن تسلم وصلا... وتبت في الطلب داخل 60 يوما...",steps:["طلب الوصل","سول على الآجال","شكاية ف chikaya.ma"],where:["💻 chikaya.ma","📞 3737"],docs:["نسخة البطاقة","الطلب"]}
+]},
+scam:{icon:"⚠️",name:"النصب",color:"#000",laws:[
+{title:"النصب والاحتيال",key:"نصب فلوس",law:"النصب كيعاقب عليه من سنة ل 5 سنين حبس وغرامة من 500 ل 5000 درهم.",article:"القانون الجنائي الفصل 540",full:"الفصل 540: من استعمل وسائل احتيالية لتسليم أموال... يعاقب بالحبس من سنة إلى خمس سنوات...",steps:["خلي الرسائل والتحويلات","شكاية عند البوليس","علم البنك"],where:["👮 الشرطة القضائية - الجرائم الإلكترونية","🏛️ وكيل الملك"],docs:["screenshots","وصولات التحويل"]}
+]}
+};
+function getAllLaws(){let all=[];Object.keys(baseLaws).forEach(dom=>{baseLaws[dom].laws.forEach(l=>all.push({...l,domain:dom,domainName:baseLaws[dom].name}));});customLaws.forEach(c=>all.push({...c,domain:c.domain||'other',domainName:c.domain}));return all;}
+function detectLaw(text){text=text.toLowerCase();let all=getAllLaws();for(let law of all){if(law.key && text.includes(law.key.toLowerCase())) return law; if(law.title && text.includes(law.title.toLowerCase().split(' ')[0].toLowerCase())) return law;} for(let dom in baseLaws){if(text.includes('كراء')||text.includes('دار')) return baseLaws.rent.laws[0]; if(text.includes('طلاق')||text.includes('نفقة')||text.includes('ولادي')) return baseLaws.family.laws[0]; if(text.includes('ارض')||text.includes('ورث')) return baseLaws.land.laws[0]; if(text.includes('خدمة')||text.includes('طرد')) return baseLaws.work.laws[0]; if(text.includes('مقاطعة')||text.includes('ورقة')) return baseLaws.admin.laws[0]; if(text.includes('نصب')||text.includes('فلوسي')) return baseLaws.scam.laws[0];} return baseLaws.admin.laws[0];}
+const docTemplatesBase=[
+{cat:'rent',title:'إنذار بالإفراغ للكراء',titleFr:'Mise en demeure bail'},
+{cat:'rent',title:'إشعار بعدم أداء الكراء',titleFr:'Avis impayé loyer'},
+{cat:'rent',title:'طلب تخفيض الكراء',titleFr:'Demande réduction loyer'},
+{cat:'rent',title:'عقد كراء سكني',titleFr:'Contrat bail habitation'},
+{cat:'rent',title:'وصل استلام الكراء',titleFr:'Reçu loyer'},
+{cat:'family',title:'طلب النفقة',titleFr:'Demande pension alimentaire'},
+{cat:'family',title:'طلب الحضانة',titleFr:'Demande garde enfants'},
+{cat:'family',title:'طلب الطلاق للشقاق',titleFr:'Demande divorce discorde'},
+{cat:'family',title:'طلب الرجوع لبيت الزوجية',titleFr:'Retour domicile conjugal'},
+{cat:'family',title:'طلب إسقاط الحضانة',titleFr:'Déchéance garde'},
+{cat:'land',title:'تعرض على مطلب التحفيظ',titleFr:'Opposition conservation foncière'},
+{cat:'land',title:'طلب قسمة أرض على الشياع',titleFr:'Demande partage indivision'},
+{cat:'land',title:'عقد بيع أرض فلاحية',titleFr:'Acte vente terrain'},
+{cat:'land',title:'طلب شهادة الملكية',titleFr:'Demande certificat propriété'},
+{cat:'work',title:'شكاية الطرد التعسفي',titleFr:'Plainte licenciement abusif'},
+{cat:'work',title:'طلب شهادة العمل',titleFr:'Demande attestation travail'},
+{cat:'work',title:'إنذار بعدم أداء الأجور',titleFr:'Mise en demeure salaires'},
+{cat:'admin',title:'شكاية إدارية - قانون 55.19',titleFr:'Réclamation administrative'},
+{cat:'admin',title:'طلب وثيقة إدارية',titleFr:'Demande document administratif'},
+{cat:'scam',title:'شكاية بالنصب الفصل 540',titleFr:'Plainte escroquerie art 540'},
+{cat:'scam',title:'شكاية بالتشهير والسب',titleFr:'Plainte diffamation'},
+{cat:'rent',title:'طلب إصلاحات في المنزل المكترى',titleFr:'Demande réparations logement'},
+{cat:'family',title:'طلب النفقة المؤقتة',titleFr:'Pension provisoire'},
+{cat:'work',title:'طلب التعويض عن حادثة شغل',titleFr:'Accident travail'},
+];
+function get100Docs(){let docs=[...docTemplatesBase]; let cats=['rent','family','land','work','admin','scam']; let titles={rent:['كراء','رهن','سكن'],family:['نفقة','حضانة','طلاق','زواج'],land:['أرض','ورث','تحفيظ','شياع'],work:['شغل','أجرة','تعويض','عقد'],admin:['رخصة','بطاقة','شهادة','مقاطعة'],scam:['نصب','احتيال','سرقة','تشهير']}; for(let i=docs.length;i<100;i++){let cat=cats[i%cats.length]; let t=titles[cat][i%3]; docs.push({cat,title:`نموذج ${t} رقم ${i+1} - ${cat}`,titleFr:`Modèle ${cat} ${i+1}`});} customDocs.forEach(d=>docs.push(d)); return docs;}
+let finalTranscript="",currentLaw=null,docLang='ar',curDomain='all',selectedDoc=null;
+function selectDomain(d){curDomain=d; document.getElementById('textInput').placeholder=`كتب مشكل ${baseLaws[d]?baseLaws[d].name:d} هنا...`; document.getElementById('textInput').focus(); renderDomains(); filterDocsByCat(d);}
+function renderDomains(){const el=document.getElementById('domainsList'); el.innerHTML=Object.keys(baseLaws).map(k=>{const d=baseLaws[k]; return `<div class="flex items-center justify-between bg-gray-50 rounded-xl p-3"><div class="flex items-center gap-2"><span class="text-xl">${d.icon}</span><div><p class="font-black text-sm">${d.name}</p><p class="text-[11px] text-gray-400 font-bold">${d.laws.length} قانون • ${get100Docs().filter(x=>x.cat===k).length} وثيقة</p></div></div><button onclick="selectDomain('${k}')" class="bg-black text-white text-xs font-black px-3 py-1 rounded-full">دخول</button></div>`}).join('');}
+function renderDocsPreview(){const docs=get100Docs().slice(0,8); document.getElementById('docsPreview').innerHTML=docs.map((d,i)=>`<div class="flex justify-between items-center bg-gray-50 rounded-xl p-3 hover:bg-gray-100 cursor-pointer" onclick="openDocFromList(${i})"><div><p class="font-black text-xs">${d.title}</p><p class="text-[10px] text-gray-400">${d.cat}</p></div><span class="text-[10px] bg-black text-white px-2 py-1 rounded-full">📄</span></div>`).join('');}
+function filterDocs(){const q=document.getElementById('docSearch').value.toLowerCase(); const docs=get100Docs().filter(d=>d.title.toLowerCase().includes(q)); document.getElementById('docsPreview').innerHTML=docs.slice(0,20).map((d,i)=>`<div class="flex justify-between items-center bg-gray-50 rounded-xl p-3 cursor-pointer" onclick="openDocFromList(${get100Docs().indexOf(d)})"><p class="font-black text-xs">${d.title}</p><span class="text-[10px] bg-black text-white px-2 py-1 rounded-full">📄</span></div>`).join('');}
+function filterDocsByCat(cat){curDomain=cat; const docs=cat==='all'?get100Docs():get100Docs().filter(d=>d.cat===cat); const list=document.getElementById('docListFull'); if(list) list.innerHTML=docs.map((d,i)=>`<button onclick="openDocFromList(${get100Docs().indexOf(d)})" class="text-right bg-gray-50 hover:bg-black hover:text-white rounded-xl p-3 font-bold text-xs transition"><p>${d.title}</p><p class="text-[10px] opacity-60">${d.titleFr} • ${d.cat}</p></button>`).join('');}
+let recognition;if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;recognition=new SR();recognition.lang='ar-MA';recognition.onstart=()=>{document.getElementById('recordBtn').classList.add('voice-pulse');document.getElementById('recordText').innerHTML="كنسمع...<br>هضر دابا";document.getElementById('wave').classList.remove('hidden');};recognition.onend=()=>{document.getElementById('recordBtn').classList.remove('voice-pulse');document.getElementById('recordText').innerHTML="عود لمشكلتك<br>بصوتك";document.getElementById('wave').classList.add('hidden');};recognition.onresult=(e)=>{finalTranscript=e.results[0][0].transcript;showTranscription(finalTranscript);};recognition.onerror=()=>{alert("ما سمعتكش مزيان، عاود");recognition.onend();};}
+document.getElementById('recordBtn').onclick=()=>{if(!recognition){alert("كتب لتحت");return;}try{recognition.start();}catch{recognition.stop();}};
+function showTranscription(t){document.getElementById('transBox').classList.remove('hidden');document.getElementById('transText').innerText=t;document.getElementById('transBox').scrollIntoView({behavior:'smooth'});}
+function reset(){document.getElementById('transBox').classList.add('hidden');document.getElementById('result').classList.add('hidden');finalTranscript="";document.getElementById('textInput').value="";}
+function analyzeFromText(){const v=document.getElementById('textInput').value.trim();if(v.length<5){alert("كتب كتر");return;}finalTranscript=v;showTranscription(v);analyze();}
+function analyze(){
+ if(!finalTranscript)return;
+ currentLaw=detectLaw(finalTranscript);
+ const q={id:Date.now(),text:finalTranscript,category:currentLaw.title||currentLaw.domainName,date:new Date().toLocaleString('ar-MA'),vip:isVip,lang:curLang,domain:currentLaw.domain||'other'};
+ questions.unshift(q); if(questions.length>1000) questions.pop(); localStorage.setItem('moch_q',JSON.stringify(questions));
+ adSettings.views+=1; localStorage.setItem('moch_ads',JSON.stringify(adSettings));
+ document.getElementById('catIcon').innerText=baseLaws[currentLaw.domain]?.icon||currentLaw.icon||"⚖️";
+ document.getElementById('catName').innerText=currentLaw.title||currentLaw.domainName||"مشكل قانوني";
+ document.getElementById('catLawCount').innerText=(baseLaws[currentLaw.domain]?.laws.length||1)+" قوانين فهاد المجال";
+ document.getElementById('lawText').innerText=currentLaw.law;
+ document.getElementById('lawArticle').innerText="📚 "+currentLaw.article;
+ document.getElementById('lawArticle2').innerText="⚖️ "+(currentLaw.domainName||"قانون مغربي");
+ const ex=document.getElementById('lawExtra'); if(isVip&&currentLaw.extraVip){ex.classList.remove('hidden');ex.innerText=currentLaw.extraVip;document.getElementById('resultVip').classList.remove('hidden');} else {ex.classList.add('hidden');}
+ document.getElementById('steps').innerHTML=(currentLaw.steps||[]).map((s,i)=>`<div class="flex gap-3 bg-white p-4 rounded-xl border"><span class="bg-[#006233] text-white min-w-[32px] h-[32px] rounded-full flex items-center justify-center font-black">${i+1}</span><span class="font-bold leading-snug">${s}</span></div>`).join('');
+ document.getElementById('where').innerHTML=(currentLaw.where||[]).map(w=>`<div class="bg-white p-3 rounded-xl border">${w}</div>`).join('');
+ document.getElementById('docsNeeded').innerHTML=`<p class="font-black text-xs">📎 الوثائق المطلوبة:</p><p class="text-xs mt-2 font-bold">${(currentLaw.docs||['بطاقة وطنية']).join(' • ')}</p><button onclick="openDocModal()" class="mt-3 w-full bg-black text-white font-black py-2 rounded-xl text-xs">📄 وجد ليا الوثيقة المناسبة</button>`;
+ document.getElementById('result').classList.remove('hidden'); document.getElementById('result').scrollIntoView({behavior:'smooth'}); speak(currentLaw.law);
+}
+function speak(t){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=curLang==='fr'?'fr-FR':curLang==='tz'?'ar-MA':'ar-MA';u.rate=0.9;speechSynthesis.speak(u);}
+function speakLaw(){speak(document.getElementById('lawText').innerText);}
+function openDocModal(){document.getElementById('docModal').classList.remove('hidden');filterDocsByCat(curDomain); if(!selectedDoc) openDocFromList(0);}
+function closeDocModal(){document.getElementById('docModal').classList.add('hidden');}
+function setDocLang(l){docLang=l;document.getElementById('langAR').className=l==='ar'?"flex-1 bg-[#006233] text-white font-black py-3 rounded-xl":"flex-1 bg-gray-100 font-black py-3 rounded-xl";document.getElementById('langFR').className=l==='fr'?"flex-1 bg-[#006233] text-white font-black py-3 rounded-xl":"flex-1 bg-gray-100 font-black py-3 rounded-xl"; if(selectedDoc) updateDocContent();}
+function openDocFromList(idx){selectedDoc=get100Docs()[idx]; updateDocContent();}
+function updateDocContent(){
+ if(!selectedDoc)return; let name=prompt(docLang==='ar'?"سميتك الكاملة؟":"Nom complet?")||"فلان الفلاني";
+ let problem=finalTranscript||"........";
+ let tpl="";
+ if(docLang==='ar'){
+tpl=`${selectedDoc.title.toUpperCase()}
 أنا الممضي أسفله:
-الطرف الأول - المكري: الاسم الكامل:.........................................
-رقم ب.ت.و:.........................................
-الساكن بـ:.........................................
+الاسم الكامل: ${name}
+رقم البطاقة الوطنية:...............
+الساكن بـ:...............
+إلى السيد: ${selectedDoc.cat==='rent'?'مالك العقار':selectedDoc.cat==='family'?'رئيس المحكمة الابتدائية - قسم الأسرة':selectedDoc.cat==='land'?'المحافظ العقاري':'السيد وكيل الملك / الإدارة المعنية'}
+الموضوع: ${selectedDoc.title}
+سلام تام بوجود مولانا الإمام،
+أتشرف بأن أعرض عليكم ما يلي:
+${problem}
+وحيث أن هذا التصرف يخالف القانون المغربي ${currentLaw?currentLaw.article:""}.
+لذلك ألتمس منكم التدخل وتطبيق القانون.
+المرفقات:
+${currentLaw && currentLaw.docs?currentLaw.docs.join('\n'):"- نسخة البطاقة الوطنية\n- الوثائق المثبتة"}
+وتقبلوا فائق الاحترام والتقدير.
+الإمضاء:
+${name}
+`;
+ } else {
+tpl=`${selectedDoc.titleFr.toUpperCase()}
+Je soussigné(e):
+Nom: ${name}
+CIN:...............
+Demeurant à:...............
+À: ${selectedDoc.cat}
+Objet: ${selectedDoc.titleFr}
+Monsieur,
+J'ai l'honneur de vous exposer ce qui suit:
+${problem}
+Cette situation est contraire à la loi marocaine ${currentLaw?currentLaw.article:""}.
+Je vous prie d'intervenir conformément à la loi.
+Signature: ${name}
+`;
+ }
+ document.getElementById('docContent').innerText=tpl;
+ document.getElementById('docContent').dir=docLang==='ar'?'rtl':'ltr';
+}
+function shareDoc(){const t=document.getElementById('docContent').innerText; if(navigator.share){navigator.share({title:'وثيقة - مشكلتي',text:t});} else {navigator.clipboard.writeText(t);alert("تنسخات ✓");}}
+function downloadDoc(){const t=document.getElementById('docContent').innerText; const blob=new Blob([t],{type:'text/plain;charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=(selectedDoc?selectedDoc.title:'وثيقة')+'.doc'; a.click();}
+function openLawsModal(){if(!currentLaw){alert("حلل مشكل أولا");return;}document.getElementById('lawsModal').classList.remove('hidden'); document.getElementById('lawsFullText').innerHTML=`<div class="bg-[#FFF8F0] rounded-2xl p-6 border-r-8 border-[#C1272D]"><h3 class="font-black text-xl">${currentLaw.title}</h3><p class="mt-2 font-bold">${currentLaw.law}</p><div class="mt-4 bg-white p-4 rounded-xl border"><p class="font-black text-sm">📚 النص الأصلي:</p><p class="mt-2 text-sm leading-loose font-bold">${currentLaw.full||currentLaw.article}</p></div><p class="mt-4 bg-[#006233] text-white inline-block px-3 py-1 rounded-full text-xs font-black">${currentLaw.article}</p></div><div class="mt-4 bg-gray-50 p-4 rounded-xl"><p class="font-black">📎 مجالات أخرى مرتبطة:</p><div class="mt-2 flex flex-wrap gap-2">${getAllLaws().filter(l=>l.domain===currentLaw.domain).map(l=>`<span class="bg-white border px-3 py-1 rounded-full text-xs font-bold">${l.title}</span>`).join('')}</div></div>`;}
+function closeLawsModal(){document.getElementById('lawsModal').classList.add('hidden');}
+let clickCount=0;document.getElementById('secretLogo').onclick=()=>{clickCount++; if(clickCount>=7){document.getElementById('adminLogin').classList.remove('hidden'); clickCount=0;} setTimeout(()=>clickCount=0,3000);};
+if(window.location.search.includes('admin')) setTimeout(()=>document.getElementById('adminLogin').classList.remove('hidden'),500);
+function closeLogin(){document.getElementById('adminLogin').classList.add('hidden');}
+function loginAdmin(){const p=document.getElementById('adminPassInput').value; if(p===adminPass){document.getElementById('adminLogin').classList.add('hidden'); openAdmin();} else {alert("كلمة السر غالطة!");}}
+function openAdmin(){document.getElementById('adminPanel').classList.remove('hidden');document.getElementById('statVisits').innerText=visits;document.getElementById('statQuestions').innerText=questions.length;document.getElementById('statProfit').innerText=(questions.length*adSettings.perQ + adSettings.views*adSettings.perAd/1000).toFixed(0)+" DH";document.getElementById('statAdViews').innerText=adSettings.views+" مشاهدة";document.getElementById('statVip').innerText=isVip?"مفعل ✓":"لا";document.getElementById('adsenseCode').value=adSettings.code;document.getElementById('profitPerQ').value=adSettings.perQ;document.getElementById('profitPerAd').value=adSettings.perAd;renderQuestions();renderCustomLaws();renderCustomDocs();document.getElementById('vipBadge').classList.toggle('hidden',!isVip);}
+function closeAdmin(){document.getElementById('adminPanel').classList.add('hidden');}
+function renderQuestions(){const q=document.getElementById('adminSearch')?document.getElementById('adminSearch').value.toLowerCase():''; let filtered=questions; if(q) filtered=questions.filter(x=>x.text.toLowerCase().includes(q)||x.category.toLowerCase().includes(q)); const list=document.getElementById('questionsList'); if(filtered.length===0){list.innerHTML='<p class="text-white/30 text-xs">ما كاين والو</p>';return;} list.innerHTML=filtered.map(x=>`<div class="bg-black rounded-xl p-4 border border-white/5"><div class="flex justify-between items-center"><span class="bg-yellow-400 text-black text-[10px] font-black px-2 py-0.5 rounded-full">${x.category} ${x.vip?'• VIP':''} • ${x.domain||''}</span><span class="text-white/30 text-[10px]">${x.date}</span></div><p class="text-white font-bold text-sm mt-2 leading-snug">${x.text}</p><p class="text-white/30 text-[10px] mt-1">اللغة: ${x.lang} • ID: ${x.id}</p></div>`).join('');}
+function renderCustomLaws(){const el=document.getElementById('customLawsList'); if(!el)return; if(customLaws.length===0){el.innerHTML='<p class="text-white/30 text-xs">ما كاين قوانين مضافة</p>';return;} el.innerHTML=customLaws.map((c,i)=>`<div class="bg-black rounded-xl p-3 flex justify-between"><div><p class="text-white font-bold text-sm">${c.title}</p><p class="text-white/50 text-xs">${c.domain} • ${c.article} • ${c.key}</p></div><button onclick="deleteLaw(${i})" class="text-red-400 text-xs bg-red-400/10 px-2 py-1 rounded-full">حذف</button></div>`).join('');}
+function renderCustomDocs(){const el=document.getElementById('customDocsList'); if(!el)return; if(customDocs.length===0){el.innerHTML='<p class="text-white/30 text-xs">ما كاين وثائق مضافة</p>';return;} el.innerHTML=customDocs.map((c,i)=>`<div class="bg-black rounded-xl p-3 flex justify-between"><div><p class="text-white text-sm font-bold">${c.title}</p><p class="text-white/50 text-xs">${c.cat}</p></div><button onclick="deleteDoc(${i})" class="text-red-400 text-xs">حذف</button></div>`).join('');}
+function clearQuestions(){if(confirm('مسح كاع الأسئلة؟')){questions=[];localStorage.setItem('moch_q','[]');renderQuestions();}}
+function toggleVip(){isVip=!isVip;localStorage.setItem('moch_vip',isVip);openAdmin();}
+function changePassword(){const oldP=prompt("كلمة السر القديمة:"); if(oldP!==adminPass){alert("غالطة");return;} const newP=prompt("كلمة السر الجديدة:"); if(!newP||newP.length<4){alert("قصيرة بزاف");return;} adminPass=newP;localStorage.setItem('moch_pass',newP);alert("تبدلات ✓: "+newP);}
+function addNewLaw(){const domain=document.getElementById('newLawDomain').value;const key=document.getElementById('newLawKey').value.trim();const title=document.getElementById('newLawTitle').value.trim();const text=document.getElementById('newLawText').value.trim();const article=document.getElementById('newLawArticle').value.trim();const full=document.getElementById('newLawFull').value.trim(); if(!key||!title||!text){alert('عمر الخانات المهمة');return;} customLaws.push({domain,title,key,law:text,article,full,steps:["جمع الوثائق","توجه للمحكمة"],where:["🏛️ المحكمة"],docs:["بطاقة وطنية"]});localStorage.setItem('moch_claws',JSON.stringify(customLaws));renderCustomLaws();alert('تزاد القانون فمجال '+domain+' ✓');}
+function deleteLaw(i){customLaws.splice(i,1);localStorage.setItem('moch_claws',JSON.stringify(customLaws));renderCustomLaws();}
+function addNewDoc(){const cat=document.getElementById('newDocDomain').value;const title=document.getElementById('newDocTitle').value.trim();const content=document.getElementById('newDocContent').value.trim(); if(!title){alert('عنوان ضروري');return;} customDocs.push({cat,title,titleFr:title,content});localStorage.setItem('moch_cdocs',JSON.stringify(customDocs));renderCustomDocs();alert('تزادت الوثيقة ✓');}
+function deleteDoc(i){customDocs.splice(i,1);localStorage.setItem('moch_cdocs',JSON.stringify(customDocs));renderCustomDocs();}
+function saveAdSettings(){adSettings.code=document.getElementById('adsenseCode').value;adSettings.perQ=parseFloat(document.getElementById('profitPerQ').value)||5;adSettings.perAd=parseFloat(document.getElementById('profitPerAd').value)||25;localStorage.setItem('moch_ads',JSON.stringify(adSettings));alert('تحفظات ✓ الربح الجديد: '+(questions.length*adSettings.perQ + adSettings.views*adSettings.perAd/1000).toFixed(0)+' DH');openAdmin();}
+function exportData(){let csv="التاريخ,المجال,العنوان,السؤال,VIP,اللغة\n"+questions.map(q=>`"${q.date}","${q.domain}","${q.category}","${q.text.replace(/"/g,'""')}","${q.vip?'نعم':'لا'}","${q.lang}"`).join('\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='mochkilti_all.csv';a.click();}
+function exportAll(){exportData();}
+function resetAll(){if(confirm('متأكد بغيتي تمسح كلشي؟ الزيارات والأسئلة والقوانين؟')){localStorage.clear();location.reload();}}
+renderDomains();renderDocsPreview();
+if(isVip)document.getElementById('vipBadge').classList.remove('hidden');
+</script>
 
-الطرف الثاني - المكتري: الاسم الكامل:.........................................
-رقم ب.ت.و:.........................................
-الساكن بـ:.........................................
+<!-- ==== الجديد - 90 نموذج كاتب عمومي + ربط الميكرو ==== -->
+<script>
+const KATIB_LIB={
+rent:[
+{title:"عقد كراء سكني - قانون 67.12",content:`عقد كراء سكني
+طبقا لأحكام القانون رقم 67.12
 
-اتفق الطرفان وتراضيا على ما يلي:
-الفصل الأول: يكري الطرف الأول للطرف الثاني الشقة الكائنة بـ:.........................................
-الفصل الثاني: مدة الكراء:......................... ابتداء من:..../..../........
-الفصل الثالث: السومة الكرائية:......................... درهم شهريا
-الفصل الرابع: يلتزم المكتري بأداء الكراء في أجل أقصاه اليوم الخامس من كل شهر
-الفصل الخامس: يمنع إحداث أي تغيير دون موافقة كتابية
-طبقا للمادة 3 من قانون 67.12
+الطرف الأول المكري: الاسم الكامل:.........................................
+ب.ت.و:......................................... الساكن:.........................................
+الطرف الثاني المكتري: الاسم:.........................................
+ب.ت.و:......................................... الساكن:.........................................
+
+الفصل 1: المحل الكائن بـ:.........................................
+الفصل 2: المدة:......................... من:..../..../........
+الفصل 3: السومة:......................... درهم
+المادة 3 من قانون 67.12
 
 الإمضاء:
-المكري:......................... المكتري:.........................
-الشاهد 1:......................... الشاهد 2:.........................`},
-{title:"عقد كراء تجاري - قانون 49.16", content: `عقد كراء تجاري
-القانون 49.16 المتعلق بكراء العقارات التجارية
+المكري:................... المكتري:...................`},
+{title:"التزام بالإفراغ",content:`التزام بالإفراغ
 
-المكري:......................................... ب.ت.و:.........................................
-المكتري:......................................... ب.ت.و:.........................................
-المحل التجاري الكائن بـ:.........................................
-النشاط:.........................................
-المدة:......................... السومة:......................... درهم
-الضمان:......................... درهم
+أنا الممضي أسفله: الاسم:.........................................
+ب.ت.و:......................................... الساكن:.........................................
+ألتزم بإفراغ المحل الكائن بـ:.........................................
+في أجل:..../..../........ دون قيد
 
-المادة 5 من القانون 49.16 - الحق في التعويض عن فقدان الأصل التجاري
-
-التوقيع:.........................`},
-{title:"التزام بالإفراغ", content: `التزام بالإفراغ
-
-أنا الممضي أسفله:
-الاسم:......................................... ب.ت.و:.........................................
-الساكن:.........................................
-
-ألتزم وأتعهد بأن أفرغ المحل السكني الكائن بـ:.........................................
-في أجل أقصاه:..../..../........ دون قيد أو شرط
-
-وأشهد على نفسي أن هذا الالتزام صدر مني عن طواعية واختيار
-
-حرر بـ:.........................................
-الإمضاء مصادق عليه:
+الإمضاء المصادق عليه:
 .........................................`},
-{title:"إنذار بأداء الكراء - م 44 ق 67.12", content: `إنذار بأداء الكراء
-المادة 44 من القانون 67.12
+{title:"إنذار بأداء الكراء - م 44",content:`إنذار بأداء الكراء - المادة 44 ق 67.12
 
-من: المكري:.........................................
-إلى: المكتري:.........................................
-الساكن بـ:.........................................
-
-الموضوع: إنذار بأداء مستحقات الكراء
-
-سلام تام،
-
-أنذركم بضرورة أداء مبلغ:......................... درهم
-عن الأشهر:.........................................
-داخل أجل 15 يوما من تاريخ التوصل بهذا الإنذار
-وإلا سأضطر لسلوك مسطرة الإفراغ طبقا للمادة 45 من قانون 67.12
-
-والسلام
+من:......................................... إلى:.........................................
+أنذركم بأداء مبلغ:......................... درهم عن الأشهر:.........................
+داخل 15 يوما وإلا سأطبق المادة 45
 
 المكري:.........................................`},
-{title:"إنذار بالإفراغ", content: `إنذار بالإفراغ للاحتياج
-المادة 45 قانون 67.12
+{title:"عقد كراء تجاري - ق 49.16",content:`عقد كراء تجاري - القانون 49.16
 
-أنا الممضي أسفله:.........................................
-أنذر السيد:.........................................
-القاطن بـ:.........................................
+المكري:.........................................
+المكتري:.........................................
+المحل:......................................... النشاط:.........................................
+السومة:......................... الضمان:.........................
 
-بضرورة إفراغ المحل في أجل 3 أشهر طبقا للمادة 45
+المادة 5 ق 49.16
 
-السبب:.........................................
-.........................................`},
-{title:"طلب تخفيض الكراء", content: `طلب تخفيض السومة الكرائية
-إلى السيد مالك العقار:.........................................
+التوقيع:.........................`},
+{title:"وصل كراء",content:`وصل كراء
 
-الموضوع: طلب تخفيض
+استلمت من:.........................................
+مبلغ:......................... عن شهر:.........................
+المحل:.........................................
+بتاريخ:..../..../........
 
+المكري:.........................................`},
+{title:"طلب تخفيض الكراء",content:`طلب تخفيض السومة - م 34
+
+إلى السيد المالك:.........................................
 أنا:......................................... القاطن بـ:.........................................
-ألتمس منكم تخفيض السومة من......................... إلى......................... نظرا لـ:.........................................
-طبقا للمادة 34 من قانون 67.12
-
-وتقبلوا احترامي
+ألتمس تخفيض من......................... إلى.........................
+السبب:.........................................
 
 الاسم:.........................................`},
-{title:"محضر تسليم المفاتيح", content: `محضر تسليم المفاتيح
+{title:"محضر تسليم المفاتيح",content:`محضر تسليم مفاتيح
 
-نحن الموقعين أسفله:
 المسلم:.........................................
 المتسلم:.........................................
 المحل:.........................................
-بتاريخ:..../..../........
-على الساعة:.........................................
-تم تسليم:........ مفاتيح، عداد كهرباء:........، ماء:........
-
+التاريخ:..../..../........ الساعة:.........................
 الحالة:.........................................
 
-التوقيع:
+التوقيع:.........................`},
+{title:"فسخ عقد كراء بالتراضي",content:`فسخ بالتراضي
+
+الطرفان:......................................... و.........................................
+اتفقا على فسخ عقد كراء المؤرخ:..../..../........
+للمحل:.........................................
+ابتداء من:..../..../........
+
+التوقيعان:
 .........................................`},
-{title:"التزام بعدم إحداث تغييرات", content: `التزام
+{title:"طلب إصلاحات - م 7",content:`طلب إصلاحات - المادة 7 ق 67.12
 
-أنا:......................................... ب.ت.و:.........................................
-ألتزم بعدم إحداث أي تغيير أو إصلاح في المحل الكائن بـ:.........................................
-دون موافقة كتابية من المالك
+إلى المالك:.........................................
+أنا المكتري:.........................................
+العطب:.........................................
+المحل:.........................................
+أطلب الإصلاح في 15 يوم
 
-حرر بـ:.........................................
-الإمضاء:.........................................`},
-{title:"عقد رهن الكراء - ضمان", content: `عقد ضمان - رهن
+الاسم:.........................................`},
+{title:"إشعار بزيادة قانونية 8%",content:`إشعار بالزيادة القانونية 8% - م 34
+
+أخبركم أن السومة ستصبح:.........................
+ابتداء من:..../..../........
+
+المالك:.........................................`},
+{title:"عقد كراء مفروش",content:`عقد كراء مفروش
+
+المحل المفروش بـ:.........................................
+بجميع أثاثه في اللائحة المرفقة
+المدة:......................... الثمن:.........................
+
+التوقيع:.........................`},
+{title:"التزام بأداء الكراء",content:`التزام بأداء الكراء
+
+أنا:......................................... ألتزم بأداء:......................... درهم
+المستحق عن:.........................................
+في أجل:..../..../........
+
+الإمضاء:.........................`},
+{title:"عقد رهن - ضمان كراء",content:`عقد ضمان - رهن
 
 المكري:.........................................
 المكتري:.........................................
 مبلغ الضمان:......................... درهم
-المحل:.........................................
-يسترجع عند نهاية الكراء بعد خصم المستحقات
+يسترجع عند نهاية الكراء
 
-طبقا للأعراف والعادات
+التوقيع:.........................`},
+{title:"التزام بعدم إحداث تغييرات",content:`التزام
 
-التوقيع:.........................................`},
-{title:"طلب إصلاحات ضرورية", content: `طلب إصلاحات
-إلى السيد المالك:.........................................
+أنا:......................................... ألتزم بعدم إحداث تغيير في المحل:.........................................
+دون موافقة كتابية
 
-أنا المكتري:.........................................
-أخبركم بوجود عطب:.........................................
-في المحل:.........................................
-أطلب إصلاحه داخل أجل 15 يوما طبقا للمادة 7 ق 67.12
+الإمضاء:.........................`},
+{title:"إنذار بالإفراغ للاحتياج",content:`إنذار بالإفراغ للاحتياج - م 45
 
-الاسم:.........................................`},
-{title:"وصل استلام الكراء", content: `وصل كراء
+أنا:.........................................
+أنذر:.........................................
+بضرورة الإفراغ في 3 أشهر
 
-استلمت من السيد:.........................................
-مبلغ:......................... درهم
-عن شهر:.........................
-المحل:.........................................
-بتاريخ:..../..../........
+السبب:.........................................
 
-المكري:.........................................`},
-{title:"فسخ عقد كراء بالتراضي", content: `فسخ بالتراضي
-
-الطرفان:......................................... و.........................................
-اتفقا على فسخ عقد الكراء المؤرخ:..../..../........
-للمحل:.........................................
-ابتداء من:..../..../........
-مع تسوية جميع المستحقات
-
-التوقيعان:
-.........................................`},
-{title:"إشعار بزيادة قانونية", content: `إشعار بالزيادة القانونية 8%
-المادة 34 ق 67.12
-
-أخبركم أن السومة ستصبح:......................... درهم
-ابتداء من:..../..../........
-طبقا للزيادة القانونية
-
-المالك:.........................................`},
-{title:"عقد كراء مفروش", content: `عقد كراء مفروش
-
-المحل المفروش الكائن:.........................................
-بجميع أثاثه المذكور في اللائحة المرفقة
-
-المدة:......................... الثمن:.........................
-
-التوقيع:.........................................`},
-{title:"التزام بأداء الكراء", content: `التزام بأداء الكراء
-
-أنا:......................................... ألتزم بأداء مبلغ:......................... درهم
-المستحق عن:.........................................
-في أجل:..../..../........
-
-الإمضاء:.........................................`}
+المكري:.........................`}
 ],
-family: [
-{title:"طلب النفقة - م 187 مدونة الأسرة", content: `مقال دعوى النفقة
-إلى السيد رئيس المحكمة الابتدائية - قسم قضاء الأسرة بـ:.........................................
+family:[
+{title:"طلب النفقة - م 187 مدونة الأسرة",content:`مقال دعوى النفقة
+إلى رئيس المحكمة الابتدائية - قضاء الأسرة بـ:.........................................
 
-المدعية: الاسم:......................................... ب.ت.و:......................................... الساكنة:.........................................
-المدعى عليه: الاسم:......................................... الساكن:.........................................
+المدعية:......................................... ب.ت.و:.........................................
+المدعى عليه:.........................................
+عقد زواج رقم:......................... بتاريخ:..../..../........
+الأبناء:.........................................
 
-الموضوع: طلب النفقة طبقا للمادة 187 وما يليها من مدونة الأسرة
+حيث هجر البيت ولم ينفق - المادة 187 مدونة الأسرة
+ألتمس الحكم بنفقة:......................... درهم
 
-سيدي الرئيس،
-حيث أن المدعى عليه زوجي بموجب عقد زواج رقم:......................... بتاريخ:..../..../........
-وحيث أنه هجر بيت الزوجية ولم يعد ينفق
-وحيث أن لي في عصمته أبناء:.........................................
-لذلك ألتمس الحكم عليه بنفقة شهرية قدرها:......................... درهم
+المرفقات: عقد زواج - ازدياد - سكنى
 
-المرفقات:
-- عقد زواج
-- عقود ازدياد
-- شهادة سكنى
-
-الإمضاء:.........................................`},
-{title:"طلب الحضانة - م 163", content: `طلب إسناد الحضانة
-المادة 163 مدونة الأسرة
+الإمضاء:.........................`},
+{title:"طلب الحضانة - م 163",content:`طلب حضانة - المادة 163
 
 المدعية:.........................................
 المدعى عليه:.........................................
 المحضونون:.........................................
 
-حيث أن الحضانة من حق الأم طبقا للمادة 166 إلى غاية 15 سنة
+الحضانة للأم إلى 15 سنة - المادة 166
+ألتمس إسناد الحضانة لي
 
-ألتمس إسناد حضانة أبنائي لي
+الاسم:.........................`},
+{title:"طلاق للشقاق - م 94",content:`طلاق للشقاق - م 94 مدونة الأسرة
 
-الاسم:.........................................`},
-{title:"دعوى الطلاق للشقاق - م 94", content: `مقال طلاق للشقاق
-المادة 94 مدونة الأسرة
-
-المدعية/المدعي:......................................... ب.ت.و:.........................................
+المدعي(ة):.........................................
 الزوج(ة):.........................................
-
 حيث استحالت العشرة
-حيث فشلت محاولات الصلح
 
-ألتمس الحكم بالتطليق للشقاق
+ألتمس التطليق للشقاق
 
-الاسم:.........................................`},
-{title:"طلب الرجوع لبيت الزوجية", content: `طلب الرجوع لبيت الزوجية
-المادة 51 مدونة الأسرة
+الاسم:.........................`},
+{title:"الرجوع لبيت الزوجية",content:`طلب الرجوع لبيت الزوجية - م 51
 
 المدعي:.........................................
-المدعى عليها: زوجتي:.........................................
+الزوجة:.........................................
+خرجت بتاريخ:..../..../........
+بيت الزوجية بـ:.........................................
 
-حيث خرجت من البيت دون مبرر بتاريخ:..../..../........
-ألتمس الحكم برجوعها لبيت الزوجية الكائن بـ:.........................................
+ألتمس الحكم برجوعها
 
-الاسم:.........................................`},
-{title:"طلب النفقة المؤقتة", content: `طلب نفقة مؤقتة
-ألتمس من المحكمة الحكم بنفقة مؤقتة قدرها:......................... إلى حين البت
+الاسم:.........................`},
+{title:"النفقة المؤقتة",content:`طلب نفقة مؤقتة
 
-الاسم:.........................................`},
-{title:"طلب إسقاط الحضانة", content: `طلب إسقاط الحضانة
-المادة 173
+ألتمس نفقة مؤقتة قدرها:......................... إلى حين البت
+
+الاسم:.........................`},
+{title:"إسقاط الحضانة - م 173",content:`طلب إسقاط الحضانة - م 173
 
 المدعي:.........................................
 المدعى عليها:.........................................
 السبب:.........................................
 
-ألتمس إسقاط الحضانة
+ألتمس الإسقاط
 
-الاسم:.........................................`},
-{title:"طلب الزيارة - م 180", content: `طلب تنظيم زيارة المحضون
-المادة 180 مدونة الأسرة
+الاسم:.........................`},
+{title:"تنظيم زيارة - م 180",content:`طلب زيارة - م 180
 
-أنا الأب:......................................... ألتمس تنظيم زيارة ابني:.........................................
-كل يوم:......................... من الساعة:.........................
+أنا الأب:.........................................
+ألتمس زيارة ابني:.........................................
+كل:......................... من الساعة:.........................
 
-الاسم:.........................................`},
-{title:"دعوى ثبوت النسب", content: `دعوى ثبوت النسب
-المادة 150 مدونة الأسرة
+الاسم:.........................`},
+{title:"ثبوت النسب - م 150",content:`دعوى ثبوت النسب - م 150
 
 المدعية:.........................................
 المدعى عليه:.........................................
-الابن:......................................... المزداد بتاريخ:..../..../........
+الابن المزداد:..../..../........
 
-ألتمس الحكم بثبوت النسب
+ألتمس ثبوت النسب
 
-الاسم:.........................................`},
-{title:"طلب الإذن بالتعدد", content: `طلب الإذن بالتعدد
-المادة 40 مدونة الأسرة
+الاسم:.........................`},
+{title:"الإذن بالتعدد - م 40",content:`طلب الإذن بالتعدد - م 40
 
 الطالب:.........................................
 الزوجة الأولى:.........................................
-أسباب موضوعية استثنائية:.........................................
+أسباب استثنائية:.........................................
 
-ألتمس الإذن بالتعدد
+ألتمس الإذن
 
-الاسم:.........................................`},
-{title:"طلب مراجعة النفقة", content: `طلب مراجعة النفقة
-المادة 192 مدونة الأسرة
+الاسم:.........................`},
+{title:"مراجعة النفقة - م 192",content:`طلب مراجعة النفقة - م 192
 
-أنا:......................................... ألتمس مراجعة النفقة من......................... إلى......................... نظرا لتغير الظروف:.........................................
+أنا:.........................................
+ألتمس مراجعة من......................... إلى.........................
+السبب:.........................................
 
-الاسم:.........................................`},
-{title:"التزام بالنفقة", content: `التزام بالنفقة
+الاسم:.........................`},
+{title:"التزام بالنفقة",content:`التزام بالنفقة
 
 أنا:......................................... ب.ت.و:.........................................
-ألتزم بأداء نفقة شهرية قدرها:......................... درهم
-لفائدة:.........................................
+ألتزم بنفقة:......................... درهم لفائدة:.........................................
 
-حرر بـ:.........................
+الإمضاء:.........................`},
+{title:"إحصاء تركة",content:`طلب إحصاء تركة
 
-الإمضاء:.........................................`},
-{title:"عقد زواج - تصريح", content: `تصريح بالزواج
-أنا:......................................... أرغب الزواج من:.........................................
-بتاريخ:..../..../........
-
-الشاهدان:
-1-......................................... 2-.........................................`},
-{title:"طلب إحصاء تركة", content: `طلب إحصاء تركة
-إلى السيد رئيس المحكمة
-
-الهالك:......................................... المتوفى بتاريخ:..../..../........
+الهالك:......................................... المتوفى:..../..../........
 الورثة:.........................................
 
 ألتمس إحصاء التركة
 
-الطالب:.........................................`},
-{title:"تنازل عن الحضانة", content: `تنازل عن الحضانة
+الطالب:.........................`},
+{title:"تنازل عن الحضانة",content:`تنازل عن الحضانة
 
-أنا:......................................... أتنازل عن حضانة ابني:.........................................
+أنا:......................................... أتنازل عن حضانة:.........................................
 لفائدة:.........................................
 
-الإمضاء:.........................................`},
-{title:"إشهاد بحضانة", content: `إشهاد
+الإمضاء:.........................`},
+{title:"إشهاد بحضانة",content:`إشهاد
 
-أشهد أنا:......................................... أن الحضانة مسندة لـ:.........................................
+أشهد أن الحضانة مسندة لـ:.........................................
 
-حرر بـ:.........................
-الإمضاء:.........................................`}
+الإمضاء:.........................`},
+{title:"تصريح بزواج",content:`تصريح بالزواج
+
+أنا:......................................... أرغب الزواج من:.........................................
+بتاريخ:..../..../........
+
+الشاهدان:.........................`}
 ],
-land: [
-{title:"تعرض على مطلب تحفيظ - م 24", content: `تعرض على مطلب التحفيظ رقم:.........................
-المحافظة العقارية بـ:.........................................
+land:[
+{title:"تعرض على مطلب تحفيظ - م 24",content:`تعرض على مطلب تحفيظ رقم:.........................
+المحافظة بـ:.........................................
 
-المتعرض: الاسم:......................................... ب.ت.و:.........................................
+المتعرض:......................................... ب.ت.و:.........................................
 المتعرض ضده:.........................................
-العقار موضوع التعرض: الكائن بـ:......................................... المسمى:.........................................
-المساحة:.........................................
-السبب: أنني أملك هذا العقار بواسطة:.........................................
+العقار:......................................... المسمى:.........................................
+السبب: أملك بواسطة:.........................................
 
-ألتمس قبول تعرضي شكلا وموضوعا
+ألتمس قبول التعرض
 
-حرر بـ:......................... بتاريخ:..../..../........
-الإمضاء:.........................................`},
-{title:"طلب قسمة أرض شياع", content: `طلب قسمة - الشياع
-إلى السيد رئيس المحكمة الابتدائية بـ:.........................................
+الإمضاء:.........................`},
+{title:"قسمة أرض شياع",content:`طلب قسمة شياع
 
 الطالبون:.........................................
 المطلوبون:.........................................
-العقار: الكائن بـ:......................................... ذو الرسم:.........................
+العقار:......................................... الرسم:.........................
 
-ألتمس الحكم بقسمة العقار
+ألتمس القسمة
 
-الاسم:.........................................`},
-{title:"عقد بيع أرض فلاحية", content: `عقد بيع أرض فلاحية
+الاسم:.........................`},
+{title:"بيع أرض فلاحية",content:`عقد بيع أرض فلاحية
 
-البائع:......................................... ب.ت.و:.........................................
-المشتري:......................................... ب.ت.و:.........................................
-العقار: الكائن بـ:......................................... مساحته:.........................
+البائع:.........................................
+المشتري:.........................................
+العقار بـ:......................................... مساحة:.........................
 الثمن:......................... درهم
-تم الأداء: نقدا / بشيك رقم:.........................
 
-الشهود:
-.........................................`},
-{title:"طلب شهادة الملكية", content: `طلب شهادة الملكية
-إلى السيد المحافظ العقاري بـ:.........................................
+الشهود:.........................`},
+{title:"شهادة الملكية",content:`طلب شهادة الملكية
 
-الطالب:......................................... ب.ت.و:.........................................
-الرسم العقاري عدد:.........................................
+الطالب:.........................................
+الرسم:.........................................
 الكائن بـ:.........................................
 
-ألتمس تسليمي شهادة الملكية
+ألتمس الشهادة
 
-الاسم:.........................................`},
-{title:"عقد هبة عقار", content: `عقد هبة
+الاسم:.........................`},
+{title:"هبة عقار",content:`عقد هبة
 
 الواهب:.........................................
 الموهوب له:.........................................
-العقار الموهوب:.........................................
+العقار:.........................................
 الكائن بـ:.........................................
 
-حرر بـ:.........................
+الإمضاء:.........................`},
+{title:"رسم إراثة",content:`طلب رسم إراثة
 
-الإمضاء:.........................................`},
-{title:"طلب إراثة", content: `طلب رسم إراثة
-الهالك:......................................... المتوفى بـ:......................... بتاريخ:..../..../........
+الهالك:......................................... المتوفى:..../..../........
 الورثة:.........................................
 
-ألتمس إقامة رسم الإراثة
+ألتمس إقامة الرسم
 
-الطالب:.........................................`},
-{title:"تصريح بضياع رسم", content: `تصريح بضياع
-أنا:......................................... أصرح بضياع الرسم العقاري عدد:.........................
+الطالب:.........................`},
+{title:"تصريح بضياع رسم",content:`تصريح بضياع
+
+أنا:......................................... أصرح بضياع الرسم عدد:.........................
 الكائن بـ:.........................................
 
-حرر بـ:.........................
-الإمضاء:.........................................`},
-{title:"التزام بعدم التعرض", content: `التزام بعدم التعرض
+الإمضاء:.........................`},
+{title:"التزام بعدم التعرض",content:`التزام بعدم التعرض
 
 أنا:......................................... ألتزم بعدم التعرض لـ:.........................................
-في استغلاله للعقار الكائن بـ:.........................................
+في العقار:.........................................
 
-الإمضاء:.........................................`},
-{title:"وعد بالبيع", content: `وعد بالبيع
+الإمضاء:.........................`},
+{title:"وعد بالبيع",content:`وعد بالبيع
 
 الواعد:.........................................
-الموعود له:.........................................
+الموعود:.........................................
 العقار:.........................................
-الثمن:......................... أجل الوعد:..../..../........
+الثمن:......................... أجل:..../..../........
 
-التوقيع:.........................................`},
-{title:"عقد كراء أرض فلاحية", content: `عقد كراء فلاحي
+التوقيع:.........................`},
+{title:"كراء أرض فلاحية",content:`عقد كراء فلاحي
 
 المكري:.........................................
 المكتري:.........................................
-الأرض: الكائنة بـ:......................................... مساحتها:.........................
-المدة:......................... الثمن السنوي:.........................
+الأرض بـ:......................................... مساحة:.........................
+الثمن السنوي:.........................
 
-التوقيع:.........................................`},
-{title:"طلب تحديد ملك غابوي", content: `طلب إخراج من الملك الغابوي
+التوقيع:.........................`},
+{title:"شكاية الترامي",content:`شكاية الترامي على ملك
 
-الطالب:.........................................
-العقار:.........................................
-
-ألتمس إخراجه
-
-الاسم:.........................................`},
-{title:"شكاية الترامي على ملك", content: `شكاية الترامي
-إلى السيد وكيل الملك بـ:.........................................
-
+إلى وكيل الملك بـ:.........................................
 المشتكي:.........................................
 المشتكى به:.........................................
-العقار المترامى عليه:.........................................
+العقار:.........................................
 
 ألتمس التدخل
 
-الاسم:.........................................`},
-{title:"محضر معاينة حدود", content: `محضر معاينة
+الاسم:.........................`},
+{title:"معاينة حدود",content:`محضر معاينة حدود
 
 العقار:.........................................
-الحدود:
 شمالا:.........................................
 جنوبا:.........................................
 شرقا:.........................................
 غربا:.........................................
 
-الشاهدان:
-.........................................`},
-{title:"عقد قسمة رضائية", content: `قسمة رضائية
+الشاهدان:.........................`},
+{title:"قسمة رضائية",content:`قسمة رضائية
 
 المتقاسمون:.........................................
 العقار:.........................................
-
-تمت القسمة كالتالي:
 الطرف 1:.........................................
 الطرف 2:.........................................
 
-التوقيع:.........................................`},
-{title:"طلب نسخة عقد", content: `طلب نسخة عقد
+التوقيع:.........................`},
+{title:"طلب نسخة عقد",content:`طلب نسخة عقد
 
 الطالب:.........................................
-رقم العقد:......................... تاريخه:..../..../........
+رقم العقد:......................... تاريخ:..../..../........
 المحافظة:.........................................
 
-الاسم:.........................................`}
+الاسم:.........................`},
+{title:"طلب إخراج من الملك الغابوي",content:`طلب إخراج من الملك الغابوي
+
+الطالب:.........................................
+العقار:.........................................
+
+ألتمس الإخراج
+
+الاسم:.........................`}
 ],
-work: [
-{title:"شكاية الطرد التعسفي - م 40 مدونة الشغل", content: `شكاية الطرد التعسفي
-إلى السيد مفتش الشغل بـ:.........................................
+work:[
+{title:"شكاية الطرد التعسفي - م 40",content:`شكاية الطرد التعسفي - م 40 و 53 مدونة الشغل
 
-المشتكي - الأجير: الاسم:......................................... ب.ت.و:......................................... رقم الضمان:.........................
-المشغل: الشركة:......................................... الكائنة بـ:.........................................
+إلى مفتش الشغل بـ:.........................................
+الأجير:......................................... ب.ت.و:......................................... CNSS:.........................
+المشغل:......................................... الكائن بـ:.........................................
+تاريخ الطرد:..../..../........ اشتغلت منذ:..../..../........
+الأجرة:.........................
 
-حيث تم طردي تعسفيا بتاريخ:..../..../........ دون سبب مشروع
-حيث اشتغلت منذ:..../..../........ إلى:..../..../........
-الأجرة:......................... درهم
+ألتمس التدخل - م 40 مدونة الشغل
 
-ألتمس التدخل طبقا للمادة 40 و 53 مدونة الشغل
+الإمضاء:.........................`},
+{title:"طلب شهادة العمل - م 72",content:`طلب شهادة العمل - م 72
 
-الإمضاء:.........................................`},
-{title:"طلب شهادة العمل", content: `طلب شهادة العمل
-إلى السيد مدير شركة:.........................................
+إلى مدير شركة:.........................................
+أنا:......................................... اشتغل منذ:..../..../........
+ألتمس شهادة العمل
 
-أنا:......................................... المشتغل لديكم منذ:..../..../........
-ألتمس تسليمي شهادة العمل طبقا للمادة 72 مدونة الشغل
+الاسم:.........................`},
+{title:"إنذار بأداء الأجور",content:`إنذار بأداء الأجور
 
-الاسم:.........................................`},
-{title:"إنذار بأداء الأجور", content: `إنذار بأداء الأجور
-المادة 361 مدونة الشغل
-
-إلى السيد المشغل:.........................................
+إلى المشغل:.........................................
 من الأجير:.........................................
+أجور الأشهر:.........................................
+المبلغ:......................... داخل 48 ساعة وإلا مفتش الشغل
 
-أنذركم بضرورة أداء أجور الأشهر:.........................................
-البالغة:......................... درهم داخل أجل 48 ساعة
-
-وإلا سألجأ لمفتش الشغل
-
-الاسم:.........................................`},
-{title:"طلب التعويض عن حادثة شغل", content: `طلب التعويض عن حادثة شغل
+الاسم:.........................`},
+{title:"حادثة شغل - ق 18.12",content:`طلب تعويض حادثة شغل - ق 18.12
 
 المصاب:......................................... تاريخ الحادثة:..../..../........
 المشغل:.........................................
-مكان الحادثة:.........................................
+مكان:.........................................
 
-ألتمس التعويض طبقا لقانون حوادث الشغل 18.12
+ألتمس التعويض
 
-الاسم:.........................................`},
-{title:"عقد شغل محدد المدة CDD", content: `عقد شغل محدد المدة
-المادة 16 مدونة الشغل
+الاسم:.........................`},
+{title:"عقد شغل CDD - م 16",content:`عقد شغل محدد المدة - م 16
 
 المشغل:.........................................
-الأجير:......................................... ب.ت.و:.........................................
-المدة: من..../..../........ إلى..../..../........
-الأجرة:......................... المنصب:.........................................
+الأجير:.........................................
+المدة:..../..../........ إلى..../..../........
+الأجرة:......................... المنصب:.........................
 
-التوقيعان:
-.........................................`},
-{title:"عقد شغل غير محدد CDI", content: `عقد شغل غير محدد المدة
+التوقيعان:.........................`},
+{title:"عقد شغل CDI",content:`عقد شغل غير محدد المدة
 
 المشغل:.........................................
 الأجير:.........................................
 تاريخ التشغيل:..../..../........
 الأجرة:.........................
 
-التوقيع:
-.........................................`},
-{title:"طلب الاستقالة", content: `طلب استقالة
+التوقيع:.........................`},
+{title:"طلب استقالة - م 34",content:`طلب استقالة - م 34
 
-إلى السيد المدير:.........................................
+إلى المدير:.........................................
+أنا:......................................... أقدم استقالتي من:..../..../........
+أجل الإخطار:.........................
 
-أنا:......................................... أقدم استقالتي من العمل ابتداء من:..../..../........
-طبقا للمادة 34 مدونة الشغل مع احترام أجل الإخطار:.........................
-
-الاسم:.........................................`},
-{title:"محضر تسليم العهدة", content: `محضر تسليم
+الاسم:.........................`},
+{title:"تسليم عهدة",content:`محضر تسليم عهدة
 
 المسلم:.........................................
 المتسلم:.........................................
 العهدة:.........................................
 بتاريخ:..../..../........
 
-التوقيع:.........................................`},
-{title:"التزام بالسر المهني", content: `التزام بالسر المهني
+التوقيع:.........................`},
+{title:"التزام بالسر المهني",content:`التزام بالسر المهني
 
-أنا:......................................... ألتزم بالحفاظ على سرية معلومات شركة:.........................................
+أنا:......................................... ألتزم بسرية شركة:.........................................
 
-الإمضاء:.........................................`},
-{title:"شكاية عدم التصريح في CNSS", content: `شكاية عدم التصريح
-إلى السيد مدير CNSS بـ:.........................................
+الإمضاء:.........................`},
+{title:"شكاية عدم التصريح CNSS",content:`شكاية عدم التصريح CNSS
 
 الأجير:.........................................
-المشغل:......................................... لم يصرح بي منذ:..../..../........
+المشغل:......................................... لم يصرح منذ:..../..../........
 
 ألتمس التدخل
 
-الاسم:.........................................`},
-{title:"طلب شهادة الأجرة", content: `طلب شهادة الأجرة
+الاسم:.........................`},
+{title:"شهادة الأجرة",content:`طلب شهادة الأجرة
 
-أنا:......................................... ألتمس شهادة الأجرة عن الأشهر:.........................................
+أنا:......................................... ألتمس شهادة عن الأشهر:.........................................
 
-الاسم:.........................................`},
-{title:"إنذار بالعودة للعمل", content: `إنذار بالرجوع للعمل
+الاسم:.........................`},
+{title:"إنذار بالرجوع للعمل",content:`إنذار بالرجوع للعمل
 
 إلى الأجير:.........................................
-تغيبت منذ:..../..../........ دون مبرر
+تغيبت منذ:..../..../........
+أنذرك بالعودة في 48 ساعة
 
-أنذرك بالعودة داخل 48 ساعة
-
-المشغل:.........................................`},
-{title:"طلب إجازة سنوية", content: `طلب إجازة
+المشغل:.........................`},
+{title:"طلب إجازة",content:`طلب إجازة سنوية
 
 أنا:......................................... ألتمس إجازة من..../..../........ إلى..../..../........
 المدة:.........................
 
-الاسم:.........................................`},
-{title:"تعهد بعدم المنافسة", content: `تعهد بعدم المنافسة
+الاسم:.........................`},
+{title:"عدم المنافسة",content:`تعهد بعدم المنافسة
 
 أنا:......................................... أتعهد بعدم منافسة شركة:.........................................
-لمدة:......................... في منطقة:.........................................
+لمدة:......................... منطقة:.........................................
 
-الإمضاء:.........................................`},
-{title:"وصل تسلم أجرة", content: `وصل تسلم أجرة
+الإمضاء:.........................`},
+{title:"وصل أجرة",content:`وصل تسلم أجرة
 
 استلمت من شركة:.........................................
-مبلغ:......................... درهم عن شهر:.........................
+مبلغ:......................... عن شهر:.........................
 
-الأجير:.........................................`}
+الأجير:.........................`}
 ],
-admin: [
-{title:"شكاية إدارية - قانون 55.19", content: `شكاية إدارية
-القانون 55.19 - تبسيط المساطر
+admin:[
+{title:"شكاية إدارية - ق 55.19",content:`شكاية إدارية - القانون 55.19 - م 7
 
 إلى السيد:......................................... بـ:.........................................
-
-المشتكي: الاسم:......................................... ب.ت.و:......................................... الهاتف:.........................
+المشتكي:......................................... ب.ت.و:......................................... هاتف:.........................
 الموضوع:.........................................
-
-حيث تقدمت بطلب:......................................... بتاريخ:..../..../........
-وحيث لم أتوصل بالجواب داخل أجل 60 يوما طبقا للمادة 7 من قانون 55.19
+تقدمت بطلب:......................................... بتاريخ:..../..../........
+لم أتوصل بجواب في 60 يوم - م 7 ق 55.19
 
 ألتمس التدخل
 
-المرفقات:
-- نسخة الطلب
-- وصل الإيداع
+الاسم:.........................`},
+{title:"شهادة السكنى",content:`طلب شهادة السكنى
 
-الاسم:.........................................`},
-{title:"طلب شهادة السكنى", content: `طلب شهادة السكنى
-
-إلى السيد قائد مقاطعة:.........................................
-
+إلى قائد مقاطعة:.........................................
 أنا:......................................... ب.ت.و:.........................................
 الساكن بـ:.........................................
-ألتمس تسليمي شهادة السكنى
+ألتمس شهادة السكنى
 
-المرفقات: نسخة ب.ت.و، فاتورة كهرباء
+الاسم:.........................`},
+{title:"رخصة إصلاح",content:`طلب رخصة إصلاح
 
-الاسم:.........................................`},
-{title:"طلب رخصة إصلاح", content: `طلب رخصة إصلاح
-
-إلى السيد رئيس جماعة:.........................................
-
+إلى رئيس جماعة:.........................................
 الطالب:.........................................
-العقار: الكائن بـ:.........................................
+العقار بـ:.........................................
 نوع الإصلاح:.........................................
 
 ألتمس الترخيص
 
-الاسم:.........................................`},
-{title:"طلب جواز سفر", content: `طلب جواز سفر
+الاسم:.........................`},
+{title:"تظلم Chikaya.ma",content:`تظلم عبر شكاية
+
+المشتكي:.........................................
+الإدارة:.........................................
+الموضوع:.........................................
+الوقائع:.........................................
+
+الاسم:.........................`},
+{title:"وكالة - procuration",content:`وكالة
+
+أنا:......................................... ب.ت.و:.........................................
+أوكل:......................................... ب.ت.و:.........................................
+ليقوم بـ:.........................................
+
+الإمضاء:.........................`},
+{title:"التزام بالسكن",content:`التزام بالسكن
+
+أنا:......................................... ب.ت.و:.........................................
+ألتزم بأن السيد:......................................... ساكن معي في:.........................................
+
+الإمضاء:.........................`},
+{title:"تصريح بضياع وثيقة",content:`تصريح بضياع
+
+أنا:......................................... ب.ت.و:.........................................
+أصرح بضياع:.........................................
+بتاريخ:..../..../........ مكان:.........................................
+
+الإمضاء:.........................`},
+{title:"شهادة العزوبة",content:`طلب شهادة العزوبة
+
+أنا:......................................... ب.ت.و:.........................................
+أصرح أنني عازب(ة)
+
+الإمضاء:.........................`},
+{title:"طلب جواز سفر",content:`طلب جواز سفر
 
 الاسم:......................................... ب.ت.و:.........................................
 تاريخ الازدياد:..../..../........ مكان:.........................................
 العنوان:.........................................
 
-الاسم:.........................................`},
-{title:"تظلم - Chikaya.ma", content: `تظلم عبر بوابة شكاية
+الاسم:.........................`},
+{title:"طلب البطاقة الوطنية",content:`طلب البطاقة الوطنية
 
-المشتكي:.........................................
-الإدارة المشتكى بها:.........................................
-موضوع الشكاية:.........................................
-
-الوقائع:
-.........................................
-
-الاسم:.........................................`},
-{title:"طلب البطاقة الوطنية", content: `طلب البطاقة الوطنية
-
-الاسم:.........................................
-تاريخ الازدياد:..../..../........
+الاسم:......................................... تاريخ:..../..../........
 العنوان:.........................................
 
-الاسم:.........................................`},
-{title:"طلب شهادة الحياة", content: `طلب شهادة الحياة
+الاسم:.........................`},
+{title:"شهادة الحياة",content:`طلب شهادة الحياة
 
 أنا:......................................... ب.ت.و:.........................................
 ألتمس شهادة الحياة
 
-الاسم:.........................................`},
-{title:"التزام بالسكن", content: `التزام بالسكن
-
-أنا:......................................... ب.ت.و:.........................................
-ألتزم بأن السيد:......................................... ساكن معي في:.........................................
-
-الإمضاء:.........................................`},
-{title:"طلب رخصة سياقة", content: `طلب رخصة سياقة
+الاسم:.........................`},
+{title:"رخصة سياقة",content:`طلب رخصة سياقة
 
 الاسم:......................................... ب.ت.و:.........................................
+ألتمس اجتياز صنف:.........................
 
-ألتمس اجتياز امتحان رخصة السياقة صنف:.........................
+الاسم:.........................`},
+{title:"إلغاء ضريبة",content:`طلب إلغاء ضريبة
 
-الاسم:.........................................`},
-{title:"شهادة العزوبة", content: `طلب شهادة العزوبة
-
-أنا:......................................... ب.ت.و:.........................................
-أصرح أنني عازب(ة)
-
-الإمضاء:.........................................`},
-{title:"طلب إلغاء ضريبة", content: `طلب إلغاء ضريبة
-
-إلى السيد مدير الضرائب بـ:.........................................
-
+إلى مدير الضرائب بـ:.........................................
 الملزم:.........................................
 الضريبة:......................................... مبلغ:.........................
+السبب:.........................................
 
-ألتمس الإلغاء نظرا لـ:.........................................
+الاسم:.........................`},
+{title:"طلب دعم اجتماعي",content:`طلب دعم اجتماعي
 
-الاسم:.........................................`},
-{title:"تصريح بالضياع", content: `تصريح بالضياع
+إلى السيد:.........................................
+أنا:......................................... وضعيتي:.........................................
+ألتمس الدعم
 
-أنا:......................................... ب.ت.و:.........................................
-أصرح بضياع الوثيقة:.........................................
-بتاريخ:..../..../........ مكان:.........................................
-
-الإمضاء:.........................................`},
-{title:"وكالة - procuration", content: `وكالة
-
-أنا الموقع أسفله:......................................... ب.ت.و:.........................................
-أوكل السيد:......................................... ب.ت.و:.........................................
-ليقوم مقامي في:.........................................
-
-حرر بـ:.........................
-الإمضاء:.........................................`},
-{title:"التزام بالنفقة - إدارة", content: `التزام
+الاسم:.........................`},
+{title:"التزام بالنفقة - إدارة",content:`التزام بالنفقة
 
 أنا:......................................... ألتزم بالنفقة على:.........................................
 
-الإمضاء:.........................................`},
-{title:"طلب دعم اجتماعي", content: `طلب دعم
-
-إلى السيد:.........................................
-
-أنا:......................................... وضعيتي:.........................................
-ألتمس الاستفادة من الدعم
-
-الاسم:.........................................`}
+الإمضاء:.........................`}
 ],
-scam: [
-{title:"شكاية النصب - الفصل 540 ق.ج", content: `شكاية بالنصب والاحتيال
-الفصل 540 من القانون الجنائي
+scam:[
+{title:"شكاية النصب - الفصل 540",content:`شكاية بالنصب والاحتيال - الفصل 540 ق.ج
 
-إلى السيد وكيل الملك لدى المحكمة الابتدائية بـ:.........................................
+إلى السيد وكيل الملك بـ:.........................................
+المشتكي:......................................... ب.ت.و:......................................... هاتف:.........................
+المشتكى به:......................................... رقم:.........................................
+الموضوع: شكاية نصب - ف 540
 
-المشتكي: الاسم:......................................... ب.ت.و:......................................... الهاتف:......................... الساكن:.........................................
-المشتكى به: الاسم/رقم الهاتف:.........................................
+حيث نصب علي بواسطة:.........................................
+المبلغ:......................... درهم بتاريخ:..../..../........ بواسطة: تحويل/واتساب/رابط:.........................................
+الفصل 540: حبس سنة ل 5 سنوات وغرامة 500 ل 5000 درهم
 
-الموضوع: شكاية بالنصب طبقا للفصل 540 ق.ج
+ألتمس فتح بحث وإرجاع أموالي
 
-سيدي الوكيل،
-حيث أن المشتكى به قام بالنصب علي بواسطة:.........................................
-حيث سلب مني مبلغ:......................... درهم بتاريخ:..../..../........ بواسطة: تحويل / واتساب / رابط:.........................................
+المرفقات: صور محادثات - وصولات
 
-وحيث أن الفصل 540 يعاقب بالحبس من سنة إلى 5 سنوات وغرامة من 500 إلى 5000 درهم
-
-لذلك ألتمس فتح بحث وإرجاع أموالي
-
-المرفقات:
-- صور المحادثات
-- وصولات التحويل
-- رقم الهاتف
-
-الإمضاء:.........................................`},
-{title:"شكاية التشهير - ف 447", content: `شكاية بالتشهير
-الفصل 447 ق.ج
+الإمضاء:.........................`},
+{title:"شكاية التشهير - ف 447",content:`شكاية التشهير - ف 447
 
 المشتكي:.........................................
-المشتكى به:......................................... حساب فيسبوك:.........................................
-الموضوع: نشر ادعاءات كاذبة بتاريخ:..../..../........
+المشتكى به:......................................... حساب:.........................................
+نشر بتاريخ:..../..../........
 
-ألتمس متابعة المشتكى به طبقا للفصل 447
+ألتمس المتابعة ف 447
 
-الاسم:.........................................`},
-{title:"شكاية خيانة الأمانة - ف 547", content: `شكاية خيانة الأمانة
-الفصل 547 ق.ج
+الاسم:.........................`},
+{title:"خيانة الأمانة - ف 547",content:`شكاية خيانة الأمانة - ف 547
 
 المشتكي:.........................................
 المشتكى به:.........................................
-المبلغ:......................... سلمته له بتاريخ:..../..../........ على سبيل الأمانة
+المبلغ:......................... سلمته بتاريخ:..../..../........ أمانة
 
-ألتمس إرجاع المبلغ
+ألتمس الإرجاع
 
-الاسم:.........................................`},
-{title:"شكاية السرقة - ف 505", content: `شكاية السرقة
-الفصل 505 ق.ج
+الاسم:.........................`},
+{title:"شكاية السرقة - ف 505",content:`شكاية السرقة - ف 505
 
 المشتكي:.........................................
 المسروق:.........................................
@@ -778,38 +1034,34 @@ scam: [
 
 ألتمس فتح بحث
 
-الاسم:.........................................`},
-{title:"شكاية الابتزاز الإلكتروني", content: `شكاية الابتزاز
-إلى مصلحة الجرائم الإلكترونية
+الاسم:.........................`},
+{title:"الابتزاز الإلكتروني",content:`شكاية الابتزاز - الجرائم الإلكترونية
 
 المشتكي:.........................................
-المبتز: رقم:.........................................
-يطلب مبلغ:......................... مقابل عدم نشر:.........................................
+المبتز رقم:.........................................
+يطلب:......................... مقابل عدم نشر:.........................................
 
 ألتمس التدخل العاجل
 
-الاسم:.........................................`},
-{title:"شكاية شيك بدون رصيد - م 316", content: `شكاية شيك بدون رصيد
-المادة 316 مدونة التجارة
+الاسم:.........................`},
+{title:"شيك بدون رصيد - م 316",content:`شكاية شيك بدون رصيد - م 316 مدونة التجارة
 
 المستفيد:.........................................
 الساحب:.........................................
-رقم الشيك:......................... مبلغ:......................... تاريخ:..../..../........
-شهادة عدم الأداء مرفقة
+شيك رقم:......................... مبلغ:......................... تاريخ:..../..../........
+شهادة عدم أداء مرفقة
 
 ألتمس المتابعة
 
-الاسم:.........................................`},
-{title:"شكاية السب والقذف", content: `شكاية السب
-الفصل 444 ق.ج
+الاسم:.........................`},
+{title:"السب والقذف - ف 444",content:`شكاية السب - ف 444
 
 المشتكي:.........................................
 المشتكى به:.........................................
-تاريخ السب:..../..../........ مكان:.........................................
+تاريخ السب:..../..../........
 
-الاسم:.........................................`},
-{title:"شكاية التهديد - ف 425", content: `شكاية التهديد
-الفصل 425 ق.ج
+الاسم:.........................`},
+{title:"التهديد - ف 425",content:`شكاية التهديد - ف 425
 
 المشتكي:.........................................
 المشتكى به:.........................................
@@ -817,58 +1069,53 @@ scam: [
 
 ألتمس الحماية
 
-الاسم:.........................................`},
-{title:"شكاية انتحال صفة", content: `شكاية انتحال صفة
-الفصل 381 ق.ج
+الاسم:.........................`},
+{title:"انتحال صفة - ف 381",content:`شكاية انتحال صفة - ف 381
 
 المشتكي:.........................................
 المنتحل:......................................... انتحل صفة:.........................................
 
-الاسم:.........................................`},
-{title:"طلب استرجاع مبلغ محول بالخطأ", content: `طلب استرجاع تحويل
+الاسم:.........................`},
+{title:"استرجاع تحويل بالخطأ",content:`طلب استرجاع تحويل بالخطأ
 
-إلى السيد مدير بنك:.........................................
-
+إلى مدير بنك:.........................................
 أنا:......................................... حولت مبلغ:......................... بتاريخ:..../..../........
 إلى حساب:......................................... بالخطأ
 
-ألتمس استرجاعه
+ألتمس الاسترجاع
 
-الاسم:.........................................`},
-{title:"شكاية إزعاج الجيران", content: `شكاية إزعاج
+الاسم:.........................`},
+{title:"إزعاج الجيران",content:`شكاية إزعاج الجيران
 
 إلى السيد القائد:.........................................
-
 المشتكي:......................................... الساكن:.........................................
-الجيران:......................................... يحدثون ضوضاء:.........................................
+الجيران:......................................... ضوضاء:.........................................
 
 ألتمس التدخل
 
-الاسم:.........................................`},
-{title:"التزام برد المبلغ", content: `التزام برد مبلغ
+الاسم:.........................`},
+{title:"التزام برد مبلغ",content:`التزام برد مبلغ
 
 أنا:......................................... ب.ت.و:.........................................
 ألتزم برد مبلغ:......................... درهم للسيد:.........................................
 في أجل:..../..../........
+وإلا أتحمل المسؤولية ف 540
 
-وإلا أتحمل المسؤولية طبقا للفصل 540
-
-الإمضاء:.........................................`},
-{title:"تنازل عن شكاية", content: `تنازل عن شكاية
+الإمضاء:.........................`},
+{title:"تنازل عن شكاية",content:`تنازل عن شكاية
 
 أنا:......................................... ب.ت.و:.........................................
 أتنازل عن الشكاية رقم:......................... ضد:.........................................
 بعد تسوية ودية
 
-الإمضاء:.........................................`},
-{title:"إشهاد بعدم النصب", content: `إشهاد
+الإمضاء:.........................`},
+{title:"إشهاد بعدم النصب",content:`إشهاد بعدم النصب
 
 أنا:......................................... أشهد أن السيد:.........................................
-لم ينصب علي والمبلغ المذكور هو دين عادي
+لم ينصب علي والمبلغ دين عادي
 
-الإمضاء:.........................................`},
-{title:"شكاية تزوير وثيقة", content: `شكاية تزوير
-الفصل 351 ق.ج
+الإمضاء:.........................`},
+{title:"تزوير وثيقة - ف 351",content:`شكاية تزوير - ف 351
 
 المشتكي:.........................................
 المزور:.........................................
@@ -876,79 +1123,69 @@ scam: [
 
 ألتمس فتح بحث
 
-الاسم:.........................................`}
+الاسم:.........................`}
 ]
 };
 
-// ==== ربط الميكرو بكاع المجالات ====
-let currentKatibDoc = null;
+let currentKatibDoc=null;
 function katibFilter(){
-  const q = document.getElementById('katibSearch').value.toLowerCase().trim();
-  const grid = document.getElementById('katibGrid');
-  if(!q){ grid.innerHTML='<p class="text-gray-400 text-xs text-center">كتب أو هضر بالميكرو...</p>'; return; }
-  let all=[];
-  Object.keys(KATIB_LIB).forEach(dom=>{ KATIB_LIB[dom].forEach(d=> all.push({...d, domain:dom})); });
-  const filtered = all.filter(d=> d.title.toLowerCase().includes(q) || d.content.toLowerCase().includes(q) || q.split(' ').some(w=> d.title.includes(w)) );
-  if(filtered.length===0){ grid.innerHTML='<p class="text-red-400 text-xs text-center">ما لقيتش، جرب كلمة أخرى: كراء، نفقة، نصب...</p>'; return; }
-  grid.innerHTML = filtered.slice(0,20).map((d,i)=>`
-    <div class="flex justify-between items-center bg-[#FFFBF5] border rounded-xl p-3 cursor-pointer hover:bg-black hover:text-white" onclick="katibOpen('${d.domain}', \`${d.title.replace(/`/g,'')}\`)">
-      <div><p class="font-black text-xs">${d.title}</p><p class="text-[10px] opacity-60">${d.domain} • جاهز للطبع بلا تاريخ</p></div>
-      <span class="bg-black text-white text-[10px] px-2 py-1 rounded-full">📄</span>
-    </div>
-  `).join('');
+ const q=document.getElementById('katibSearch').value.toLowerCase().trim();
+ const grid=document.getElementById('katibGrid');
+ if(!q){grid.innerHTML='<p class="text-gray-400 text-xs text-center">كتب أو هضر بالميكرو...</p>';return;}
+ let all=[]; Object.keys(KATIB_LIB).forEach(dom=>{KATIB_LIB[dom].forEach(d=>all.push({...d,domain:dom}));});
+ const filtered=all.filter(d=>d.title.toLowerCase().includes(q)||d.content.toLowerCase().includes(q));
+ if(filtered.length===0){grid.innerHTML='<p class="text-red-400 text-xs text-center">ما لقيتش، جرب: كراء، نفقة، نصب...</p>';return;}
+ grid.innerHTML=filtered.slice(0,30).map(d=>`<div class="flex justify-between items-center bg-[#FFFBF5] border rounded-xl p-3 cursor-pointer hover:bg-black hover:text-white" onclick="katibOpen('${d.domain}','${d.title.replace(/'/g,"\\'")}')"><div><p class="font-black text-xs">${d.title}</p><p class="text-[10px] opacity-60">${d.domain} • بلا تاريخ طباعة • فراغات للستيلو</p></div><span class="bg-black text-white text-[10px] px-2 py-1 rounded-full">📄</span></div>`).join('');
 }
-function katibOpen(domain, title){
-  const doc = KATIB_LIB[domain].find(d=>d.title===title);
-  if(!doc) return;
-  currentKatibDoc = doc;
-  document.getElementById('katibPreview').classList.remove('hidden');
-  document.getElementById('katibActions').classList.remove('hidden');
-  document.getElementById('katibPreview').innerText = doc.content;
-  document.getElementById('katibPreview').scrollIntoView({behavior:'smooth'});
+function katibOpen(domain,title){
+ const doc=KATIB_LIB[domain].find(d=>d.title===title);
+ if(!doc)return;
+ currentKatibDoc=doc;
+ document.getElementById('katibPreview').classList.remove('hidden');
+ document.getElementById('katibActions').classList.remove('hidden');
+ document.getElementById('katibPreview').innerText=doc.content;
+ document.getElementById('katibPreview').scrollIntoView({behavior:'smooth'});
 }
 function katibSpeakSearch(){
-  if(!('webkitSpeechRecognition' in window) &&!('SpeechRecognition' in window)){ alert('استعمل Chrome'); return; }
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const rec = new SR();
-  rec.lang='ar-MA';
-  document.getElementById('katibSearch').placeholder='🎙️ كنسمع... قول: بغيت عقد كراء...';
-  rec.onresult = (e)=>{
-    const t = e.results[0][0].transcript;
-    document.getElementById('katibSearch').value = t;
-    katibFilter();
-    // قلب تلقائي فالمكتبة القديمة حتى هي
-    const oldSearch = document.getElementById('docSearch');
-    if(oldSearch){ oldSearch.value=t; oldSearch.dispatchEvent(new Event('input')); }
-    if(typeof filterDocs==='function') filterDocs();
-    // إلا لقينا نتيجة نفتحو أول واحدة تلقائيا
-    setTimeout(()=>{
-      const first = document.querySelector('#katibGrid div');
-      if(first) first.click();
-    },300);
-  };
-  rec.start();
+ if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window)){alert('استعمل Chrome');return;}
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ const rec=new SR(); rec.lang='ar-MA';
+ document.getElementById('katibSearch').placeholder='🎙️ كنسمع... قول: بغيت عقد كراء...';
+ rec.onresult=(e)=>{
+  const t=e.results[0][0].transcript;
+  document.getElementById('katibSearch').value=t;
+  katibFilter();
+  const oldSearch=document.getElementById('docSearch');
+  if(oldSearch){oldSearch.value=t; oldSearch.dispatchEvent(new Event('input')); if(typeof filterDocs==='function') filterDocs();}
+  setTimeout(()=>{const first=document.querySelector('#katibGrid div'); if(first) first.click();},300);
+ };
+ rec.start();
 }
-function katibPrint(){ if(!currentKatibDoc) return; const w=window.open('','_blank'); w.document.write('<pre style="font-family:Tajawal; white-space:pre-wrap; padding:20px; font-weight:bold; line-height:2">'+document.getElementById('katibPreview').innerText+'</pre>'); w.print(); }
-function katibShare(){ if(!currentKatibDoc) return; const t=document.getElementById('katibPreview').innerText; if(navigator.share) navigator.share({title:currentKatibDoc.title, text:t}); else { navigator.clipboard.writeText(t); alert('تنسخ ✓'); } }
+function katibPrint(){if(!currentKatibDoc)return; const w=window.open('','_blank'); w.document.write('<pre style="font-family:Tajawal; white-space:pre-wrap; padding:20px; font-weight:bold; line-height:2.2; font-size:15px">'+document.getElementById('katibPreview').innerText+'</pre>'); w.print();}
+function katibShare(){if(!currentKatibDoc)return; const t=document.getElementById('katibPreview').innerText; if(navigator.share) navigator.share({title:currentKatibDoc.title,text:t}); else {navigator.clipboard.writeText(t); alert('تنسخ ✓');}}
 
-// ربط الميكرو الأصلي ديالك بالمكتبة الجديدة تلقائيا
-(function(){
-  const origShow = window.showTranscription;
-  window.showTranscription = function(t){
-    if(origShow) origShow(t);
-    // قلب تلقائي فمكتبة الكاتب العمومي
-    document.getElementById('katibSearch').value = t;
-    katibFilter();
-    // إلا كان شي كلمة مفتاحية نفتحو النموذج تلقائيا
-    let lower = t.toLowerCase();
-    if(lower.includes('كراء')) katibOpen('rent', KATIB_LIB.rent[0].title);
-    else if(lower.includes('نفقة')) katibOpen('family', KATIB_LIB.family[0].title);
-    else if(lower.includes('نصب')||lower.includes('فلوس')) katibOpen('scam', KATIB_LIB.scam[0].title);
-    else if(lower.includes('ارض')||lower.includes('ورث')) katibOpen('land', KATIB_LIB.land[0].title);
-    else if(lower.includes('خدمة')||lower.includes('طرد')) katibOpen('work', KATIB_LIB.work[0].title);
-    else if(lower.includes('ادارة')||lower.includes('ورقة')) katibOpen('admin', KATIB_LIB.admin[0].title);
-  };
-  // عرض أولي
-  setTimeout(()=>{ document.getElementById('katibGrid').innerHTML='<p class="text-gray-400 text-xs text-center">هضر بالميكرو الفوق فالصفحة الرئيسية وغنجيب لك النموذج هنا تلقائيا - 90 نموذج واجد</p>'; },500);
-})();
+// ربط الميكرو الأصلي بالمكتبة الجديدة تلقائيا
+const origShow=window.showTranscription;
+window.showTranscription=function(t){
+ if(origShow) origShow(t);
+ const el=document.getElementById('katibSearch');
+ if(el){el.value=t; katibFilter();}
+ let lower=t.toLowerCase();
+ if(lower.includes('كراء')) katibOpen('rent',KATIB_LIB.rent[0].title);
+ else if(lower.includes('نفقة')||lower.includes('حضانة')) katibOpen('family',KATIB_LIB.family[0].title);
+ else if(lower.includes('نصب')||lower.includes('فلوس')) katibOpen('scam',KATIB_LIB.scam[0].title);
+ else if(lower.includes('ارض')||lower.includes('ورث')) katibOpen('land',KATIB_LIB.land[0].title);
+ else if(lower.includes('خدمة')||lower.includes('طرد')) katibOpen('work',KATIB_LIB.work[0].title);
+ else if(lower.includes('ادارة')||lower.includes('ورقة')||lower.includes('شكاية')) katibOpen('admin',KATIB_LIB.admin[0].title);
+};
+setTimeout(()=>{const g=document.getElementById('katibGrid'); if(g) g.innerHTML='<p class="text-gray-400 text-xs text-center p-4">✅ 90 نموذج واجد بأسلوب كاتب عمومي<br>هضر بالميكرو الفوق وغنجيب لك النموذج هنا تلقائيا<br>الفراغات خاوية للستيلو - بلا تاريخ طباعة</p>';},800);
 </script>
+
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+<a href="docs.html" style="display:block; width:100%; background:#C1272D; color:white; padding:18px; text-align:center; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; margin:20px 0;">📄 مكتبة النماذج - 100 نموذج مفصل</a>
+</body>
+</html>
