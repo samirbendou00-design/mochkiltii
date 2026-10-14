@@ -133,22 +133,29 @@ function shareWhatsApp(){
   let text=`${name? 'أنا '+name+' - ':''}عندي مشكل: ${finalTranscript}%0A%0A📌 القانون: ${currentLaw.law}%0A%0A✅ الحلول: ${currentLaw.steps.join(' - ')}%0A%0A📍 فين نمشي: ${currentLaw.where.join(' - ')}%0A%0A📄 النموذج: ${currentLaw.docTitle}%0A%0AMochkilti.ma 🇲🇦`;
   window.open(`https://wa.me/?text=${text}`,'_blank');
 }
-  function saveMyCase(){
-  if(!currentLaw){alert("حلل أولا");return;}
-  const name=document.getElementById('userName').value||'بدون اسم';
-  let myCases=JSON.parse(localStorage.getItem('moch_myCases')||'[]');
-  const startDate=new Date();
-  let deadlineDays=60;
-  if(currentLaw.docKeyword==='كراء') deadlineDays=30;
-  if(currentLaw.docKeyword==='جناية') deadlineDays=15;
-  if(currentLaw.docKeyword==='نصب') deadlineDays=30;
-  let deadline=new Date(); deadline.setDate(startDate.getDate()+deadlineDays);
-  let appeal=new Date(); appeal.setDate(deadline.getDate()+30);
-  const c={id:Date.now(),name:name,problem:finalTranscript,law:currentLaw.title,date:startDate.toLocaleDateString('ar-MA'),deadline:deadline.toLocaleDateString('ar-MA'),appeal:appeal.toLocaleDateString('ar-MA'),days:deadlineDays,status:'مفتوحة'};
-  myCases.unshift(c);
-  localStorage.setItem('moch_myCases',JSON.stringify(myCases));
-  alert(`✅ تحفظات! الآجال: ${c.deadline}`);
-  window.location.href='my-cases.html';
+function saveMyCase(){
+ if(!currentLaw){alert("حل المشكل أولا");return;}
+ const name=document.getElementById('userName')?.value||'بدون اسم';
+ let myCases=JSON.parse(localStorage.getItem('moch_myCases')||'[]');
+ const startDate=new Date();
+ let deadlineDays=60;
+ if(currentLaw.docKeyword=='كراء') deadlineDays=30;
+ if(currentLaw.docKeyword=='عمل') deadlineDays=15;
+ if(currentLaw.docKeyword=='نفقة') deadlineDays=30;
+ const deadline=new Date(startDate.getTime()+deadlineDays*24*60*60*1000);
+ myCases.unshift({
+  id:Date.now(),
+  title:currentLaw.title,
+  problem:document.getElementById('problemInput')?.value?.substring(0,100)||'',
+  startDate:startDate.toLocaleDateString('ar-MA'),
+  deadlineDate:deadline.toLocaleDateString('ar-MA'),
+  deadlineTime:deadline.getTime(),
+  deadlineDays:deadlineDays,
+  name:name
+ });
+ localStorage.setItem('moch_myCases',JSON.stringify(myCases));
+ alert('✅ تحفظ فـ قضاياي! الأجل: '+deadlineDays+' يوم');
+ window.location.href='my-cases.html';
 }
 let clickCount=0; document.getElementById('secretLogo').onclick=()=>{...
 function closeLogin(){document.getElementById('adminLogin').classList.add('hidden');}
