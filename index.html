@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7493926171525023" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1a56db">
 <meta charset="UTF-8">
@@ -23,103 +24,114 @@
 <header class="morocco-gradient text-white p-4 sticky top-0 z-40 shadow-xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div class="flex items-center gap-3"><div id="secretLogo" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#C1272D] font-black text-2xl">م</div><div><h1 class="font-black text-[22px]">مشكلتي</h1><p class="text-[11px]">دليلك القانوني بالدارجة</p></div></div><div id="vipBadge" class="hidden bg-yellow-400 text-black text-[10px] font-black px-3 py-1 rounded-full">VIP PRO</div></div></header>
 <div class="max-w-6xl mx-auto p-4 pb-28 grid lg:grid-cols-3 gap-6">
 <div class="lg:col-span-2 space-y-5">
-<div class="bg-white rounded-[32px] p-8 big-shadow border text-center"><h2 class="font-black text-[28px]">شنو مشكلتك اليوم؟</h2><p class="text-gray-500 font-bold mt-2">هضر بالدارجة، أنا نفهمك ونجبد لك النموذج</p></div>
+<div class="bg-white rounded-[32px] p-8 big-shadow border text-center"><h2 class="font-black text-[28px]">شنو مشكلتك اليوم؟</h2><p class="text-gray-500 font-bold mt-2">هضر بالدارجة، أنا نفهمك ونجبد لك النموذج + PDF</p></div>
 <div class="bg-white rounded-[32px] p-8 big-shadow border text-center">
 <div class="flex flex-col items-center gap-5">
 <button id="recordBtn" class="w-[200px] h-[200px] rounded-full morocco-gradient text-white font-black text-[20px] flex flex-col items-center justify-center gap-2 border-[12px] border-white shadow-2xl"><span class="text-5xl">🎤</span><span id="recordText">عود لمشكلتك<br>بصوتك</span></button>
 <a href="docs.html" class="bg-black text-white font-black px-8 py-4 rounded-full text-[15px] flex items-center gap-3 shadow-xl"><span>📄</span> مكتبة النماذج - 100 نموذج →</a>
 </div>
-<p id="recordHint" class="mt-6 text-sm text-gray-400 font-bold">مثلا: موظف ما بغاش يعطيني وثيقة، نصب عليا، ضربني، جناية...</p>
+<p id="recordHint" class="mt-6 text-sm text-gray-400 font-bold">مثلا: موظف ما بغاش يعطيني وثيقة، نصب عليا، ضربني، جناية، جنحة، مخالفة...</p>
 <div id="wave" class="hidden mt-4 flex justify-center gap-1"><div class="w-1 h-6 bg-[#C1272D] rounded animate-bounce"></div><div class="w-1 h-8 bg-[#C1272D] rounded animate-bounce"></div><div class="w-1 h-10 bg-[#C1272D] rounded animate-bounce"></div></div>
 <div class="mt-6 relative"><textarea id="textInput" placeholder="ولا كتب هنا: موظف ما بغاش يعطيني وثيقة الإثارة..." class="w-full bg-[#FFFBF5] rounded-[20px] p-4 border-2 border-gray-100 outline-none font-bold min-h-[110px] text-[15px]"></textarea><button onclick="analyzeFromText()" class="absolute left-3 bottom-3 bg-black text-white font-black px-5 py-2 rounded-xl text-sm">حلل ✓</button></div>
 </div>
-<div id="transBox" class="hidden bg-white rounded-[24px] p-5 border-2 border-dashed border-[#006233]/30"><p class="text-xs font-black text-[#006233]">🎧 سمعتك قلتي:</p><p id="transText" class="font-black text-lg mt-2"></p><div class="mt-4 flex gap-2"><button onclick="analyze()" class="flex-1 green-gradient text-white font-black py-3 rounded-xl">حلل ليا المشكل ✓</button><button onclick="reset()" class="px-6 py-3 bg-gray-100 rounded-xl font-bold">مسح</button></div></div><div id="result" class="hidden space-y-4">
+<div id="transBox" class="hidden bg-white rounded-[24px] p-5 border-2 border-dashed border-[#006233]/30"><p class="text-xs font-black text-[#006233]">🎧 سمعتك قلتي:</p><p id="transText" class="font-black text-lg mt-2"></p><div class="mt-4 flex gap-2"><button onclick="analyze()" class="flex-1 green-gradient text-white font-black py-3 rounded-xl">حلل ليا المشكل ✓</button><button onclick="resetAll()" class="px-6 py-3 bg-gray-100 rounded-xl font-bold">مسح</button></div></div><div id="result" class="hidden space-y-4">
 <div class="bg-white rounded-[28px] overflow-hidden big-shadow border">
 <div class="green-gradient text-white p-5 flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl" id="catIcon">⚖️</div><div><p class="text-xs opacity-80 font-bold">الموضوع ديالك</p><p id="catName" class="font-black text-xl"></p><p id="catLawCount" class="text-[11px] opacity-80 font-bold"></p></div></div>
 <div class="p-6 space-y-5">
 <div class="bg-[#FFF8F0] rounded-2xl p-5 border-r-[8px] border-[#C1272D]"><div class="flex items-center gap-2 mb-3"><span class="bg-[#C1272D] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">1</span><h3 class="font-black text-[#C1272D] text-lg">آش كيقول القانون؟</h3></div><p id="lawText" class="font-bold leading-loose text-[15px]"></p><div class="mt-3 flex flex-wrap gap-2"><span id="lawArticle" class="bg-[#006233] text-white text-xs font-black px-3 py-1 rounded-full"></span></div></div>
 <div class="bg-[#F0F7FF] rounded-2xl p-5 border-r-[8px] border-[#006233]"><div class="flex items-center gap-2 mb-4"><span class="bg-[#006233] text-white w-8 h-8 rounded-full flex items-center justify-center font-black">2</span><h3 class="font-black text-[#006233] text-lg">آش خاصك تدير دابا؟</h3></div><div id="steps" class="space-y-3"></div></div>
 <div class="bg-gray-50 rounded-2xl p-5 border-r-[8px] border-black"><div class="flex items-center gap-2 mb-4"><span class="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center font-black">3</span><h3 class="font-black text-lg">فين تمشي؟ والوثائق لي خاصك</h3></div><div id="where" class="space-y-2 font-bold text-sm"></div><div id="docsNeeded" class="mt-4 bg-white p-4 rounded-xl border"></div></div>
+
+<!-- الجديد - مولد PDF + واتساب -->
+<div class="bg-white rounded-[20px] p-5 border-2 border-dashed border-[#006233]/30"><h3 class="font-black text-[#006233]">📝 عمر معلوماتك باش نوجد لك PDF بسميتك</h3><div class="grid grid-cols-2 gap-3 mt-4"><input id="userName" placeholder="الاسم الكامل" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userCIN" placeholder="CIN" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userCity" placeholder="المدينة" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"><input id="userPhone" placeholder="الهاتف" class="bg-[#FFFBF5] border-2 p-3 rounded-xl font-bold text-sm"></div><div class="mt-4 grid grid-cols-1 gap-2"><button onclick="generatePDF()" class="bg-[#006233] text-white font-black py-4 rounded-xl">📄 حمل PDF بسميتك دابا</button><button onclick="shareWhatsApp()" class="bg-[#25D366] text-white font-black py-4 rounded-xl">📤 صيفط الحل لواتساب</button><button id="docLinkBtn" class="bg-black text-white font-black py-3 rounded-xl text-sm">📚 شوف النموذج فالمكتبة ديالك</button></div><div id="pdfPreview" class="hidden mt-4 bg-[#FFFBF5] p-4 rounded-xl border text-[12px] font-bold leading-loose whitespace-pre-wrap"></div></div>
+
 </div>
 </div>
 <button onclick="window.location.href='docs.html'" class="w-full morocco-gradient text-white font-black text-lg py-5 rounded-[20px] big-shadow">📄 شوف كاع النماذج فالمكتبة →</button>
 </div>
 </div>
 <div class="space-y-4">
-<div class="bg-black rounded-[24px] p-5 text-white"><h3 class="font-black">💡 علاش مشكلتي؟</h3><ul class="mt-3 space-y-2 text-xs font-bold opacity-80"><li>✅ كيجاوبك بنفس هضرتك</li><li>✅ كيجبد لك النموذج من المكتبة</li><li>✅ بالدارجة 100%</li><li>✅ 100 وثيقة واجدة</li></ul></div>
+<div class="bg-black rounded-[24px] p-5 text-white"><h3 class="font-black">💡 علاش مشكلتي؟</h3><ul class="mt-3 space-y-2 text-xs font-bold opacity-80"><li>✅ كيجاوبك بنفس هضرتك</li><li>✅ كيجبد لك النموذج + PDF</li><li>✅ بالدارجة 100%</li><li>✅ 100 وثيقة واجدة</li></ul></div>
 <div class="bg-[#FFF3E0] rounded-[24px] p-5 border-2 border-orange-100"><p class="font-black text-sm text-[#856404] text-center">⚠️ تنبيه: توجيه أولي وليس استشارة محامي</p></div>
 <div id="adSide" class="bg-gray-50 border-2 border-dashed rounded-2xl p-2 text-center"><p class="text-[10px] text-gray-400 font-bold mb-1">إعلان جانبي</p><div id="adSideContent" class="min-h-[250px] flex items-center justify-center text-gray-400 font-bold text-xs">Side Ad 300x250<br>Adsense كيخدم هنا</div></div>
 </div>
 </div>
+
+<footer class="max-w-6xl mx-auto mt-6 p-6 bg-black rounded-[24px] text-white text-center"><div class="flex justify-center gap-4 text-[12px] font-black"><a href="about.html" class="underline">من نحن</a><a href="privacy.html" class="underline">الخصوصية</a><a href="contact.html" class="underline">اتصل بنا</a><a href="docs.html" class="underline">النماذج</a></div><p class="text-[11px] mt-3 opacity-60">© 2026 Mochkilti.ma - توجيه قانوني أولي فقط</p></footer>
+
 <div id="adminLogin" class="hidden fixed inset-0 bg-black/80 z-[300] p-4 flex items-center justify-center"><div class="bg-white rounded-[28px] p-8 max-w-sm w-full text-center"><h3 class="font-black text-xl">دخول الإدارة</h3><input id="adminPassInput" type="password" placeholder="كلمة السر" class="w-full mt-6 bg-gray-50 border-2 rounded-xl p-4 font-bold text-center"><button onclick="loginAdmin()" class="w-full mt-3 bg-black text-white font-black py-4 rounded-xl">دخول</button><button onclick="closeLogin()" class="w-full mt-2 text-gray-400 font-bold text-sm">إلغاء</button></div></div>
+
 <div id="adminPanel" class="hidden fixed inset-0 bg-[#0A0A0A] z-[250] overflow-y-auto"><div class="max-w-4xl mx-auto p-4 text-white pb-28">
 <div class="flex justify-between items-center"><h2 class="font-black text-3xl">لوحة التحكم - كاملة</h2><button onclick="closeAdmin()" class="w-10 h-10 bg-white/10 rounded-full">✕</button></div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
 <div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-60">الزيارات</p><p id="statVisits" class="font-black text-2xl">0</p></div>
 <div class="bg-white/10 rounded-2xl p-4"><p class="text-xs opacity-60">الأسئلة</p><p id="statQuestions" class="font-black text-2xl">0</p></div>
 <div class="bg-green-600 rounded-2xl p-4"><p class="text-xs">الأرباح</p><p id="statEarnings" class="font-black text-2xl">$0.00</p></div>
-<div class="bg-[#C1272D] rounded-2xl p-4"><p class="text-xs">حالة Adsense</p><p id="adsenseStatus" class="font-black text-sm">بانتظار الموافقة</p></div>
+<div class="bg-[#C1272D] rounded-2xl p-4"><p class="text-xs">PDF تحميلات</p><p id="statDL" class="font-black text-2xl">0</p><p id="adsenseStatus" class="text-[10px] mt-1">بانتظار الموافقة</p></div>
 </div>
 <div class="mt-8 space-y-6">
 <div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📢 إعدادات الإعلانات - كود Adsense</h3><textarea id="adsenseCode" placeholder="حط هنا كود Adsense ca-pub-7493926171525023" class="w-full bg-black border border-white/20 rounded-xl p-3 text-xs h-20"></textarea><button onclick="saveAdsense()" class="mt-3 w-full bg-[#C1272D] font-black py-3 rounded-xl">حفظ كود Adsense ✓</button>
 <div class="mt-4 grid grid-cols-2 gap-3"><div><p class="text-xs mb-1">إعلان جانبي</p><textarea id="adSideCode" placeholder="كود الإعلان الجانبي" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div><div><p class="text-xs mb-1">إعلان لاصق سفلي</p><textarea id="adStickyCode" placeholder="كود الإعلان اللاصق" class="w-full bg-black border border-white/10 rounded-xl p-2 text-[10px] h-14"></textarea></div></div>
 <button onclick="saveAdCodes()" class="mt-3 w-full bg-white text-black font-black py-3 rounded-xl">حفظ كل الإعلانات</button>
 </div>
-<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📚 إدارة القوانين</h3><div class="grid grid-cols-2 gap-2"><input id="lawTitle" placeholder="عنوان القانون" class="bg-black border border-white/10 rounded-xl p-3 text-sm"><input id="lawArticleInput" placeholder="المادة - مثلا 55.19" class="bg-black border border-white/10 rounded-xl p-3 text-sm"></div><textarea id="lawContent" placeholder="نص القانون بالدارجة" class="w-full mt-2 bg-black border border-white/10 rounded-xl p-3 text-sm h-16"></textarea><button onclick="addLaw()" class="mt-2 w-full bg-[#006233] font-black py-3 rounded-xl">+ زيد قانون جديد</button><div id="lawsList" class="mt-3 space-y-2 text-xs"></div></div>
+<div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">📚 إدارة القوانين - فين كاين القانون - الكراء - قضية مقدارية...</h3><div class="grid grid-cols-2 gap-2"><input id="lawTitle" placeholder="عنوان القانون" class="bg-black border border-white/10 rounded-xl p-3 text-sm"><input id="lawArticleInput" placeholder="المادة - مثلا 55.19" class="bg-black border border-white/10 rounded-xl p-3 text-sm"></div><textarea id="lawContent" placeholder="نص القانون بالدارجة" class="w-full mt-2 bg-black border border-white/10 rounded-xl p-3 text-sm h-16"></textarea><button onclick="addLaw()" class="mt-2 w-full bg-[#006233] font-black py-3 rounded-xl">+ زيد قانون جديد</button><div id="lawsList" class="mt-3 space-y-2 text-xs"></div></div>
 <div class="bg-white/5 border border-white/10 rounded-[20px] p-5"><h3 class="font-black text-lg mb-3">❓ الأسئلة الأخيرة من الزوار</h3><div id="questionsList" class="space-y-2 max-h-[300px] overflow-y-auto"></div></div>
 <button onclick="closeAdmin()" class="w-full bg-white text-black font-black py-4 rounded-xl">خروج وحفظ</button>
 </div>
 </div></div>
+
 <div id="adSticky" class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 p-2 z-30 shadow-2xl"><div class="max-w-6xl mx-auto flex items-center justify-between"><div id="adStickyContent" class="flex-1 bg-gray-50 border-2 border-dashed rounded-xl h-[60px] flex items-center justify-center text-gray-400 font-black text-xs">📢 إعلان لاصق - Sticky Ad</div><button onclick="this.parentElement.parentElement.style.display='none'" class="mr-2 w-8 h-8 bg-gray-100 rounded-full">✕</button></div></div>
+
 <script>
 let visits=parseInt(localStorage.getItem('moch_visits')||'0'); let questions=JSON.parse(localStorage.getItem('moch_q')||'[]'); let adminPass=localStorage.getItem('moch_pass')||'admin123'; let adsenseCode=localStorage.getItem('moch_adsense')||''; let adSide=localStorage.getItem('moch_adSide')||''; let adSticky=localStorage.getItem('moch_adSticky')||''; let earnings=localStorage.getItem('moch_earn')||'0.00'; let customLaws=JSON.parse(localStorage.getItem('moch_customLaws')||'[]'); visits++; localStorage.setItem('moch_visits',visits);
-const baseLaws={
-rent:{icon:"🏠",name:"الكراء",laws:[{title:"الإفراغ والكراء",key:"كراء",law:"مول الدار ما عندوش الحق يخرجك بلا حكم قضائي. القانون 67.12 كيحميك.",article:"قانون 67.12 المادة 45",full:"لا يمكن تنفيذ الإفراغ إلا بحكم",steps:["ما تخرجش بلا حكم","طلب إنذار كتابي","جمع وصولات الكراء","سير لمحكمة قضاء القرب"],where:["🏛️ محكمة قضاء القرب"],docs:["عقد الكراء - وصولات - بطاقة"]}]},
-family:{icon:"👨‍👩‍👧",name:"الأسرة",laws:[{title:"الطلاق والنفقة",key:"نطلق",law:"الطلاق كيكون فالمحكمة بإذن القاضي المادة 71، النفقة واجبة المادة 187.",article:"مدونة الأسرة 71 و 187",full:"لا يقع الطلاق إلا بإذن",steps:["جمع عقد الزواج","طلب الإذن بالطلاق","جلسة صلح","تحديد النفقة"],where:["🏛️ محكمة الأسرة"],docs:["عقد الزواج - ازدياد الولاد - بطاقة"]}]},
-scam:{icon:"⚠️",name:"النصب",laws:[{title:"النصب",key:"نصب",law:"النصب كيعاقب من سنة ل 5 سنين حبس الفصل 540.",article:"الفصل 540",full:"من استعمل وسائل احتيالية",steps:["خلي الرسائل","جمع الأدلة","شكاية عند الشرطة"],where:["👮 الشرطة"],docs:["Screenshots - تحويل - بطاقة"]}]}};
-function getAllLaws(){let all=[]; Object.keys(baseLaws).forEach(dom=>{baseLaws[dom].laws.forEach(l=>all.push({...l,domain:dom}));}); customLaws.forEach(l=>all.push(l)); return all;}
-function detectLaw(text){
-  let original=text; let t=text.toLowerCase();
-  const DB=[
-    {keys:['موظف','وثيقة','مقاطعة','ادارة','شهادة','اثارة','ورقة'], kw:'وثيقة', title:'عدم تسليم وثيقة إدارية', law:'قانون 55.19 المادة 7: الإدارة ملزمة تجاوبك في 60 يوم وتعطيك وصل. الموظف ما عندوش الحق يرفض بلا سبب كتابي. إلا رفض من حقك تشكي في chikaya.ma.', article:'قانون 55.19 المادة 7', steps:['طلب الرفض كتابي مع السبب','طلب الوصل (récépissé)','صور الطلب كدليل','شكاية في chikaya.ma'], where:['💻 chikaya.ma - موقع الشكايات','🏢 العمالة - قسم الشكايات','🏛️ المحكمة الإدارية'], docs:['نسخة الطلب + بطاقة وطنية + الوصل']},
-    {keys:['نصب','نصاب','نصبو','فلوسي'], kw:'نصب', title:'النصب والاحتيال', law:'الفصل 540 من القانون الجنائي: النصب باستعمال الحيلة كيتعاقب من سنة ل 5 سنين حبس وغرامة.', article:'الفصل 540', steps:['ما تمسحش الرسائل','جمع كاع الأدلة: تحويلات، سكرينات','سير دير شكاية عند الشرطة القضائية','تبع الملف عند وكيل الملك'], where:['👮 الشرطة القضائية','🏛️ محكمة الابتدائية - وكيل الملك'], docs:['سكرينات + إثبات التحويل + بطاقة']},
-    {keys:['ضرب','جرح','اعتداء','موس','سيف'], kw:'ضرب', title:'الضرب والجرح', law:'الفصل 400-401: الضرب لي فيه عجز أقل من 20 يوم حبس من شهر لسنة، إلا فات 20 يوم من سنة ل 3 سنين.', article:'الفصل 400', steps:['سير للطبيب فالحين وجيب شهادة طبية','صور الجرح','دير شكاية فالحين عند الشرطة','ما تديرش تنازل بلا حقك'], where:['🏥 المستشفى - شهادة طبية','👮 دائرة الشرطة','🏛️ وكيل الملك'], docs:['شهادة طبية + صور الجرح + شهود']},
-    {keys:['سرق','سرقة','شفار','شفر'], kw:'سرقة', title:'السرقة', law:'الفصل 505: السرقة كتعاقب من سنة ل 5 سنين، إلا كانت بالسلاح 10 ل 20 سنة.', article:'الفصل 505', steps:['ما تقيسش بلاصة السرقة','جمع الأدلة','شكاية عند الشرطة فالحين'], where:['👮 الشرطة القضائية'], docs:['قائمة المسروقات + شهود']},
-    {keys:['تهديد','هددني','نقتل'], kw:'تهديد', title:'التهديد', law:'الفصل 425: التهديد بالقتل أو جناية كيعاقب من سنة ل 3 سنين حبس.', article:'الفصل 425', steps:['خلي الدليل','ما تمسحش رسائل التهديد','شكاية عند الشرطة'], where:['👮 الشرطة','🏛️ وكيل الملك'], docs:['رسائل التهديد + بطاقة']},
-    {keys:['سب','شتم','قذف','معيور'], kw:'سب', title:'السب والقذف', law:'الفصل 444: السب العلني كيعاقب بالحبس شهر لسنة وغرامة.', article:'الفصل 444', steps:['سكرين للدليل','شكاية'], where:['🏛️ المحكمة الابتدائية'], docs:['دليل السب']},
-    {keys:['جناية','جنحة','مخالفة'], kw:'جناية', title:'قضية جنائية', law:'القانون الجنائي: جناية أكثر من 5 سنين، جنحة أقل من 5 سنين، مخالفة غرامة.', article:'القانون الجنائي العام', steps:['حدد واش جناية ولا جنحة','جمع الأدلة','شكاية مفصلة'], where:['👮 الشرطة / الدرك','🏛️ النيابة العامة'], docs:['أدلة + شهود + بطاقة']},
-    {keys:['طلق','طلاق','نفقة','حضانة'], kw:'طلاق', title:'الطلاق والنفقة', law:'مدونة الأسرة المادة 71 و 187: الطلاق بإذن المحكمة والنفقة واجبة.', article:'مدونة الأسرة 71', steps:['جمع عقد الزواج','طلب الإذن بالطلاق','جلسة صلح'], where:['🏛️ محكمة الأسرة'], docs:['عقد الزواج + ازدياد الولاد']},
-    {keys:['كراء','مول الدار','خرجني','رهن'], kw:'كراء', title:'الكراء والإفراغ', law:'قانون 67.12 المادة 45: مول الدار ما عندوش الحق يخرجك بلا حكم قضائي.', article:'قانون 67.12', steps:['ما تخرجش بلا حكم','جمع وصولات الكراء','إنذار كتابي'], where:['🏛️ محكمة قضاء القرب'], docs:['عقد الكراء + وصولات']},
-  ];
-  for(let item of DB){
-    for(let k of item.keys){
-      if(t.includes(k)){
-        return {title:original, law:`قلتي: "${original}" - ${item.law}`, article:item.article, full:item.article, docKeyword:item.kw, docTitle:`نموذج ${item.title} - ${item.kw}`, steps:item.steps, where:item.where, docs:item.docs, domain:item.title, icon:'⚖️'};
-      }
-    }
-  }
-  return {title:original, law:`قلتي: "${original}" - القانون المغربي كيحميك. الدستور الفصل 118 كيعطيك حق التقاضي وطلب حقك.`, article:'الدستور الفصل 118', full:'حق التقاضي مضمون', docKeyword:'شكاية', docTitle:'نموذج شكاية عامة', steps:[`1. مشكلتك: ${original}`,'2. جمع الأدلة','3. كتب شكاية واضحة','4. سير للجهة المختصة'], where:['🏛️ الجهة المختصة','💻 chikaya.ma'], docs:['بطاقة + أدلة + شكاية'], domain:'عام', icon:'⚖️'};
-}
 let finalTranscript="",currentLaw=null; let recognition;
 if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){const SR=window.SpeechRecognition||window.webkitSpeechRecognition; recognition=new SR(); recognition.lang='ar-MA'; recognition.onstart=()=>{document.getElementById('recordBtn').classList.add('voice-pulse'); document.getElementById('recordText').innerHTML="كنسمع...<br>هضر"; document.getElementById('wave').classList.remove('hidden');}; recognition.onend=()=>{document.getElementById('recordBtn').classList.remove('voice-pulse'); document.getElementById('recordText').innerHTML="عود لمشكلتك<br>بصوتك"; document.getElementById('wave').classList.add('hidden');}; recognition.onresult=(e)=>{finalTranscript=e.results[0][0].transcript; showTranscription(finalTranscript);};}
 document.getElementById('recordBtn').onclick=()=>{if(!recognition){alert("كتب لتحت");return;} try{recognition.start();}catch{recognition.stop();}};
 function showTranscription(t){document.getElementById('transBox').classList.remove('hidden'); document.getElementById('transText').innerText=t; document.getElementById('transBox').scrollIntoView({behavior:'smooth'});}
-function reset(){document.getElementById('transBox').classList.add('hidden'); document.getElementById('result').classList.add('hidden'); finalTranscript=""; document.getElementById('textInput').value="";}
+function resetAll(){document.getElementById('transBox').classList.add('hidden'); document.getElementById('result').classList.add('hidden'); finalTranscript=""; document.getElementById('textInput').value="";}
 function analyzeFromText(){const v=document.getElementById('textInput').value.trim(); if(v.length<3){alert("كتب كتر");return;} finalTranscript=v; showTranscription(v); analyze();}
+function detectLaw(text){
+  let original=text; let t=text.toLowerCase();
+  const DB=[
+    {keys:['موظف','وثيقة','مقاطعة','ادارة','شهادة','اثارة','ورقة'], kw:'وثيقة', title:'عدم تسليم وثيقة إدارية', law:'قانون 55.19 المادة 7: الإدارة ملزمة تجاوبك في 60 يوم وتعطيك وصل. الرفض خاصو يكون كتابي.', article:'قانون 55.19 المادة 7', steps:['طلب الرفض كتابي','طلب الوصل','شكاية في chikaya.ma','سير للعمالة'], where:['💻 chikaya.ma','🏢 العمالة'], docs:['نسخة الطلب + بطاقة']},
+    {keys:['نصب','فلوس','نصاب'], kw:'نصب', title:'النصب والاحتيال', law:'الفصل 540: النصب كيعاقب من سنة ل 5 سنين حبس.', article:'الفصل 540', steps:['خلي الرسائل','جمع الأدلة','شكاية عند الشرطة'], where:['👮 الشرطة'], docs:['سكرينات + تحويل']},
+    {keys:['ضرب','جرح','اعتداء'], kw:'ضرب', title:'الضرب والجرح', law:'الفصل 400: الضرب كيعاقب حسب مدة العجز.', article:'الفصل 400', steps:['شهادة طبية','صور الجرح','شكاية فالحين'], where:['👮 الشرطة'], docs:['شهادة طبية']},
+    {keys:['جناية','جنحة','مخالفة','سرق','تهديد','سب'], kw:'جناية', title:'قضية جنائية', law:'القانون الجنائي: جناية >5 سنين، جنحة <5 سنين، مخالفة غرامة.', article:'القانون الجنائي', steps:['تحديد النوع','جمع الأدلة','شكاية'], where:['👮 الشرطة'], docs:['أدلة']},
+    {keys:['طلق','طلاق','نفقة'], kw:'طلاق', title:'الطلاق', law:'مدونة الأسرة 71: الطلاق بإذن المحكمة.', article:'مدونة الأسرة 71', steps:['عقد الزواج','طلب الإذن','جلسة صلح'], where:['🏛️ محكمة الأسرة'], docs:['عقد الزواج']},
+    {keys:['كراء','مول الدار'], kw:'كراء', title:'الكراء', law:'قانون 67.12: ما يخرجكش بلا حكم.', article:'67.12', steps:['ما تخرجش بلا حكم','جمع الوصولات'], where:['🏛️ قضاء القرب'], docs:['عقد الكراء']},
+  ];
+  for(let item of DB){ for(let k of item.keys){ if(t.includes(k)){ return {title:original, law:`قلتي: "${original}" - ${item.law}`, article:item.article, docKeyword:item.kw, docTitle:`نموذج ${item.title}`, steps:item.steps, where:item.where, docs:item.docs, domain:item.title, icon:'⚖️'}; } } }
+  return {title:original, law:`قلتي: "${original}" - القانون كيحميك. الفصل 118 حق التقاضي مضمون.`, article:'الفصل 118', docKeyword:'شكاية', docTitle:'نموذج شكاية عامة', steps:[`مشكلتك: ${original}`,'جمع الأدلة','شكاية'], where:['🏛️ الجهة المختصة'], docs:['بطاقة'], domain:'عام', icon:'⚖️'};
+}
 function analyze(){
  if(!finalTranscript) return;
  currentLaw=detectLaw(finalTranscript);
  const q={id:Date.now(),text:finalTranscript,category:currentLaw.title,date:new Date().toLocaleString('ar-MA')}; questions.unshift(q); localStorage.setItem('moch_q',JSON.stringify(questions));
- document.getElementById('catIcon').innerText=currentLaw.icon||"⚖️";
- document.getElementById('catName').innerText=currentLaw.title;
- document.getElementById('catLawCount').innerText=currentLaw.domain;
- document.getElementById('lawText').innerText=currentLaw.law;
- document.getElementById('lawArticle').innerText="📚 "+currentLaw.article;
+ document.getElementById('catIcon').innerText='⚖️'; document.getElementById('catName').innerText=currentLaw.title; document.getElementById('catLawCount').innerText=currentLaw.domain;
+ document.getElementById('lawText').innerText=currentLaw.law; document.getElementById('lawArticle').innerText="📚 "+currentLaw.article;
  document.getElementById('steps').innerHTML=currentLaw.steps.map(s=>`<div class="flex gap-3 bg-white p-4 rounded-xl border"><span class="bg-[#006233] text-white min-w-[32px] h-[32px] rounded-full flex items-center justify-center font-black">✓</span><span class="font-bold text-[14px]">${s}</span></div>`).join('');
  document.getElementById('where').innerHTML=currentLaw.where.map(w=>`<div class="bg-white p-3 rounded-xl border">📍 ${w}</div>`).join('');
- document.getElementById('docsNeeded').innerHTML=`<p class="font-black text-xs">📎 الوثائق لي خاصك:</p><p class="text-[13px] mt-2 font-bold leading-loose">${currentLaw.docs}</p><div class="mt-4 bg-green-50 border-2 border-green-600 rounded-xl p-4 text-center"><p class="font-black text-green-700">✅ وجدت لك الوثيقة!</p><p class="font-black mt-1">${currentLaw.docTitle}</p><button onclick="window.location.href='docs.html?search=${encodeURIComponent(currentLaw.docKeyword)}'" class="mt-3 w-full bg-[#006233] text-white font-black py-3 rounded-xl text-sm">📥 حمل النموذج من المكتبة ديالك →</button></div>`;
+ document.getElementById('docsNeeded').innerHTML=`<p class="font-black text-xs">📎 الوثائق:</p><p class="text-[13px] mt-2 font-bold">${currentLaw.docs}</p><div class="mt-3 bg-green-50 border-2 border-green-600 rounded-xl p-3 text-center"><p class="font-black text-green-700">✅ وجدت لك الوثيقة!</p><p class="font-black">${currentLaw.docTitle}</p></div>`;
+ document.getElementById('docLinkBtn').onclick=()=>{window.location.href='docs.html?search='+encodeURIComponent(currentLaw.docKeyword);};
  document.getElementById('result').classList.remove('hidden'); document.getElementById('result').scrollIntoView({behavior:'smooth'});
- if('speechSynthesis' in window){speechSynthesis.cancel(); let u=new SpeechSynthesisUtterance(currentLaw.law); u.lang='ar-MA'; u.rate=0.9; speechSynthesis.speak(u);}
+}
+function generatePDF(){
+  if(!currentLaw){alert("حلل أولا");return;}
+  const name=document.getElementById('userName').value||'................';
+  const cin=document.getElementById('userCIN').value||'................';
+  const city=document.getElementById('userCity').value||'................';
+  const phone=document.getElementById('userPhone').value||'................';
+  const date=new Date().toLocaleDateString('ar-MA');
+  const content = `المملكة المغربية\nشكاية - ${currentLaw.title}\n--------------------------\nالاسم: ${name}\nCIN: ${cin}\nالمدينة: ${city}\nالهاتف: ${phone}\nالتاريخ: ${date}\n\nموضوع الشكاية: ${finalTranscript}\n\nالنص القانوني: ${currentLaw.law}\nالمرجع: ${currentLaw.article}\n\nالحلول:\n${currentLaw.steps.join('\n')}\n\nالجهة المختصة:\n${currentLaw.where.join('\n')}\n\nالإمضاء:\n${name}`;
+  document.getElementById('pdfPreview').classList.remove('hidden'); document.getElementById('pdfPreview').innerText=content;
+  const { jsPDF } = window.jspdf; const doc = new jsPDF(); const lines = doc.splitTextToSize(content, 180); doc.text(lines, 10, 10); doc.save(`Mochkilti-${currentLaw.docKeyword}-${name}.pdf`);
+  let dl=parseInt(localStorage.getItem('moch_dl')||'0')+1; localStorage.setItem('moch_dl',dl);
+}
+function shareWhatsApp(){
+  if(!currentLaw){alert("حلل أولا");return;}
+  const name=document.getElementById('userName').value||'';
+  let text=`${name? 'أنا '+name+' - ':''}عندي مشكل: ${finalTranscript}%0A%0A📌 القانون: ${currentLaw.law}%0A%0A✅ الحلول: ${currentLaw.steps.join(' - ')}%0A%0A📍 فين نمشي: ${currentLaw.where.join(' - ')}%0A%0A📄 النموذج: ${currentLaw.docTitle}%0A%0AMochkilti.ma 🇲🇦`;
+  window.open(`https://wa.me/?text=${text}`,'_blank');
 }
 let clickCount=0; document.getElementById('secretLogo').onclick=()=>{clickCount++; if(clickCount>=7){document.getElementById('adminLogin').classList.remove('hidden'); clickCount=0;} setTimeout(()=>clickCount=0,3000);};
 function closeLogin(){document.getElementById('adminLogin').classList.add('hidden');}
@@ -129,6 +141,7 @@ function openAdmin(){
  document.getElementById('statVisits').innerText=visits;
  document.getElementById('statQuestions').innerText=questions.length;
  document.getElementById('statEarnings').innerText='$'+earnings;
+ document.getElementById('statDL').innerText=localStorage.getItem('moch_dl')||'0';
  document.getElementById('adsenseCode').value=adsenseCode;
  document.getElementById('adSideCode').value=adSide;
  document.getElementById('adStickyCode').value=adSticky;
